@@ -23,13 +23,14 @@
 
 ## 3. Sprint 总览
 
-| Sprint | 主题 | 产出 | 预估 |
+| Sprint | 主题 | 产出 | 状态 |
 |---|---|---|---|
-| 0 | 地基与调研 | 环境就绪、golden EDL、hyperframe 接口说明、风格 checklist | 0.5 周 |
-| 1 | 粗剪 MVP | rough-cut skill v1：转写→对齐→规则决策→EDL→切割 | 1 周 |
-| 2 | 粗剪打磨 | 气口平滑、LLM 决策层、滤镜、微调回路、质检报告 | 1 周 |
-| 3 | 精剪 I | hyperframe 接入 + 字幕管线 | 1 周 |
-| 4 | 精剪 II | 图表/动效/B-roll + 端到端整片验收 | 1–1.5 周 |
+| 0 | 地基与调研 | 环境就绪、golden EDL、hyperframe 接口说明、风格 checklist | ✅ 完成 |
+| 1 | 粗剪 MVP | rough-cut v1：转写→对齐→规则决策→EDL→切割 | ✅ 完成 |
+| 2 | 粗剪打磨 | 气口平滑✅、tianbaba 滤镜✅、微调回路✅；LLM 自动化⚠️、质检报告⚠️ | ⚠️ 70% — 遗留转 S3 |
+| 3 | 管线统一 + 字幕 | `ng_detect.py`、`pipeline.py`、`subtitle.py`、QC 接入、SKILL.md | 🔵 **当前 Sprint** |
+| 4 | 精剪 I — HyperFrames | fine-cut-hyperframe skill + 自动重试 | ⬜ 待启动 |
+| 5 | 精剪 II | 图表/B-roll/风格对标 + 端到端验收 + 操作手册 | ⬜ 待启动 |
 
 依赖链：S0 → S1 → S2 → S3 → S4（S3 的 hyperframe 调研在 S0 完成，故 S3 可与 S2 部分并行）。
 
@@ -61,34 +62,64 @@ Sprint review：Chen 看 MVP 成片，重点验证 P1（重复漏识别）是否
 
 ### Sprint 2 — 粗剪打磨（PRD FR-3 LLM 部分/6/8/9 + NFR 全部）
 
-| ID | Story | 验收（DoD） |
-|---|---|---|
-| S2-1 | 气口平滑：能量谷值切点 + crossfade + 呼吸垫 | Chen 盲听 10 切点 ≥ 8 个无剪辑痕迹 |
-| S2-2 | LLM 决策层：重复改判、口误歧义（temperature=0，决策缓存） | token ≤ 1 万/期；同输入两次运行 EDL 一致 |
-| S2-3 | 高清化滤镜两档（基础/超分） | 样张对比供 Chen 选默认档 |
-| S2-4 | 质检报告 + 断点续跑 | 报告含删除清单/低置信项/压缩比/token 数 |
-| S2-5 | 微调回路验证 | 故意改 3 行 EDL，重渲染 ≤ 5 分钟，human 行不被覆盖 |
+| ID | Story | 状态 | 验收（DoD） |
+|---|---|---|---|
+| S2-1 | 气口平滑：能量谷值切点 + crossfade + 呼吸垫 | ✅ Done | `snap_cuts.py` RMS 谷值对齐 + 50ms crossfade，test1/test2 验证通过 |
+| S2-2 | LLM 决策层：重复改判、口误歧义（temperature=0，决策缓存） | ⚠️ Partial | 手工 LLM 调用已验证有效，但 `ng_detect.py` 自动化脚本尚未写 |
+| S2-3 | 高清化滤镜两档（基础/超分） | ✅ Done | `enhance.py` tianbaba preset（colorlevels 去灰 + saturation 1.35 + unsharp 1.2），对标 SRN901 参考片，已设为默认档；`roughcut.py --enhance` flag 接入 |
+| S2-4 | 质检报告 + 断点续跑 | ⚠️ Partial | `qc_report.py` 存在但未接入新管线；断点续跑未实现 |
+| S2-5 | 微调回路验证 | ✅ Done | 手改 EDL JSON → `enc_cf.py` 重渲染路径验证通过 |
+
+**Sprint 2 Retro（2026-06-14）**
+
+> 完成了什么：气口平滑（S2-1）✅、tianbaba 滤镜（S2-3）✅、微调回路（S2-5）✅；通过 test1/test2 两期实际素材验证整体粗剪管线可用。
+>
+> 遗留问题：
+> 1. **管线碎片化**：新管线（ASR → LLM NG → snap → enc_cf → enhance）是分步手工调用，尚无统一 CLI；旧 `roughcut.py` 走 align+rules 路径（已过时，不删但不作为主路径）。
+> 2. **LLM NG 未自动化（S2-2）**：`ng_detect.py` 尚未写，每期需手工请 Claude 判断 NG 区间。
+> 3. **质检报告未集成（S2-4）**：`qc_report.py` 需接入新管线输出。
+>
+> 根因：新管线方向（基于 LLM 语义理解而非规则对齐）在 Sprint 2 中途确定，比原设计更有效，但导致架构分叉。
+>
+> 工程约束（写入 Sprint 3）：新 story 必须基于新管线架构，不再扩展 `roughcut.py` 旧路径。
 
 Sprint review：粗剪整体过 PRD §7 全部门槛 → 粗剪冻结，进入维护。
 
-### Sprint 3 — 精剪 I（PRD FR-10/11）
+### Sprint 3 — 管线统一 + 字幕管线（PRD FR-3/10 + S2 遗留）
+
+> **Sprint 目标**：封口 S2 遗留（LLM NG 自动化、管线统一），同时交付字幕能力（FR-10），让粗剪→带字幕成片可以一条命令跑通。
+
+| ID | Story | 优先级 | 验收（DoD） |
+|---|---|---|---|
+| S3-1 | `ng_detect.py`：LLM NG 自动化（S2-2 遗留） | P0 | 输入转写 JSON + 飞书稿文本 → 输出 NG 窗口 JSON；与手工判断一致性 ≥ 95%；temperature=0，同输入两次结果相同 |
+| S3-2 | `pipeline.py`：粗剪全流程统一 CLI | P0 | `python pipeline.py run --media <mp4> --feishu-url <url>` 一条命令完成 ASR → NG 检测 → 切割 → 滤镜 → 输出成片 + QC 报告 |
+| S3-3 | QC 报告接入新管线（S2-4 遗留） | P1 | pipeline.py 结束后输出 report.json：删除区间列表、压缩比、处理时长、token 用量 |
+| S3-4 | `subtitle.py`：定稿 → 中英双语 SRT（FR-10） | P1 | 基于 ASR 词级时间戳对齐飞书稿逐句；时间轴与音频偏差 < 200ms；自动英译 |
+| S3-5 | 字幕烧录：金陵体 / 中12 / 英8 / 白 / 60% 阴影（FR-10） | P1 | `subtitle.py burn` 调用 ffmpeg；截图对比样张符合规范；`pipeline.py --subtitle` flag 接入 |
+| S3-6 | `skills/roughcut/SKILL.md` 打包 | P2 | Claude 通过 skill 可自主跑完整粗剪管线（含字幕），无需手工步骤 |
+
+依赖：S3-1 → S3-2 → S3-3（串行）；S3-4 → S3-5 → pipeline.py --subtitle（串行）；S3-6 在 S3-2/S3-5 之后。
+
+### Sprint 4 — 精剪 I（PRD FR-11）：HyperFrames 接入
+
+> *原 Sprint 3 的 hyperframe 内容，顺序后移一个 sprint。*
 
 | ID | Story | 验收（DoD） |
 |---|---|---|
-| S3-1 | fine-cut-hyperframe skill：preset 模板 + 调用日志 | 同 preset 重复调用 3 次输出一致或差异在容忍内 |
-| S3-2 | 输出质检 + 自动重试 ≤ 2 次 + 降级报人工 | 注入一次故意失败，验证重试与降级路径 |
-| S3-3 | 字幕管线：定稿→中英双语 SRT→金陵体烧录（中12/英8/白/60%阴影） | 截图逐项比对 100% 符合；时间轴与音频偏差 < 200ms |
-| S3-4 | 英文译文质量 | Chen 抽查 20 句，可用率 ≥ 90% |
+| S4-0 | HyperFrames API/CLI 调研（S0-3 升级版） | 接口说明文档更新；鉴权/限额/preset 草案确认 |
+| S4-1 | fine-cut-hyperframe skill：preset 模板 + 调用日志 | 同 preset 重复调用 3 次输出一致或差异在容忍内 |
+| S4-2 | 输出质检 + 自动重试 ≤ 2 次 + 降级报人工 | 注入一次故意失败，验证重试与降级路径 |
+| S4-3 | 英文译文质量回归 | Chen 抽查 20 句可用率 ≥ 90% |
 
-### Sprint 4 — 精剪 II（PRD FR-12/13/14）
+### Sprint 5 — 精剪 II（PRD FR-12/13/14）
 
 | ID | Story | 验收（DoD） |
 |---|---|---|
-| S4-1 | 图表提案→确认→渲染插入流水线 | 测试期产出 ≥ 3 个图表，位置/数据经 Chen 确认 |
-| S4-2 | B-roll 需求清单→匹配→装配 | 插入点准确，无版权风险来源 |
-| S4-3 | 风格对标评分：成片过小Lin说 checklist | checklist 达标率 ≥ 80% |
-| S4-4 | 端到端演练：新素材从粗剪到成片全流程 | Chen 终审通过，全流程 token 与时长在 NFR 内 |
-| S4-5 | 操作手册 + skill 打包交付 | Chen 能独立跑通一期 |
+| S5-1 | 图表提案→确认→渲染插入流水线 | 测试期产出 ≥ 3 个图表，位置/数据经 Chen 确认 |
+| S5-2 | B-roll 需求清单→匹配→装配 | 插入点准确，无版权风险来源 |
+| S5-3 | 风格对标评分：成片过小Lin说 checklist | checklist 达标率 ≥ 80% |
+| S5-4 | 端到端演练：新素材从粗剪到成片全流程 | Chen 终审通过，全流程 token 与时长在 NFR 内 |
+| S5-5 | 操作手册 + skill 打包交付 | Chen 能独立跑通一期 |
 
 ## 5. 仪式与节奏
 
