@@ -1,37 +1,39 @@
 #!/usr/bin/env python3
 """
-ng_detect.py — LLM 语义 NG 检测 → 重建 EDL  (S3-1)
+ng_detect.py — LLM 语义 NG 检测 → 重建 EDL
 
-两种运行模式：
+设计原则：
+  本脚本不调任何外部 API，不引入额外费用。
+  NG 窗口由运行本 skill 的 Agent（LLM）在对话中分析后写出，
+  本脚本只做"执行"角色：读入 NG JSON → 过滤词列表 → 重建 EDL。
 
-  A) 自动模式（调 Claude API 检测，推荐）
-     python3 src/ng_detect.py auto \
-         --transcript output/t1_transcript.json \
-         --script     materials/scripts/定稿.md \
-         --out        output/t1_edl_ng.json \
-         [--api-key $ANTHROPIC_API_KEY] [--model claude-haiku-4-5-20251001]
+两种模式：
 
-  B) 手工模式（NG 窗口写入 JSON 文件，由 Claude 在对话中生成后调用）
+  A) manual — Agent 已分析并输出 ng_windows.json，本脚本读入执行
      python3 src/ng_detect.py manual \
-         --transcript output/t1_transcript.json \
+         --transcript output/transcript.json \
          --ng-json    output/ng_windows.json \
-         --out        output/t1_edl_ng.json
+         --out        output/edl_ng.json \
+         [--source reference/原素材.MP4]
+
+  B) prompt — 输出供 Agent 分析的 prompt 文本（Agent 读后在对话中给出 JSON）
+     python3 src/ng_detect.py prompt \
+         --transcript output/transcript.json \
+         --script     materials/scripts/定稿.md \
+         [--max-words 1500]
+
+  Agent 工作流：
+    1. 运行 `prompt` 模式，得到转写词表 + 定稿对照
+    2. Agent（本 Claude 会话）阅读并找出所有 NG 区间
+    3. Agent 将结果写入 output/ng_windows.json（格式见下）
+    4. 运行 `manual` 模式，生成 EDL
 
   ng_windows.json 格式：
   [
-    {"start_s": 28.14, "end_s": 42.06, "reason": "NG重拍"},
+    {"start_s": 28.14, "end_s": 42.06, "reason": "NG重拍：说错延长33%后重来"},
+    {"start_s": 88.60, "end_s": 91.64, "reason": "假起步：帕雷米→雷帕梅素"},
     ...
   ]
-
-  C) 只输出供 Claude 分析的 prompt（不调 API，便于复制到对话框手工运行）
-     python3 src/ng_detect.py prompt \
-         --transcript output/t1_transcript.json \
-         --script     materials/scripts/定稿.md
-
-设计原则：
-  - temperature=0 保证同输入两次结果相同（确定性）
-  - 输出 NG 窗口 JSON（供 manual 模式直接读入，也可存档）
-  - 过滤精度：NG 窗口内的词语按中心点判断 (mid = (start+end)/2)
 """
 
 import argparse
@@ -42,35 +44,54 @@ import textwrap
 
 
 # ═══════════════════════════════════════════════════════════════
-#  LLM Prompt
+#  Prompt 生成（供 Agent 在对话中分析）
 # ═══════════════════════════════════════════════════════════════
 
-SYSTEM_PROMPT = textwrap.dedent("""\
-你是一位专业的视频粗剪助理。任务：对比主播的【实际录音转写】与【定稿逐字稿】，
-找出所有需要剔除的 NG 片段（假起步、NG重拍、口吃重复、语义重复、明显错词/吊句）。
+ANALYSIS_PROMPT = textwrap.dedent("""\
+请对比【定稿逐字稿】与【ASR 转写词表】，找出所有 NG 区间。
 
-输出规则（严格遵守）：
-1. 只输出 JSON 数组，不加任何解释文字、代码块标记。
-2. 每条记录格式：{"start_s": <float>, "end_s": <float>, "reason": "<简洁中文原因>"}
-3. 时间戳来自转写中的词级时间戳，精确到 0.01s。
-4. end_s 取"好的那一遍"开始前的最后一个词的 end 时间（即删到干净为止）。
-5. 若无任何 NG，输出空数组 []。
-6. 不要删除任何属于定稿内容的正确段落，宁可少删不要误删。
-""")
+NG 类型（需标注）：
+  - NG重拍：说到一半重头再来（有明显重拍意图）
+  - 假起步：说了几个字就停顿重说
+  - 口吃重复：同一词/字连续重复
+  - 语义重复：同一句意思在前后完整说了两遍（删先保后）
+  - 吊句：句子未完成就切断
 
-USER_PROMPT_TEMPLATE = textwrap.dedent("""\
+不应删除：
+  - 故意重复（强调修辞）
+  - 停顿后继续同一句子（组织语言）
+  - 定稿中明确包含的重复结构
+
+输出格式（只输出 JSON 数组，不加任何解释）：
+[
+  {{"start_s": <float>, "end_s": <float>, "reason": "<简洁中文说明>"}},
+  ...
+]
+
+精度要求：
+  - start_s = NG 片段第一个词的 start 时间
+  - end_s   = 正确版本开头词的 start 时间（即删到干净为止）
+  - 精确到 0.01s
+
+若无任何 NG，输出 []
+
+分析完成后，将 JSON 写入 output/ng_windows.json，再运行：
+  python3 src/ng_detect.py manual \\
+      --transcript output/transcript.json \\
+      --ng-json output/ng_windows.json \\
+      --out output/edl_ng.json
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 【定稿逐字稿】
 {script}
 
-【ASR 转写（词级时间戳片段，每行格式：start_s end_s word）】
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+【ASR 转写词表（格式：start_s  end_s  word）】
 {word_table}
-
-请分析并输出 NG 窗口 JSON 数组：
 """)
 
 
-def build_word_table(words: list, max_words: int = 2000) -> str:
-    """把词列表格式化为对人和 LLM 都易读的表格（限制长度防 context 溢出）"""
+def build_word_table(words: list, max_words: int = 1500) -> str:
     lines = []
     for w in words[:max_words]:
         s = w.get("start", 0)
@@ -78,77 +99,24 @@ def build_word_table(words: list, max_words: int = 2000) -> str:
         word = w.get("word", "").strip()
         lines.append(f"{s:8.2f}  {e:8.2f}  {word}")
     if len(words) > max_words:
-        lines.append(f"... (省略 {len(words)-max_words} 词，超出 {max_words} 词上限)")
+        lines.append(f"... (共 {len(words)} 词，此处截断至前 {max_words} 词；"
+                     f"若需分析后半段，用 --offset {max_words})")
     return "\n".join(lines)
 
 
 # ═══════════════════════════════════════════════════════════════
-#  API 调用
-# ═══════════════════════════════════════════════════════════════
-
-def call_claude_api(prompt: str, system: str, model: str, api_key: str) -> str:
-    """调用 Anthropic Messages API，返回文本内容"""
-    try:
-        import anthropic
-    except ImportError:
-        print("[ng] 缺少 anthropic 库，正在安装...", file=sys.stderr)
-        import subprocess
-        subprocess.check_call([sys.executable, "-m", "pip", "install", "anthropic",
-                               "--break-system-packages", "-q"])
-        import anthropic
-
-    client = anthropic.Anthropic(api_key=api_key)
-    msg = client.messages.create(
-        model=model,
-        max_tokens=4096,
-        temperature=0,
-        system=system,
-        messages=[{"role": "user", "content": prompt}],
-    )
-    return msg.content[0].text
-
-
-def parse_ng_json(text: str) -> list:
-    """从 LLM 响应中提取 JSON 数组"""
-    text = text.strip()
-    # 去掉可能的 ```json ... ``` 包裹
-    if text.startswith("```"):
-        lines = text.split("\n")
-        text = "\n".join(l for l in lines if not l.startswith("```"))
-    try:
-        result = json.loads(text)
-    except json.JSONDecodeError:
-        # 尝试找第一个 [ ... ] 块
-        import re
-        m = re.search(r"\[.*?\]", text, re.DOTALL)
-        if m:
-            result = json.loads(m.group())
-        else:
-            raise ValueError(f"无法解析 LLM 输出为 JSON：\n{text[:300]}")
-    if not isinstance(result, list):
-        raise ValueError(f"LLM 输出不是数组：{type(result)}")
-    return result
-
-
-# ═══════════════════════════════════════════════════════════════
-#  EDL 构建（与原 build_edl 逻辑一致）
+#  EDL 构建
 # ═══════════════════════════════════════════════════════════════
 
 def build_edl_from_ng(words: list, ng_windows: list,
                       source: str, out_path: str,
                       pause_thresh: float = 0.8, pad: float = 0.15) -> dict:
-    """
-    根据 NG 窗口过滤词列表，重新做停顿分割，生成 EDL JSON。
-    """
     print(f"[ng] 原始词数: {len(words)}")
     print(f"[ng] NG窗口数: {len(ng_windows)}")
 
     def in_ng(word):
         mid = (word["start"] + word["end"]) / 2
-        for w in ng_windows:
-            if w["start_s"] <= mid < w["end_s"]:
-                return True
-        return False
+        return any(w["start_s"] <= mid < w["end_s"] for w in ng_windows)
 
     clean = [w for w in words if not in_ng(w)]
     removed = len(words) - len(clean)
@@ -158,19 +126,16 @@ def build_edl_from_ng(words: list, ng_windows: list,
         print("ERROR: 过滤后没有任何词", file=sys.stderr)
         sys.exit(1)
 
-    # 停顿分割
     segments = []
 
-    def flush(seg_words):
-        st = max(0.0, round(seg_words[0]["start"] - pad, 3))
-        et = round(seg_words[-1]["end"] + pad, 3)
-        text = "".join(w["word"] for w in seg_words)
+    def flush(buf):
+        st = max(0.0, round(buf[0]["start"] - pad, 3))
+        et = round(buf[-1]["end"] + pad, 3)
+        text = "".join(w["word"] for w in buf)
         segments.append({
             "id": len(segments) + 1,
-            "start_s": st,
-            "end_s": et,
-            "keep": True,
-            "decided_by": "llm",
+            "start_s": st, "end_s": et,
+            "keep": True, "decided_by": "llm",
             "text": text,
         })
 
@@ -178,13 +143,11 @@ def build_edl_from_ng(words: list, ng_windows: list,
     for w in clean[1:]:
         gap = w["start"] - buf[-1]["end"]
         if gap >= pause_thresh:
-            flush(buf)
-            buf = [w]
+            flush(buf); buf = [w]
         else:
             buf.append(w)
     flush(buf)
 
-    # 过滤过短片段
     segments = [s for s in segments if s["end_s"] - s["start_s"] >= 0.3]
     for i, s in enumerate(segments):
         s["id"] = i + 1
@@ -194,13 +157,13 @@ def build_edl_from_ng(words: list, ng_windows: list,
 
     for s in segments:
         dur = s["end_s"] - s["start_s"]
-        print(f"  [{s['id']:3d}] {s['start_s']:7.2f}-{s['end_s']:7.2f} ({dur:5.2f}s) "
-              f"{s['text'][:55]}")
+        print(f"  [{s['id']:3d}] {s['start_s']:7.2f}-{s['end_s']:7.2f} "
+              f"({dur:5.2f}s) {s['text'][:55]}")
 
     edl = {
         "version": "2.0",
         "source": source,
-        "generated_by": "ng_detect.py v2 (LLM 语义 NG 自动检测)",
+        "generated_by": "ng_detect.py (Agent 语义 NG 检测)",
         "ng_windows": ng_windows,
         "segments": segments,
         "meta": {
@@ -211,10 +174,14 @@ def build_edl_from_ng(words: list, ng_windows: list,
         },
     }
 
-    os.makedirs(os.path.dirname(out_path), exist_ok=True) if os.path.dirname(out_path) else None
-    with open(out_path, "w", encoding="utf-8") as f:
-        json.dump(edl, f, ensure_ascii=False, indent=2)
-    print(f"\n[ng] EDL 已保存 → {out_path}")
+    if out_path:
+        dirpath = os.path.dirname(out_path)
+        if dirpath:
+            os.makedirs(dirpath, exist_ok=True)
+        with open(out_path, "w", encoding="utf-8") as f:
+            json.dump(edl, f, ensure_ascii=False, indent=2)
+        print(f"\n[ng] EDL → {out_path}")
+
     return edl
 
 
@@ -222,84 +189,46 @@ def build_edl_from_ng(words: list, ng_windows: list,
 #  子命令
 # ═══════════════════════════════════════════════════════════════
 
-def cmd_auto(args):
-    """模式 A：调 Claude API 自动检测"""
-    api_key = args.api_key or os.environ.get("ANTHROPIC_API_KEY", "")
-    if not api_key:
-        print("ERROR: 需要 --api-key 或环境变量 ANTHROPIC_API_KEY", file=sys.stderr)
-        sys.exit(1)
-
+def cmd_prompt(args):
+    """输出供 Agent 分析的 prompt"""
     with open(args.transcript, encoding="utf-8") as f:
         tr = json.load(f)
     words = tr.get("words", [])
     if not words:
-        print("ERROR: 转写中没有词级时间戳", file=sys.stderr)
+        print("ERROR: 转写中无词级时间戳", file=sys.stderr)
         sys.exit(1)
 
-    with open(args.script, encoding="utf-8") as f:
-        script_text = f.read()
+    script_text = ""
+    if args.script:
+        with open(args.script, encoding="utf-8") as f:
+            script_text = f.read()
 
-    word_table = build_word_table(words)
-    prompt = USER_PROMPT_TEMPLATE.format(script=script_text, word_table=word_table)
-
-    print(f"[ng] 调用 Claude API (model={args.model}) ...")
-    raw = call_claude_api(prompt, SYSTEM_PROMPT, args.model, api_key)
-
-    # 保存原始响应供审计
-    raw_path = args.out.replace(".json", "_llm_raw.txt")
-    with open(raw_path, "w", encoding="utf-8") as f:
-        f.write(raw)
-    print(f"[ng] LLM 原始响应 → {raw_path}")
-
-    ng_windows = parse_ng_json(raw)
-    print(f"[ng] 解析到 {len(ng_windows)} 个 NG 窗口")
-    for w in ng_windows:
-        print(f"  {w['start_s']:.2f}-{w['end_s']:.2f}  {w['reason'][:60]}")
-
-    # 同时保存 NG JSON 供 manual 模式复用
-    ng_json_path = args.out.replace(".json", "_ng_windows.json")
-    with open(ng_json_path, "w", encoding="utf-8") as f:
-        json.dump(ng_windows, f, ensure_ascii=False, indent=2)
-    print(f"[ng] NG 窗口 JSON → {ng_json_path}")
-
-    source = args.source or args.transcript.replace("_transcript.json", ".MP4")
-    build_edl_from_ng(words, ng_windows, source, args.out, args.pause, args.pad)
+    word_table = build_word_table(words, args.max_words)
+    print(ANALYSIS_PROMPT.format(script=script_text, word_table=word_table))
 
 
 def cmd_manual(args):
-    """模式 B：读取已有 NG JSON 构建 EDL"""
+    """读取 Agent 输出的 ng_windows.json，构建 EDL"""
     with open(args.transcript, encoding="utf-8") as f:
         tr = json.load(f)
     words = tr.get("words", [])
+    if not words:
+        print("ERROR: 转写中无词级时间戳", file=sys.stderr)
+        sys.exit(1)
 
-    with open(args.ng_json, encoding="utf-8") as f:
-        ng_windows = json.load(f)
+    if args.ng_json == "-":
+        # 从 stdin 读（方便 pipe）
+        ng_windows = json.load(sys.stdin)
+    else:
+        with open(args.ng_json, encoding="utf-8") as f:
+            ng_windows = json.load(f)
+
+    if not isinstance(ng_windows, list):
+        print("ERROR: ng_windows.json 必须是数组", file=sys.stderr)
+        sys.exit(1)
 
     source = args.source or args.transcript.replace("_transcript.json", ".MP4")
     build_edl_from_ng(words, ng_windows, source, args.out, args.pause, args.pad)
-
-
-def cmd_prompt(args):
-    """模式 C：只打印 prompt，不调 API"""
-    with open(args.transcript, encoding="utf-8") as f:
-        tr = json.load(f)
-    words = tr.get("words", [])
-
-    with open(args.script, encoding="utf-8") as f:
-        script_text = f.read()
-
-    word_table = build_word_table(words)
-    prompt = USER_PROMPT_TEMPLATE.format(script=script_text, word_table=word_table)
-
-    print("=" * 60)
-    print("SYSTEM:")
-    print(SYSTEM_PROMPT)
-    print("=" * 60)
-    print("USER:")
-    print(prompt)
-    print("=" * 60)
-    print("(把以上内容粘贴到 Claude 对话框，将返回的 JSON 保存为 ng_windows.json，")
-    print(" 再用 manual 模式：python3 src/ng_detect.py manual --ng-json ... --transcript ... --out ...)")
 
 
 # ═══════════════════════════════════════════════════════════════
@@ -308,58 +237,48 @@ def cmd_prompt(args):
 
 def main():
     p = argparse.ArgumentParser(
-        description="ng_detect.py v2 — LLM 语义 NG 检测 → 重建 EDL",
+        description="ng_detect.py — Agent 语义 NG 检测 → 重建 EDL（不调外部 API）",
         formatter_class=argparse.RawDescriptionHelpFormatter,
         epilog=textwrap.dedent("""\
-        使用示例：
-          # 自动模式（推荐）
-          python3 src/ng_detect.py auto \\
-              --transcript output/t1_transcript.json \\
-              --script materials/scripts/定稿.md \\
-              --out output/t1_edl_ng.json
-
-          # 手工模式（Claude 对话框生成 ng_windows.json 后）
-          python3 src/ng_detect.py manual \\
-              --transcript output/t1_transcript.json \\
-              --ng-json output/ng_windows.json \\
-              --out output/t1_edl_ng.json
-
-          # 只输出 prompt（复制到对话框）
+        典型工作流：
+          # Step 1：输出分析 prompt，Agent 在对话中阅读并标注 NG 窗口
           python3 src/ng_detect.py prompt \\
-              --transcript output/t1_transcript.json \\
+              --transcript output/transcript.json \\
               --script materials/scripts/定稿.md
+
+          # Step 2：Agent 将 NG JSON 写入文件（或由 Claude 直接写文件）
+          #   → output/ng_windows.json
+
+          # Step 3：重建 EDL
+          python3 src/ng_detect.py manual \\
+              --transcript output/transcript.json \\
+              --ng-json output/ng_windows.json \\
+              --out output/edl_ng.json
         """),
     )
     sub = p.add_subparsers(dest="cmd", required=True)
 
-    # ── auto ──────────────────────────────────────────────────
-    pa = sub.add_parser("auto", help="调 Claude API 自动检测 NG 并生成 EDL")
-    pa.add_argument("--transcript", required=True, help="转写 JSON（含 words 词级时间戳）")
-    pa.add_argument("--script", required=True, help="飞书定稿逐字稿文本文件")
-    pa.add_argument("--out", required=True, help="输出 EDL JSON 路径")
-    pa.add_argument("--source", default="", help="素材路径（写入 EDL，可选）")
-    pa.add_argument("--api-key", default="", help="Anthropic API Key（可用环境变量 ANTHROPIC_API_KEY）")
-    pa.add_argument("--model", default="claude-haiku-4-5-20251001",
-                    help="Claude 模型（默认 claude-haiku-4-5-20251001，便宜快）")
-    pa.add_argument("--pause", type=float, default=0.8, help="停顿分割阈值（秒，默认 0.8）")
-    pa.add_argument("--pad", type=float, default=0.15, help="切点前后留白（秒，默认 0.15）")
+    # prompt
+    pp = sub.add_parser("prompt", help="输出供 Agent 分析的 prompt（不调 API）")
+    pp.add_argument("--transcript", required=True, help="转写 JSON（含 words）")
+    pp.add_argument("--script", default="", help="飞书定稿文本文件（可选）")
+    pp.add_argument("--max-words", type=int, default=1500,
+                    help="词表截断上限（默认 1500，防 context 超长）")
+    pp.set_defaults(func=cmd_prompt)
 
-    # ── manual ────────────────────────────────────────────────
-    pm = sub.add_parser("manual", help="读取已有 NG JSON 构建 EDL")
+    # manual
+    pm = sub.add_parser("manual", help="读取 ng_windows.json，重建 EDL")
     pm.add_argument("--transcript", required=True)
-    pm.add_argument("--ng-json", required=True, help="NG 窗口 JSON 文件")
-    pm.add_argument("--out", required=True)
-    pm.add_argument("--source", default="")
-    pm.add_argument("--pause", type=float, default=0.8)
-    pm.add_argument("--pad", type=float, default=0.15)
-
-    # ── prompt ────────────────────────────────────────────────
-    pp = sub.add_parser("prompt", help="只打印分析 prompt，不调 API")
-    pp.add_argument("--transcript", required=True)
-    pp.add_argument("--script", required=True)
+    pm.add_argument("--ng-json", required=True,
+                    help="NG 窗口 JSON 文件路径，或 '-' 从 stdin 读")
+    pm.add_argument("--out", required=True, help="输出 EDL JSON 路径")
+    pm.add_argument("--source", default="", help="素材路径（写入 EDL meta）")
+    pm.add_argument("--pause", type=float, default=0.8, help="停顿分割阈值（秒）")
+    pm.add_argument("--pad", type=float, default=0.15, help="切点前后留白（秒）")
+    pm.set_defaults(func=cmd_manual)
 
     args = p.parse_args()
-    {"auto": cmd_auto, "manual": cmd_manual, "prompt": cmd_prompt}[args.cmd](args)
+    args.func(args)
 
 
 if __name__ == "__main__":

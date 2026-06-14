@@ -2,41 +2,38 @@
 """
 pipeline.py — 粗剪全流程统一 CLI  (S3-2)
 
-替代旧 roughcut.py 的 align+rules 路径，实现经过 test1/test2 验证的新架构：
-  转写 → LLM 语义 NG 检测 → 波形切点吸附 → 渲染 → 高清滤镜 → QC 报告
+设计原则：
+  本脚本不调任何外部 API，不引入额外费用。
+  NG 检测和字幕翻译均由运行本 skill 的 Agent（LLM）完成，
+  本脚本只负责串联各步骤的"执行"层。
+
+工作流（Agent 主导）：
+  Step 1  转写（本脚本执行）
+          python3 src/pipeline.py transcribe --media 原素材.MP4 --outdir output/
+
+  Step 2  Agent 阅读 transcript.json + 定稿 → 标注 NG 窗口 → 写 ng_windows.json
+          （或：python3 src/ng_detect.py prompt 输出分析 prompt，Agent 在对话中给出 JSON）
+
+  Step 3  NG 重建 EDL（本脚本执行）
+          python3 src/pipeline.py run --media ... --ng-json output/ng_windows.json ...
+
+  Step 4-7 切点吸附 → 渲染 → 滤镜 → QC（本脚本自动串联）
+
+  字幕（可选，Agent 主导）：
+          python3 src/subtitle.py align → Agent 翻译 → subtitle.py generate → subtitle.py burn
 
 用法：
-  # 全流程（推荐）
-  python3 src/pipeline.py run \\
-      --media  reference/test1.MP4 \\
-      --script materials/scripts/定稿_SRN901.md \\
-      --outdir output/test1/ \\
-      [--ng-mode auto|manual|skip] \\
-      [--ng-json output/ng_windows.json]  # manual 模式时指定 NG JSON \\
-      [--no-enhance] [--no-subtitle]
-
-  # 只做转写（第一步，查看转写结果后再决定 NG 窗口）
+  # Step 1：只转写
   python3 src/pipeline.py transcribe \\
       --media reference/test1.MP4 \\
       --outdir output/test1/
 
-  # 从已有转写继续（跳过转写）
+  # Step 3+：从已有 ng_windows.json 继续（跳过转写和 Agent 分析步骤）
   python3 src/pipeline.py run \\
-      --media reference/test1.MP4 \\
-      --transcript output/test1/transcript.json \\
-      --script ... \\
-      --outdir output/test1/
-
-流程详解：
-  Step 1  转写         transcribe.py → transcript.json（词级时间戳）
-  Step 2  NG 检测      ng_detect.py  → edl_ng.json（过滤重拍/假起步）
-  Step 3  切点吸附     snap_cuts.py  → edl_snapped.json（气口对齐）
-  Step 4  渲染         ffmpeg concat → roughcut.mp4
-  Step 5  高清滤镜     enhance.py    → roughcut_hd.mp4（tianbaba 默认）
-  Step 6  字幕烧录     subtitle.py   → roughcut_hd_sub.mp4（可选）
-  Step 7  QC 报告      qc_report.py  → report.json + report.md
-
-所有中间产物落盘 --outdir，断点续跑（产物已存在则跳过对应步骤）。
+      --media  reference/test1.MP4 \\
+      --outdir output/test1/ \\
+      --ng-json output/test1/ng_windows.json \\
+      [--no-enhance] [--no-subtitle]
 """
 
 import argparse
@@ -199,39 +196,15 @@ def cmd_run(args):
     else:
         log(f"Step 1 跳过（已有 transcript）: {transcript_path}")
 
-    # ── Step 2: NG 检测 ───────────────────────────────────────
+    # ── Step 2: NG 重建 EDL ───────────────────────────────────
+    # Agent 在 Step 1 转写完成后，阅读 transcript.json + 定稿，
+    # 标注 NG 窗口并写入 ng_windows.json，再调用本命令继续。
     edl_ng_path = os.path.join(outdir, "edl_ng.json")
 
     if not os.path.exists(edl_ng_path):
-        ng_mode = args.ng_mode
-
-        if ng_mode == "auto":
-            api_key = args.api_key or os.environ.get("ANTHROPIC_API_KEY", "")
-            if not api_key:
-                log("WARNING: ng_mode=auto 但无 ANTHROPIC_API_KEY，降级为 skip")
-                ng_mode = "skip"
-            else:
-                if not args.script:
-                    log("ERROR: auto 模式需要 --script 飞书定稿路径")
-                    sys.exit(1)
-                ok = run_step("Step 2 LLM NG 检测（auto）", [
-                    PYTHON, os.path.join(SRC_DIR, "ng_detect.py"), "auto",
-                    "--transcript", transcript_path,
-                    "--script", args.script,
-                    "--out", edl_ng_path,
-                    "--api-key", api_key,
-                    "--model", args.ng_model,
-                    "--source", args.media,
-                ])
-                if not ok:
-                    log("WARNING: LLM NG 检测失败，降级为 skip")
-                    ng_mode = "skip"
-
-        if ng_mode == "manual":
-            if not args.ng_json:
-                log("ERROR: manual 模式需要 --ng-json 指定 NG 窗口 JSON 路径")
-                sys.exit(1)
-            ok = run_step("Step 2 NG 重建 EDL（manual）", [
+        if args.ng_json and os.path.exists(args.ng_json):
+            # 有 ng_windows.json → 用 manual 模式重建 EDL
+            ok = run_step("Step 2 NG 重建 EDL", [
                 PYTHON, os.path.join(SRC_DIR, "ng_detect.py"), "manual",
                 "--transcript", transcript_path,
                 "--ng-json", args.ng_json,
@@ -240,20 +213,12 @@ def cmd_run(args):
             ])
             if not ok:
                 sys.exit(1)
-
-        if ng_mode == "skip":
-            # 直接从转写做停顿分割，生成基础 EDL
-            log("Step 2 跳过 NG 检测，从转写直接生成 EDL（无语义过滤）")
-            ok = run_step("Step 2 基础 EDL（停顿分割）", [
-                PYTHON, os.path.join(SRC_DIR, "ng_detect.py"), "manual",
-                "--transcript", transcript_path,
-                "--ng-json", "/dev/stdin",  # 空数组
-                "--out", edl_ng_path,
-                "--source", args.media,
-            ])
-            if not ok:
-                # 降级：直接写一个只做停顿分割的 EDL（不过滤任何 NG）
-                _make_basic_edl(transcript_path, edl_ng_path, args.media)
+        else:
+            # 没有 ng_windows.json → 停顿分割基础 EDL（无语义过滤）
+            log("Step 2: 无 ng_windows.json，生成基础 EDL（停顿分割，无 NG 过滤）")
+            log("  提示：先运行 transcribe，再让 Agent 分析 transcript.json，")
+            log("  写出 ng_windows.json 后用 --ng-json 参数重新运行。")
+            _make_basic_edl(transcript_path, edl_ng_path, args.media)
     else:
         log(f"Step 2 跳过（已有 edl_ng）: {edl_ng_path}")
 
@@ -308,36 +273,27 @@ def cmd_run(args):
             log(f"Step 5 跳过（已有 roughcut_hd）: {hd_path}")
             final_video = hd_path
 
-    # ── Step 6: 字幕烧录（可选）──────────────────────────────
-    if not args.no_subtitle and args.script:
+    # ── Step 6: 字幕烧录（可选，需 Agent 先完成翻译）────────
+    # 字幕工作流由 Agent 主导（见 SKILL.md 第三节），
+    # 本步骤仅在 --srt 参数指定了已生成的 SRT 时执行烧录。
+    if not args.no_subtitle and args.srt and os.path.exists(args.srt):
         sub_path = os.path.join(outdir, "roughcut_hd_sub.mp4")
-        srt_path = os.path.join(outdir, "subtitle.srt")
         if not os.path.exists(sub_path):
-            # 先生成 SRT
-            ok = run_step("Step 6a 生成 SRT", [
-                PYTHON, os.path.join(SRC_DIR, "subtitle.py"), "generate",
-                "--transcript", transcript_path,
-                "--script", args.script,
-                "--edl", edl_snapped_path,
-                "--out", srt_path,
+            ok = run_step("Step 6 烧录字幕", [
+                PYTHON, os.path.join(SRC_DIR, "subtitle.py"), "burn",
+                "--video", final_video,
+                "--srt", args.srt,
+                "--out", sub_path,
             ])
             if ok:
-                # 再烧录字幕
-                ok = run_step("Step 6b 烧录字幕", [
-                    PYTHON, os.path.join(SRC_DIR, "subtitle.py"), "burn",
-                    "--video", final_video,
-                    "--srt", srt_path,
-                    "--out", sub_path,
-                ])
-                if ok:
-                    final_video = sub_path
-                else:
-                    log("WARNING: 字幕烧录失败，跳过")
+                final_video = sub_path
             else:
-                log("WARNING: SRT 生成失败，跳过字幕")
+                log("WARNING: 字幕烧录失败，跳过")
         else:
             log(f"Step 6 跳过（已有 subtitle）: {sub_path}")
             final_video = sub_path
+    elif not args.no_subtitle and not args.srt:
+        log("Step 6 跳过字幕（无 --srt 参数；字幕需 Agent 主导，见 SKILL.md §三）")
 
     # ── Step 7: QC 报告 ───────────────────────────────────────
     report_path = os.path.join(outdir, "qc_report.md")
@@ -440,15 +396,13 @@ def main():
     pr.add_argument("--script", default="", help="飞书定稿文本文件（auto/字幕模式必填）")
     pr.add_argument("--outdir", default="output/", help="输出目录（默认 output/）")
     pr.add_argument("--transcript", default="", help="已有转写 JSON（跳过转写步骤）")
-    pr.add_argument("--ng-mode", choices=["auto", "manual", "skip"], default="auto",
-                    help="NG 检测模式：auto=调 Claude API / manual=读已有 JSON / skip=跳过")
-    pr.add_argument("--ng-json", default="", help="manual 模式：NG 窗口 JSON 路径")
-    pr.add_argument("--api-key", default="", help="Anthropic API Key（也可用环境变量）")
-    pr.add_argument("--ng-model", default="claude-haiku-4-5-20251001",
-                    help="NG 检测用的 Claude 模型")
+    pr.add_argument("--ng-json", default="",
+                    help="Agent 标注的 NG 窗口 JSON（由 ng_detect.py prompt + Agent 分析生成）")
     pr.add_argument("--no-enhance", action="store_true", help="跳过高清滤镜")
     pr.add_argument("--enhance-grade", default="tianbaba", help="滤镜档位（默认 tianbaba）")
     pr.add_argument("--no-subtitle", action="store_true", help="跳过字幕烧录")
+    pr.add_argument("--srt", default="",
+                    help="已生成的 SRT 路径（由 subtitle.py 工作流产出）；有则烧录")
     pr.add_argument("--whisper-model", default="Systran/faster-whisper-medium",
                     help="Whisper 模型")
     pr.add_argument("--crf", type=int, default=20, help="渲染 CRF（默认 20）")

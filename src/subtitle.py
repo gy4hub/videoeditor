@@ -2,44 +2,32 @@
 """
 subtitle.py — 字幕生成与烧录管线  (S3-4/S3-5)
 
+设计原则：
+  本脚本不调任何外部 API，不引入额外费用。
+  英文翻译由运行本 skill 的 Agent（LLM）在对话中完成后传入，
+  本脚本只负责时间轴对齐、SRT/ASS 格式化、ffmpeg 烧录。
+
 功能：
-  A) generate：飞书定稿 + ASR 词级时间戳 → 中英双语 SRT
-  B) burn    ：SRT → ffmpeg 金陵体烧录（中12pt/英8pt/白/60%阴影）
-  C) preview ：截图指定时间点的字幕效果（用于验收）
+  A) align   ：飞书定稿 + ASR 词级时间戳 → 带时间的中文字幕 JSON（供 Agent 翻译）
+  B) generate：读入中文+英文字幕 JSON → 双语 SRT/ASS
+  C) burn    ：SRT/ASS → ffmpeg 金陵体烧录（中12pt/英8pt/白/60%阴影）
+  D) preview ：截图指定时间点的字幕效果（用于验收）
 
-用法：
-  # 生成 SRT
-  python3 src/subtitle.py generate \\
-      --transcript output/t1_transcript.json \\
-      --script     materials/scripts/定稿.md \\
-      --edl        output/t1_edl_snapped.json \\
-      --out        output/t1_subtitle.srt \\
-      [--api-key   $ANTHROPIC_API_KEY]
+Agent 工作流：
+  1. `subtitle.py align` → output/subtitle_cn.json（中文+时间轴）
+  2. Agent 阅读 subtitle_cn.json，逐句翻译，写入 output/subtitle_en.json
+     格式：[{"index": 1, "en": "..."}, ...]
+  3. `subtitle.py generate` 合并 → subtitle.srt + subtitle.ass
+  4. `subtitle.py burn` 烧录
 
-  # 烧录字幕到视频
-  python3 src/subtitle.py burn \\
-      --video output/roughcut_hd.mp4 \\
-      --srt   output/t1_subtitle.srt \\
-      --out   output/roughcut_hd_sub.mp4 \\
-      [--font 金陵体] [--cn-size 12] [--en-size 8]
-
-  # 截图验收（t=30s 的字幕效果）
-  python3 src/subtitle.py preview \\
-      --video output/roughcut_hd_sub.mp4 \\
-      --time 30 --out output/subtitle_preview_30s.png
-
-SRT 时间轴策略：
-  每行定稿句子对齐到 ASR 词级时间戳：
-  - 找定稿句中关键词（长度≥2字）在转写中最早匹配的词
-  - 句子 start = 该词的 start_s
-  - 句子 end   = 下一句 start - 0.05s（避免闪烁）
-  - 若匹配不到，从上一句 end 顺延
+快捷路径（Agent 在对话中直接写双语 JSON）：
+  subtitle.py generate --bilingual output/subtitle_bilingual.json --out output/subtitle.srt
+  bilingual JSON 格式：[{"cn": "...", "en": "...", "start_s": 1.2, "end_s": 3.4}, ...]
 
 字幕规范：
-  - 中文行：金陵体（或备用微软雅黑/PingFang）、字号12、白色、60%黑色阴影
-  - 英文行：同字体、字号8、白色、60%黑色阴影
-  - 位置：底部居中，留边 30px
-  - 每屏显示一行中文 + 一行英文
+  - 中文行：金陵体（→ STSong → PingFang SC 降级）、54pt ASS、白色、60%阴影
+  - 英文行：同字体、38pt ASS、白色、60%阴影
+  - 位置：底部居中，marginV=30px
 """
 
 import argparse
@@ -160,52 +148,36 @@ def align_script_to_words(script_lines: list[str], words: list[dict]) -> list[di
     return entries
 
 
-def translate_to_english(lines: list[str], api_key: str = "",
-                          model: str = "claude-haiku-4-5-20251001") -> list[str]:
-    """调 Claude API 批量翻译中文→英文字幕"""
-    if not api_key:
-        api_key = os.environ.get("ANTHROPIC_API_KEY", "")
-    if not api_key:
-        print("[subtitle] 无 API Key，跳过英译（英文行留空）", file=sys.stderr)
-        return [""] * len(lines)
+def load_translations(en_json_path: str, count: int) -> list[str]:
+    """
+    读取 Agent 翻译好的英文 JSON。
+    支持两种格式：
+      - 数组格式：[{"index": 1, "en": "..."}, ...]
+      - 纯字符串数组：["...", "...", ...]
+    """
+    if not en_json_path or not os.path.exists(en_json_path):
+        print("[subtitle] 无英译文件，英文行留空", file=sys.stderr)
+        return [""] * count
 
-    try:
-        import anthropic
-    except ImportError:
-        subprocess.check_call([sys.executable, "-m", "pip", "install", "anthropic",
-                               "--break-system-packages", "-q"])
-        import anthropic
+    with open(en_json_path, encoding="utf-8") as f:
+        data = json.load(f)
 
-    client = anthropic.Anthropic(api_key=api_key)
+    if not data:
+        return [""] * count
 
-    # 批量翻译（每批 20 句，控制 token）
-    batch_size = 20
-    translations = []
+    if isinstance(data[0], str):
+        translations = data
+    elif isinstance(data[0], dict):
+        # 按 index 排序，取 en 字段
+        data_sorted = sorted(data, key=lambda x: x.get("index", 0))
+        translations = [d.get("en", "") for d in data_sorted]
+    else:
+        translations = [""] * count
 
-    for i in range(0, len(lines), batch_size):
-        batch = lines[i:i+batch_size]
-        numbered = "\n".join(f"{j+1}. {t}" for j, t in enumerate(batch))
-        prompt = (
-            "将以下中文视频字幕逐句翻译为简洁自然的英文。\n"
-            "规则：①保持序号②一句一行③不加解释④医学/保健术语直译或保留拼音\n\n"
-            f"{numbered}\n\n英文（保留序号）："
-        )
-        msg = client.messages.create(
-            model=model, max_tokens=2048, temperature=0,
-            messages=[{"role": "user", "content": prompt}],
-        )
-        raw = msg.content[0].text.strip()
-        # 解析"N. text"格式
-        for line in raw.splitlines():
-            m = re.match(r"^\d+\.\s+(.*)", line)
-            if m:
-                translations.append(m.group(1).strip())
-
-    # 补齐（如果 API 漏行）
-    while len(translations) < len(lines):
+    # 补齐
+    while len(translations) < count:
         translations.append("")
-
-    return translations[:len(lines)]
+    return translations[:count]
 
 
 def secs_to_srt_time(s: float) -> str:
@@ -358,8 +330,11 @@ def burn_subtitles_ass(video: str, ass_path: str, out_path: str,
 #  子命令
 # ═══════════════════════════════════════════════════════════════
 
-def cmd_generate(args):
-    """生成双语 SRT/ASS"""
+def cmd_align(args):
+    """
+    Step 1：定稿 + ASR 词表 → 中文字幕 JSON（含时间轴）
+    Agent 读取后逐句翻译，写出 en_translations.json，再调 generate。
+    """
     with open(args.transcript, encoding="utf-8") as f:
         tr = json.load(f)
     words = tr.get("words", [])
@@ -367,7 +342,6 @@ def cmd_generate(args):
         print("ERROR: 转写中无词级时间戳", file=sys.stderr)
         sys.exit(1)
 
-    # 如果有 EDL，过滤掉被删除区间的词
     if args.edl and os.path.exists(args.edl):
         with open(args.edl, encoding="utf-8") as f:
             edl = json.load(f)
@@ -381,21 +355,61 @@ def cmd_generate(args):
 
     script_lines = parse_script_lines(args.script)
     print(f"[subtitle] 定稿句数: {len(script_lines)}")
-
     entries = align_script_to_words(script_lines, words)
 
-    # 英文翻译
-    cn_texts = [e["text"] for e in entries]
-    if not args.no_translate:
-        print("[subtitle] 调用 Claude API 英译...")
-        translations = translate_to_english(cn_texts, args.api_key, args.model)
+    # 输出中文字幕 JSON（供 Agent 翻译）
+    cn_json = [
+        {"index": i + 1, "cn": e["text"], "start_s": e["start_s"], "end_s": e["end_s"]}
+        for i, e in enumerate(entries)
+    ]
+    dirpath = os.path.dirname(args.out)
+    if dirpath:
+        os.makedirs(dirpath, exist_ok=True)
+    with open(args.out, "w", encoding="utf-8") as f:
+        json.dump(cn_json, f, ensure_ascii=False, indent=2)
+    print(f"[subtitle] 中文字幕 JSON → {args.out} ({len(entries)} 条)")
+    print()
+    print("下一步：Agent 阅读上述 JSON，逐句翻译后写出英文 JSON：")
+    print(f"  格式：[{{\"index\": 1, \"en\": \"...\"}}, ...]")
+    print(f"  建议路径：{args.out.replace('subtitle_cn', 'subtitle_en')}")
+    print()
+    print("然后运行：")
+    print(f"  python3 src/subtitle.py generate \\")
+    print(f"      --cn-json {args.out} \\")
+    print(f"      --en-json <英文JSON路径> \\")
+    print(f"      --out {args.out.replace('subtitle_cn.json', 'subtitle.srt')}")
+
+
+def cmd_generate(args):
+    """
+    Step 3：合并中文 JSON + 英文 JSON → 双语 SRT/ASS
+
+    支持两种输入路径：
+      A) --cn-json + --en-json（推荐：Agent 内联翻译工作流）
+      B) --bilingual（Agent 直接写好的双语 JSON）
+    """
+    if args.bilingual:
+        # 路径 B：双语 JSON 直接读入
+        with open(args.bilingual, encoding="utf-8") as f:
+            data = json.load(f)
+        entries = [{"text": d["cn"], "start_s": d["start_s"], "end_s": d["end_s"]}
+                   for d in data]
+        translations = [d.get("en", "") for d in data]
     else:
-        translations = [""] * len(cn_texts)
+        # 路径 A：分别读中文和英文 JSON
+        if not args.cn_json:
+            print("ERROR: 需要 --cn-json 或 --bilingual", file=sys.stderr)
+            sys.exit(1)
+        with open(args.cn_json, encoding="utf-8") as f:
+            cn_data = json.load(f)
+        entries = [{"text": d["cn"], "start_s": d["start_s"], "end_s": d["end_s"]}
+                   for d in cn_data]
+        translations = load_translations(args.en_json, len(entries))
 
     # 输出 SRT
     write_bilingual_srt(entries, translations, args.out)
 
-    # 同时输出 ASS（更好的双样式支持）
+    # 同时输出 ASS
     if args.ass:
         ass_path = args.out.replace(".srt", ".ass")
         font = detect_font()
@@ -443,15 +457,21 @@ def main():
     p = argparse.ArgumentParser(description="subtitle.py — 字幕生成与烧录管线")
     sub = p.add_subparsers(dest="cmd", required=True)
 
-    # generate
-    pg = sub.add_parser("generate", help="生成双语 SRT")
-    pg.add_argument("--transcript", required=True, help="转写 JSON（含 words）")
-    pg.add_argument("--script", required=True, help="飞书定稿文本文件")
-    pg.add_argument("--edl", default="", help="EDL JSON（可选，用于过滤被删区间的词）")
+    # align（Step 1：生成中文字幕 JSON 供 Agent 翻译）
+    pa = sub.add_parser("align", help="定稿+ASR → 中文字幕 JSON（Agent 翻译后调 generate）")
+    pa.add_argument("--transcript", required=True, help="转写 JSON（含 words）")
+    pa.add_argument("--script", required=True, help="飞书定稿文本文件")
+    pa.add_argument("--edl", default="", help="EDL JSON（可选，过滤被删区间）")
+    pa.add_argument("--out", required=True, help="输出中文字幕 JSON 路径")
+    pa.set_defaults(func=cmd_align)
+
+    # generate（Step 3：合并中英 JSON → SRT/ASS）
+    pg = sub.add_parser("generate", help="合并中英 JSON → 双语 SRT/ASS")
+    pg.add_argument("--cn-json", default="", help="中文字幕 JSON（align 输出）")
+    pg.add_argument("--en-json", default="", help="英文翻译 JSON（Agent 输出）")
+    pg.add_argument("--bilingual", default="",
+                    help="快捷：Agent 直接输出的双语 JSON（含 cn/en/start_s/end_s）")
     pg.add_argument("--out", required=True, help="输出 SRT 路径")
-    pg.add_argument("--api-key", default="", help="Anthropic API Key")
-    pg.add_argument("--model", default="claude-haiku-4-5-20251001")
-    pg.add_argument("--no-translate", action="store_true", help="不生成英文翻译")
     pg.add_argument("--ass", action="store_true", help="同时输出 ASS 格式")
     pg.set_defaults(func=cmd_generate)
 
