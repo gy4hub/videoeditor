@@ -1,0 +1,71 @@
+{
+  "source": "srcA.wav",
+  "model": "small",
+  "language": "zh",
+  "language_probability": 1,
+  "duration_s": 7.0,
+  "transcribe_time_s": 1.78,
+  "words": [
+    {
+      "word": "更",
+      "start": 0.0,
+      "end": 0.0,
+      "confidence": 0.1195
+    },
+    {
+      "word": "改",
+      "start": 0.0,
+      "end": 0.64,
+      "confidence": 0.6058
+    },
+    {
+      "word": "善",
+      "start": 0.64,
+      "end": 0.88,
+      "confidence": 0.9468
+    },
+    {
+      "word": "皮",
+      "start": 0.88,
+      "end": 1.08,
+      "confidence": 0.8009
+    },
+    {
+      "word": "肤",
+      "start": 1.08,
+      "end": 1.36,
+      "confidence": 0.9518
+    },
+    {
+      "word": "和",
+      "start": 1.36,
+      "end": 1.7,
+      "confidence": 0.9074
+    },
+    {
+      "word": "抗",
+      "start": 1.7,
+      "end": 5.64,
+      "confidence": 0.8709
+    },
+    {
+      "word": "衰",
+      "start": 5.64,
+      "end": 5.82,
+      "confidence": 0.9442
+    },
+    {
+      "word": "老",
+      "start": 5.82,
+      "end": 6.06,
+      "confidence": 0.9766
+    }
+  ],
+  "segments": [
+    {
+      "start": 0.0,
+      "end": 6.06,
+      "text": "更改善皮肤和抗衰老"
+    }
+  ]
+}

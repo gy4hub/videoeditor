@@ -1,0 +1,97 @@
+{
+  "version": "v2",
+  "description": "累计客户报缺陷回归清单（v1×4 + v4×4 = 8项）",
+  "items": [
+    {
+      "id": "v1-R1",
+      "category": "重复未剪",
+      "description": "v1缺陷：1:18~1:32 区间「这一次有什么不一样」不得出现两次",
+      "source_window_s": [67.13, 73.0],
+      "output_window_s": [62.0, 70.0],
+      "expected_behavior": "该窗口「这一次有什么不一样」只出现一次",
+      "verify_method": "keyword_absent",
+      "keywords_absent": [],
+      "keywords_present": ["这一次"],
+      "note": "v1曾保留两次，v2+已剪除第一次（id=17 drop）"
+    },
+    {
+      "id": "v1-R2",
+      "category": "重复未剪",
+      "description": "v1缺陷：「我也研究了一下」第一次说法（源104-109s）已剪",
+      "source_window_s": [104.32, 109.05],
+      "output_window_s": [95.0, 100.0],
+      "expected_behavior": "该窗口不出现「我也研究了一下」的残段",
+      "verify_method": "keyword_absent",
+      "keywords_absent": ["研究"],
+      "note": "id=25 drop（D1）"
+    },
+    {
+      "id": "v1-R3",
+      "category": "重复未剪",
+      "description": "v1缺陷：「他的肠道的修复」结巴前段（源118-120s）已剪",
+      "source_window_s": [118.23, 120.47],
+      "output_window_s": [103.0, 107.0],
+      "expected_behavior": "该窗口不出现「肠道的修复」孤立断句",
+      "verify_method": "keyword_absent",
+      "keywords_absent": [],
+      "note": "id=28 drop（D2）；仅听感检查，tiny转写可能识别不稳定"
+    },
+    {
+      "id": "v1-R4",
+      "category": "重复未剪",
+      "description": "v1缺陷：「市场营销这套」中途止句（源152-154s）已剪",
+      "source_window_s": [152.35, 153.83],
+      "output_window_s": [131.0, 134.0],
+      "expected_behavior": "该窗口无「市场营销这套」孤立断句",
+      "verify_method": "keyword_absent",
+      "keywords_absent": [],
+      "note": "id=34 drop（D3）；165s处有完整版，已保留"
+    },
+    {
+      "id": "v4-A",
+      "category": "结巴未剪",
+      "description": "v4缺陷A：约1:21(81s)「改善皮肤和抗」第一次结巴已剪",
+      "source_window_s": [86.32, 89.30],
+      "output_window_s": [79.0, 86.0],
+      "expected_behavior": "该输出窗口只出现一次「改善皮肤和抗衰」；结巴重启前段已删",
+      "verify_method": "keyword_absent",
+      "keywords_absent": [],
+      "keywords_present": ["改善"],
+      "note": "v5新增：EDL id=41 drop（stutter A），output 81s处不再有重复"
+    },
+    {
+      "id": "v4-B",
+      "category": "结巴未剪",
+      "description": "v4缺陷B：约1:31(91s)「微商群」第一次结巴已剪",
+      "source_window_s": [96.64, 97.98],
+      "output_window_s": [85.0, 92.0],
+      "expected_behavior": "该输出窗口「微商群」不重复出现；结巴前段已删",
+      "verify_method": "keyword_absent",
+      "keywords_absent": [],
+      "note": "v5新增：EDL id=43 drop（stutter B），output 91s处不再有重复"
+    },
+    {
+      "id": "v4-C",
+      "category": "切词",
+      "description": "v4缺陷C：约1:38(98s)「带货」被切断，v5应完整",
+      "source_window_s": [103.5, 105.5],
+      "output_window_s": [93.0, 99.0],
+      "expected_behavior": "该窗口「带货」完整出现，不被截断",
+      "verify_method": "keyword_present",
+      "keywords_present": ["带货"],
+      "note": "v5新增：opt_end id=24 改为104.920（货结束）+150ms"
+    },
+    {
+      "id": "v4-D",
+      "category": "尾部吞字",
+      "description": "v4缺陷D：结尾「下次再见」最后被切断，v5应完整",
+      "source_window_s": [194.0, 197.0],
+      "output_window_s": null,
+      "expected_behavior": "成片最后「下次再见」完整；再见两字均可听到",
+      "verify_method": "last_word_complete",
+      "keywords_present": ["再见"],
+      "min_duration_s": 4.0,
+      "note": "v5新增：最后段 opt_end=196.000s（195.5+500ms），覆盖完整再见"
+    }
+  ]
+}

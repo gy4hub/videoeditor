@@ -1,0 +1,489 @@
+{
+  "source": "raw_audio_seg2b.wav",
+  "model": "Systran/faster-whisper-medium",
+  "seg_offset_s": 29.0,
+  "language": "zh",
+  "transcribe_time_s": 18.71,
+  "words": [
+    {
+      "word": "第二",
+      "start": 29.0,
+      "end": 29.26,
+      "confidence": 0.6198
+    },
+    {
+      "word": "个",
+      "start": 29.26,
+      "end": 29.66,
+      "confidence": 0.9474
+    },
+    {
+      "word": "是",
+      "start": 29.66,
+      "end": 30.06,
+      "confidence": 0.546
+    },
+    {
+      "word": "宣",
+      "start": 30.06,
+      "end": 30.32,
+      "confidence": 0.9346
+    },
+    {
+      "word": "传",
+      "start": 30.32,
+      "end": 30.7,
+      "confidence": 0.999
+    },
+    {
+      "word": " 提",
+      "start": 30.96,
+      "end": 31.0,
+      "confidence": 0.9877
+    },
+    {
+      "word": "高",
+      "start": 31.0,
+      "end": 31.16,
+      "confidence": 0.9947
+    },
+    {
+      "word": "婴",
+      "start": 31.16,
+      "end": 31.5,
+      "confidence": 0.9811
+    },
+    {
+      "word": "儿",
+      "start": 31.5,
+      "end": 31.64,
+      "confidence": 0.9988
+    },
+    {
+      "word": "免",
+      "start": 31.64,
+      "end": 31.78,
+      "confidence": 0.999
+    },
+    {
+      "word": "疫",
+      "start": 31.78,
+      "end": 31.92,
+      "confidence": 0.873
+    },
+    {
+      "word": "力",
+      "start": 31.92,
+      "end": 32.3,
+      "confidence": 0.9822
+    },
+    {
+      "word": "这",
+      "start": 32.3,
+      "end": 32.68,
+      "confidence": 0.6659
+    },
+    {
+      "word": "次",
+      "start": 32.68,
+      "end": 32.96,
+      "confidence": 0.9703
+    },
+    {
+      "word": "改",
+      "start": 32.96,
+      "end": 33.36,
+      "confidence": 0.8169
+    },
+    {
+      "word": "了",
+      "start": 33.36,
+      "end": 33.92,
+      "confidence": 0.9292
+    },
+    {
+      "word": "是",
+      "start": 33.92,
+      "end": 34.24,
+      "confidence": 0.6201
+    },
+    {
+      "word": "修",
+      "start": 34.24,
+      "end": 34.62,
+      "confidence": 0.9922
+    },
+    {
+      "word": "复",
+      "start": 34.62,
+      "end": 34.76,
+      "confidence": 0.9878
+    },
+    {
+      "word": "肠",
+      "start": 34.76,
+      "end": 35.06,
+      "confidence": 0.9803
+    },
+    {
+      "word": "道",
+      "start": 35.06,
+      "end": 35.24,
+      "confidence": 0.9991
+    },
+    {
+      "word": "的",
+      "start": 35.24,
+      "end": 35.42,
+      "confidence": 0.918
+    },
+    {
+      "word": "功",
+      "start": 35.42,
+      "end": 35.58,
+      "confidence": 0.999
+    },
+    {
+      "word": "能",
+      "start": 35.58,
+      "end": 35.96,
+      "confidence": 0.9978
+    },
+    {
+      "word": "改",
+      "start": 35.96,
+      "end": 36.26,
+      "confidence": 0.6923
+    },
+    {
+      "word": "善",
+      "start": 36.26,
+      "end": 36.46,
+      "confidence": 0.9994
+    },
+    {
+      "word": "皮",
+      "start": 36.46,
+      "end": 36.8,
+      "confidence": 0.9821
+    },
+    {
+      "word": "肤",
+      "start": 36.8,
+      "end": 37.02,
+      "confidence": 0.9982
+    },
+    {
+      "word": "和",
+      "start": 37.02,
+      "end": 37.36,
+      "confidence": 0.9118
+    },
+    {
+      "word": "抗",
+      "start": 37.36,
+      "end": 41.22,
+      "confidence": 0.9732
+    },
+    {
+      "word": "衰",
+      "start": 41.22,
+      "end": 41.4,
+      "confidence": 0.9046
+    },
+    {
+      "word": "老",
+      "start": 41.4,
+      "end": 42.04,
+      "confidence": 0.9811
+    },
+    {
+      "word": "第三",
+      "start": 42.04,
+      "end": 42.66,
+      "confidence": 0.9615
+    },
+    {
+      "word": " 也是",
+      "start": 43.4,
+      "end": 43.56,
+      "confidence": 0.6001
+    },
+    {
+      "word": "渠",
+      "start": 43.56,
+      "end": 43.66,
+      "confidence": 0.9658
+    },
+    {
+      "word": "道",
+      "start": 43.66,
+      "end": 43.82,
+      "confidence": 1.0
+    },
+    {
+      "word": "也",
+      "start": 43.82,
+      "end": 44.02,
+      "confidence": 0.8649
+    },
+    {
+      "word": "换",
+      "start": 44.02,
+      "end": 44.18,
+      "confidence": 0.9958
+    },
+    {
+      "word": "了",
+      "start": 44.18,
+      "end": 44.72,
+      "confidence": 0.9954
+    },
+    {
+      "word": "以前",
+      "start": 44.72,
+      "end": 45.04,
+      "confidence": 0.9331
+    },
+    {
+      "word": "是",
+      "start": 45.04,
+      "end": 45.54,
+      "confidence": 0.9467
+    },
+    {
+      "word": "微",
+      "start": 45.54,
+      "end": 45.76,
+      "confidence": 0.7721
+    },
+    {
+      "word": "商",
+      "start": 45.76,
+      "end": 46.2,
+      "confidence": 0.9725
+    },
+    {
+      "word": "群",
+      "start": 46.2,
+      "end": 49.12,
+      "confidence": 0.8416
+    },
+    {
+      "word": "私",
+      "start": 49.12,
+      "end": 49.46,
+      "confidence": 0.7436
+    },
+    {
+      "word": "欲",
+      "start": 49.46,
+      "end": 50.14,
+      "confidence": 0.7533
+    },
+    {
+      "word": "做",
+      "start": 50.14,
+      "end": 50.42,
+      "confidence": 0.8808
+    },
+    {
+      "word": "直",
+      "start": 50.42,
+      "end": 50.68,
+      "confidence": 0.9627
+    },
+    {
+      "word": "销",
+      "start": 50.68,
+      "end": 51.2,
+      "confidence": 0.9991
+    },
+    {
+      "word": "现在",
+      "start": 51.2,
+      "end": 52.02,
+      "confidence": 0.9037
+    },
+    {
+      "word": "是",
+      "start": 52.02,
+      "end": 52.5,
+      "confidence": 0.915
+    },
+    {
+      "word": "直",
+      "start": 52.5,
+      "end": 52.66,
+      "confidence": 0.9948
+    },
+    {
+      "word": "播",
+      "start": 52.66,
+      "end": 52.82,
+      "confidence": 0.9987
+    },
+    {
+      "word": "室",
+      "start": 52.82,
+      "end": 53.04,
+      "confidence": 0.7987
+    },
+    {
+      "word": "靠",
+      "start": 53.04,
+      "end": 53.26,
+      "confidence": 0.9796
+    },
+    {
+      "word": "主",
+      "start": 53.26,
+      "end": 53.4,
+      "confidence": 0.9964
+    },
+    {
+      "word": "播",
+      "start": 53.4,
+      "end": 53.54,
+      "confidence": 0.9996
+    },
+    {
+      "word": "带",
+      "start": 53.54,
+      "end": 53.78,
+      "confidence": 0.8815
+    },
+    {
+      "word": "货",
+      "start": 53.78,
+      "end": 54.46,
+      "confidence": 0.987
+    },
+    {
+      "word": "那",
+      "start": 54.46,
+      "end": 54.8,
+      "confidence": 0.3843
+    },
+    {
+      "word": "我也",
+      "start": 54.8,
+      "end": 54.98,
+      "confidence": 0.9874
+    },
+    {
+      "word": "研",
+      "start": 54.98,
+      "end": 55.2,
+      "confidence": 0.9981
+    },
+    {
+      "word": "究",
+      "start": 55.2,
+      "end": 55.24,
+      "confidence": 0.9997
+    },
+    {
+      "word": "了",
+      "start": 55.24,
+      "end": 55.44,
+      "confidence": 0.9955
+    },
+    {
+      "word": "一下",
+      "start": 55.44,
+      "end": 56.12,
+      "confidence": 0.9913
+    },
+    {
+      "word": "牛",
+      "start": 56.12,
+      "end": 56.4,
+      "confidence": 0.9551
+    },
+    {
+      "word": "橱",
+      "start": 56.4,
+      "end": 56.56,
+      "confidence": 0.5876
+    },
+    {
+      "word": "楼",
+      "start": 56.56,
+      "end": 56.72,
+      "confidence": 0.6673
+    },
+    {
+      "word": "的",
+      "start": 56.72,
+      "end": 56.88,
+      "confidence": 0.9941
+    },
+    {
+      "word": "科",
+      "start": 56.88,
+      "end": 56.92,
+      "confidence": 0.9864
+    },
+    {
+      "word": "学",
+      "start": 56.92,
+      "end": 57.08,
+      "confidence": 0.9997
+    },
+    {
+      "word": "证",
+      "start": 57.08,
+      "end": 57.24,
+      "confidence": 0.9967
+    },
+    {
+      "word": "据",
+      "start": 57.24,
+      "end": 57.34,
+      "confidence": 0.9996
+    }
+  ],
+  "segments": [
+    {
+      "start": 29.0,
+      "end": 32.3,
+      "text": "第二个是宣传 提高婴儿免疫力"
+    },
+    {
+      "start": 32.3,
+      "end": 35.96,
+      "text": "这次改了是修复肠道的功能"
+    },
+    {
+      "start": 35.96,
+      "end": 42.04,
+      "text": "改善皮肤和抗衰老"
+    },
+    {
+      "start": 42.04,
+      "end": 44.72,
+      "text": "第三 也是渠道也换了"
+    },
+    {
+      "start": 44.72,
+      "end": 51.2,
+      "text": "以前是微商群私欲做直销"
+    },
+    {
+      "start": 51.2,
+      "end": 54.46,
+      "text": "现在是直播室靠主播带货"
+    },
+    {
+      "start": 54.46,
+      "end": 56.12,
+      "text": "那我也研究了一下"
+    },
+    {
+      "start": 56.12,
+      "end": 57.34,
+      "text": "牛橱楼的科学证据"
+    }
+  ]
+}

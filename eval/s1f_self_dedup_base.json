@@ -1,0 +1,411 @@
+{
+  "transcript_source": "eval/s1-1_transcript_base.json",
+  "total_pairs": 18,
+  "config": {
+    "MAX_GAP_S": 15.0,
+    "WIN_MIN_CHARS": 4,
+    "WIN_MAX_CHARS": 60,
+    "NGRAM": 2,
+    "SIM_THRESHOLD": 0.55,
+    "STUTTER_MAX_GAP_S": 3.0,
+    "MIN_WORDS": 3
+  },
+  "pairs": [
+    {
+      "pair_id": 0,
+      "dup_type": "full_repeat",
+      "similarity": 0.5714,
+      "gap_s": 4.72,
+      "seg_a": {
+        "word_start": 15,
+        "word_end": 19,
+        "start_s": 4.56,
+        "end_s": 5.66,
+        "text": "品叫牛出乳"
+      },
+      "seg_b": {
+        "word_start": 37,
+        "word_end": 40,
+        "start_s": 10.38,
+        "end_s": 11.06,
+        "text": "说牛出乳"
+      },
+      "suggested_action": "drop_a_keep_b",
+      "decided_by": "self_dedup_rule"
+    },
+    {
+      "pair_id": 1,
+      "dup_type": "full_repeat",
+      "similarity": 0.5714,
+      "gap_s": 14.82,
+      "seg_a": {
+        "word_start": 36,
+        "word_end": 40,
+        "start_s": 10.02,
+        "end_s": 11.06,
+        "text": "先说牛出乳"
+      },
+      "seg_b": {
+        "word_start": 102,
+        "word_end": 105,
+        "start_s": 25.88,
+        "end_s": 26.48,
+        "text": "家牛出乳"
+      },
+      "suggested_action": "drop_a_keep_b",
+      "decided_by": "self_dedup_rule"
+    },
+    {
+      "pair_id": 2,
+      "dup_type": "stutter_restart",
+      "similarity": 0.5714,
+      "gap_s": 2.62,
+      "seg_a": {
+        "word_start": 51,
+        "word_end": 55,
+        "start_s": 13.6,
+        "end_s": 14.5,
+        "text": "大量的免疫"
+      },
+      "seg_b": {
+        "word_start": 66,
+        "word_end": 69,
+        "start_s": 17.12,
+        "end_s": 17.76,
+        "text": "的免疫力"
+      },
+      "suggested_action": "drop_a_keep_b",
+      "decided_by": "self_dedup_rule"
+    },
+    {
+      "pair_id": 3,
+      "dup_type": "full_repeat",
+      "similarity": 0.5714,
+      "gap_s": 5.82,
+      "seg_a": {
+        "word_start": 101,
+        "word_end": 105,
+        "start_s": 25.72,
+        "end_s": 26.48,
+        "text": "天家牛出乳"
+      },
+      "seg_b": {
+        "word_start": 128,
+        "word_end": 131,
+        "start_s": 32.3,
+        "end_s": 32.86,
+        "text": "的牛出乳"
+      },
+      "suggested_action": "drop_a_keep_b",
+      "decided_by": "self_dedup_rule"
+    },
+    {
+      "pair_id": 4,
+      "dup_type": "full_repeat",
+      "similarity": 0.5714,
+      "gap_s": 3.38,
+      "seg_a": {
+        "word_start": 170,
+        "word_end": 172,
+        "start_s": 43.94,
+        "end_s": 45.58,
+        "text": "所以很多的"
+      },
+      "seg_b": {
+        "word_start": 187,
+        "word_end": 189,
+        "start_s": 48.96,
+        "end_s": 49.84,
+        "text": "了很多的"
+      },
+      "suggested_action": "drop_a_keep_b",
+      "decided_by": "self_dedup_rule"
+    },
+    {
+      "pair_id": 5,
+      "dup_type": "full_repeat",
+      "similarity": 1.0,
+      "gap_s": 6.04,
+      "seg_a": {
+        "word_start": 195,
+        "word_end": 198,
+        "start_s": 51.3,
+        "end_s": 52.0,
+        "text": "两年牛出"
+      },
+      "seg_b": {
+        "word_start": 221,
+        "word_end": 224,
+        "start_s": 58.04,
+        "end_s": 58.82,
+        "text": "两年牛出"
+      },
+      "suggested_action": "drop_a_keep_b",
+      "decided_by": "self_dedup_rule"
+    },
+    {
+      "pair_id": 6,
+      "dup_type": "full_repeat",
+      "similarity": 0.5714,
+      "gap_s": 12.92,
+      "seg_a": {
+        "word_start": 203,
+        "word_end": 205,
+        "start_s": 52.72,
+        "end_s": 53.76,
+        "text": "但是这一次"
+      },
+      "seg_b": {
+        "word_start": 252,
+        "word_end": 254,
+        "start_s": 66.68,
+        "end_s": 68.36,
+        "text": "倍这一次"
+      },
+      "suggested_action": "drop_a_keep_b",
+      "decided_by": "self_dedup_rule"
+    },
+    {
+      "pair_id": 7,
+      "dup_type": "full_repeat",
+      "similarity": 0.6,
+      "gap_s": 14.79,
+      "seg_a": {
+        "word_start": 227,
+        "word_end": 233,
+        "start_s": 59.08,
+        "end_s": 61.04,
+        "text": "品从原来的61万"
+      },
+      "seg_b": {
+        "word_start": 284,
+        "word_end": 287,
+        "start_s": 75.83,
+        "end_s": 76.73,
+        "text": "从原来的"
+      },
+      "suggested_action": "drop_a_keep_b",
+      "decided_by": "self_dedup_rule"
+    },
+    {
+      "pair_id": 8,
+      "dup_type": "stutter_restart",
+      "similarity": 1.0,
+      "gap_s": 2.35,
+      "seg_a": {
+        "word_start": 254,
+        "word_end": 256,
+        "start_s": 68.08,
+        "end_s": 68.9,
+        "text": "一次有什么"
+      },
+      "seg_b": {
+        "word_start": 262,
+        "word_end": 264,
+        "start_s": 71.25,
+        "end_s": 71.69,
+        "text": "一次有什么"
+      },
+      "suggested_action": "drop_a_keep_b",
+      "decided_by": "self_dedup_rule"
+    },
+    {
+      "pair_id": 9,
+      "dup_type": "stutter_restart",
+      "similarity": 0.6667,
+      "gap_s": 2.07,
+      "seg_a": {
+        "word_start": 257,
+        "word_end": 260,
+        "start_s": 68.9,
+        "end_s": 69.62,
+        "text": "不一样的"
+      },
+      "seg_b": {
+        "word_start": 265,
+        "word_end": 268,
+        "start_s": 71.69,
+        "end_s": 72.57,
+        "text": "不一样我"
+      },
+      "suggested_action": "drop_a_keep_b",
+      "decided_by": "self_dedup_rule"
+    },
+    {
+      "pair_id": 10,
+      "dup_type": "stutter_restart",
+      "similarity": 1.0,
+      "gap_s": 2.64,
+      "seg_a": {
+        "word_start": 323,
+        "word_end": 326,
+        "start_s": 86.61,
+        "end_s": 87.69,
+        "text": "善皮肤和"
+      },
+      "seg_b": {
+        "word_start": 332,
+        "word_end": 335,
+        "start_s": 90.33,
+        "end_s": 91.37,
+        "text": "善皮肤和"
+      },
+      "suggested_action": "drop_a_keep_b",
+      "decided_by": "self_dedup_rule"
+    },
+    {
+      "pair_id": 11,
+      "dup_type": "full_repeat",
+      "similarity": 1.0,
+      "gap_s": 3.33,
+      "seg_a": {
+        "word_start": 367,
+        "word_end": 370,
+        "start_s": 105.33,
+        "end_s": 106.27,
+        "text": "研究了一下"
+      },
+      "seg_b": {
+        "word_start": 380,
+        "word_end": 383,
+        "start_s": 109.6,
+        "end_s": 110.34,
+        "text": "研究了一下"
+      },
+      "suggested_action": "drop_a_keep_b",
+      "decided_by": "self_dedup_rule"
+    },
+    {
+      "pair_id": 12,
+      "dup_type": "stutter_restart",
+      "similarity": 1.0,
+      "gap_s": 2.51,
+      "seg_a": {
+        "word_start": 371,
+        "word_end": 378,
+        "start_s": 106.27,
+        "end_s": 107.83,
+        "text": "牛出乳的科学证据"
+      },
+      "seg_b": {
+        "word_start": 384,
+        "word_end": 391,
+        "start_s": 110.34,
+        "end_s": 111.94,
+        "text": "牛出乳的科学证据"
+      },
+      "suggested_action": "drop_a_keep_b",
+      "decided_by": "self_dedup_rule"
+    },
+    {
+      "pair_id": 13,
+      "dup_type": "full_repeat",
+      "similarity": 0.6,
+      "gap_s": 13.64,
+      "seg_a": {
+        "word_start": 380,
+        "word_end": 386,
+        "start_s": 109.6,
+        "end_s": 111.22,
+        "text": "研究了一下牛出乳"
+      },
+      "seg_b": {
+        "word_start": 440,
+        "word_end": 443,
+        "start_s": 124.86,
+        "end_s": 125.9,
+        "text": "下牛出乳"
+      },
+      "suggested_action": "drop_a_keep_b",
+      "decided_by": "self_dedup_rule"
+    },
+    {
+      "pair_id": 14,
+      "dup_type": "stutter_restart",
+      "similarity": 0.6,
+      "gap_s": 1.18,
+      "seg_a": {
+        "word_start": 413,
+        "word_end": 419,
+        "start_s": 117.34,
+        "end_s": 119.34,
+        "text": "训练之后它的长道"
+      },
+      "seg_b": {
+        "word_start": 423,
+        "word_end": 425,
+        "start_s": 120.52,
+        "end_s": 121.86,
+        "text": "它的长道"
+      },
+      "suggested_action": "drop_a_keep_b",
+      "decided_by": "self_dedup_rule"
+    },
+    {
+      "pair_id": 15,
+      "dup_type": "full_repeat",
+      "similarity": 0.5714,
+      "gap_s": 14.26,
+      "seg_a": {
+        "word_start": 535,
+        "word_end": 538,
+        "start_s": 148.74,
+        "end_s": 149.9,
+        "text": "牛出乳的"
+      },
+      "seg_b": {
+        "word_start": 561,
+        "word_end": 564,
+        "start_s": 164.16,
+        "end_s": 166.84,
+        "text": "现在牛出乳"
+      },
+      "suggested_action": "drop_a_keep_b",
+      "decided_by": "self_dedup_rule"
+    },
+    {
+      "pair_id": 16,
+      "dup_type": "full_repeat",
+      "similarity": 0.6,
+      "gap_s": 9.78,
+      "seg_a": {
+        "word_start": 546,
+        "word_end": 553,
+        "start_s": 151.62,
+        "end_s": 153.5,
+        "text": "比较担保市场营销"
+      },
+      "seg_b": {
+        "word_start": 557,
+        "word_end": 560,
+        "start_s": 163.28,
+        "end_s": 164.16,
+        "text": "市场营销"
+      },
+      "suggested_action": "drop_a_keep_b",
+      "decided_by": "self_dedup_rule"
+    },
+    {
+      "pair_id": 17,
+      "dup_type": "full_repeat",
+      "similarity": 0.6667,
+      "gap_s": 3.0,
+      "seg_a": {
+        "word_start": 555,
+        "word_end": 560,
+        "start_s": 153.7,
+        "end_s": 164.16,
+        "text": "套现在市场营销"
+      },
+      "seg_b": {
+        "word_start": 567,
+        "word_end": 570,
+        "start_s": 167.16,
+        "end_s": 167.88,
+        "text": "市场营销"
+      },
+      "suggested_action": "drop_a_keep_b",
+      "decided_by": "self_dedup_rule"
+    }
+  ]
+}

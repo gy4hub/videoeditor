@@ -1,0 +1,19 @@
+# S0-1 环境验证依赖
+# 安装命令: pip install -r src/requirements.txt --break-system-packages
+#
+# 运行环境: Python 3.10+, ffmpeg 4.4+ (系统级安装)
+# 测试平台: Ubuntu 22.04 (aarch64), macOS (x86/arm)
+
+# ---- 核心推理 ----
+faster-whisper>=1.0.0        # Whisper 词级时间戳转写 (CTranslate2 后端)
+
+# ---- TTS（测试语音合成，生产环境可移除）----
+gTTS>=2.3.0                  # Google Text-to-Speech，用于生成测试音频
+                             # 注意: 需要网络访问 Google TTS API
+                             # 生产替代: espeak-ng (系统包，无需网络)
+
+# ---- 以下为 faster-whisper 自动依赖，列出供参考 ----
+# ctranslate2>=4.0.0
+# huggingface-hub>=0.13.0
+# tokenizers>=0.13.0
+# av>=9.0.0                  # PyAV (ffmpeg Python 绑定，用于音频解码)

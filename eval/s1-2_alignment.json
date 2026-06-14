@@ -1,0 +1,600 @@
+{
+  "meta": {
+    "transcript_source": "raw_audio.wav",
+    "transcript_model": "/sessions/amazing-confident-bardeen/.cache/huggingface/hub/models--Systran--faster-whisper-base/snapshots/main",
+    "transcript_words": 669,
+    "transcript_duration_s": 197.952,
+    "total_script_sentences": 20,
+    "matched_sentences": 17,
+    "unmatched_sentences": 3,
+    "repeat_sentences": 1,
+    "adlib_intervals": 15,
+    "sentence_match_rate": 0.85,
+    "config": {
+      "NGRAM_SIZE": 4,
+      "ANCHOR_CONF_THRESHOLD": 0.5,
+      "WIN_MIN_RATIO": 0.65,
+      "WIN_MAX_RATIO": 2.2,
+      "SCAN_STRIDE": 3,
+      "SCAN_WIN_RATIO": 1.3,
+      "FINE_SCAN_MARGIN": 30,
+      "NMS_RADIUS_RATIO": 0.8,
+      "MIN_MATCH_CONFIDENCE": 0.25,
+      "ADLIB_MIN_DURATION": 0.5,
+      "SENTENCE_SPLIT_RE": "(?<=[。！？；\\n])",
+      "SCRIPT_START_MARKER": "视频号版（终稿）",
+      "SCRIPT_END_MARKERS": [
+        "九件套",
+        "草稿（参考，勿当成稿）",
+        "AI 口播底稿"
+      ],
+      "REPEAT_MIN_COUNT": 2,
+      "KEEP_LAST_REPEAT": true
+    }
+  },
+  "sentences": [
+    {
+      "id": 0,
+      "script_text": "还记得当年那个红极一时的婴幼儿保健品牛初乳么？",
+      "matched": true,
+      "is_repeat": false,
+      "recommended_interval_idx": null,
+      "intervals": [
+        {
+          "interval_idx": 0,
+          "start_s": 2.0,
+          "end_s": 4.26,
+          "start_tc": "00:02.000",
+          "end_tc": "00:04.260",
+          "word_start_idx": 0,
+          "word_end_idx": 12,
+          "confidence": 0.3333,
+          "transcript_text": "还记得当年那个红鸡翼石的嬰儿",
+          "keep": true,
+          "reason": "matched"
+        }
+      ]
+    },
+    {
+      "id": 1,
+      "script_text": "现在他又杀回来了，咱们看看这是怎么回事。",
+      "matched": true,
+      "is_repeat": false,
+      "recommended_interval_idx": null,
+      "intervals": [
+        {
+          "interval_idx": 0,
+          "start_s": 6.22,
+          "end_s": 8.58,
+          "start_tc": "00:06.220",
+          "end_tc": "00:08.580",
+          "word_start_idx": 21,
+          "word_end_idx": 30,
+          "confidence": 0.8,
+          "transcript_text": "现在他又杀回来了咱们看看这",
+          "keep": true,
+          "reason": "matched"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "script_text": "先说牛初乳当年号称是奶中黄金，含有大量的免疫因子和生长因子，可以提高孩子免疫力。",
+      "matched": true,
+      "is_repeat": false,
+      "recommended_interval_idx": null,
+      "intervals": [
+        {
+          "interval_idx": 0,
+          "start_s": 12.14,
+          "end_s": 17.12,
+          "start_tc": "00:12.140",
+          "end_tc": "00:17.120",
+          "word_start_idx": 45,
+          "word_end_idx": 65,
+          "confidence": 0.2545,
+          "transcript_text": "称乃中黄金还有大量的免疫阴子、生长阴子可以提高孩子",
+          "keep": true,
+          "reason": "matched"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "script_text": "当年的宣传真是铺天盖地啊。",
+      "matched": true,
+      "is_repeat": false,
+      "recommended_interval_idx": null,
+      "intervals": [
+        {
+          "interval_idx": 0,
+          "start_s": 17.76,
+          "end_s": 20.12,
+          "start_tc": "00:17.760",
+          "end_tc": "00:20.120",
+          "word_start_idx": 70,
+          "word_end_idx": 81,
+          "confidence": 0.5263,
+          "transcript_text": "当年的宣传能那真是铺天盖地",
+          "keep": true,
+          "reason": "matched"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "script_text": "结果到2012年卫生部一纸禁令，婴幼儿产品禁止添加牛初乳，让这个概念瞬间刹车。",
+      "matched": true,
+      "is_repeat": false,
+      "recommended_interval_idx": null,
+      "intervals": [
+        {
+          "interval_idx": 0,
+          "start_s": 21.06,
+          "end_s": 27.22,
+          "start_tc": "00:21.060",
+          "end_tc": "00:27.220",
+          "word_start_idx": 84,
+          "word_end_idx": 107,
+          "confidence": 0.3103,
+          "transcript_text": "2012年卫生部的一直禁令因幼儿产品禁止天家牛出乳让这个",
+          "keep": true,
+          "reason": "matched"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "script_text": "当时的理由也很合理，因为所谓牛初乳是牛刚产仔7天内的乳汁，在工业化中收集，质量控制都很困难，更没有标准。",
+      "matched": true,
+      "is_repeat": false,
+      "recommended_interval_idx": null,
+      "intervals": [
+        {
+          "interval_idx": 0,
+          "start_s": 29.22,
+          "end_s": 41.4,
+          "start_tc": "00:29.220",
+          "end_tc": "00:41.400",
+          "word_start_idx": 115,
+          "word_end_idx": 160,
+          "confidence": 0.2637,
+          "transcript_text": "当时的理由其实非常合理因为要所谓的牛出乳是牛刚好产宰的7天内的乳滋在工业化的这个过程中收集质量控制都是",
+          "keep": true,
+          "reason": "matched"
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "script_text": "很多不良商家以次充好、混水摸鱼，造成了很多社会乱象。",
+      "matched": true,
+      "is_repeat": false,
+      "recommended_interval_idx": null,
+      "intervals": [
+        {
+          "interval_idx": 0,
+          "start_s": 45.58,
+          "end_s": 49.56,
+          "start_tc": "00:45.580",
+          "end_tc": "00:49.560",
+          "word_start_idx": 173,
+          "word_end_idx": 188,
+          "confidence": 0.8235,
+          "transcript_text": "不良商家以次充好混水摸鱼造成了很多",
+          "keep": true,
+          "reason": "matched"
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "script_text": "这两年牛初乳又回来了，这次这把火是从美国烧到国内，美国这两年牛初乳产品从61万美元涨到了1900万美元，涨了整整3000%。",
+      "matched": true,
+      "is_repeat": false,
+      "recommended_interval_idx": null,
+      "intervals": [
+        {
+          "interval_idx": 0,
+          "start_s": 54.56,
+          "end_s": 65.12,
+          "start_tc": "00:54.560",
+          "end_tc": "01:05.120",
+          "word_start_idx": 208,
+          "word_end_idx": 246,
+          "confidence": 0.3918,
+          "transcript_text": "火是从美国烧到国内的美国这两年牛出乳产品从原来的61万美元市场份额一下子涨到了1,900万美元",
+          "keep": true,
+          "reason": "matched"
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "script_text": "这一次有什么不一样呢？",
+      "matched": true,
+      "is_repeat": true,
+      "recommended_interval_idx": 1,
+      "intervals": [
+        {
+          "interval_idx": 0,
+          "start_s": 67.64,
+          "end_s": 69.34,
+          "start_tc": "01:07.640",
+          "end_tc": "01:09.340",
+          "word_start_idx": 253,
+          "word_end_idx": 259,
+          "confidence": 0.9231,
+          "transcript_text": "这一次有什么不一样",
+          "keep": false,
+          "reason": "repeat_discard"
+        },
+        {
+          "interval_idx": 1,
+          "start_s": 70.81,
+          "end_s": 72.17,
+          "start_tc": "01:10.810",
+          "end_tc": "01:12.170",
+          "word_start_idx": 261,
+          "word_end_idx": 267,
+          "confidence": 0.9231,
+          "transcript_text": "这一次有什么不一样",
+          "keep": true,
+          "reason": "repeat_keep_last"
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "script_text": "我总结有三个变化。",
+      "matched": true,
+      "is_repeat": false,
+      "recommended_interval_idx": null,
+      "intervals": [
+        {
+          "interval_idx": 0,
+          "start_s": 72.17,
+          "end_s": 73.85,
+          "start_tc": "01:12.170",
+          "end_tc": "01:13.850",
+          "word_start_idx": 268,
+          "word_end_idx": 275,
+          "confidence": 1.0,
+          "transcript_text": "我总结有三个变化",
+          "keep": true,
+          "reason": "matched"
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "script_text": "第一个，对象从婴儿换成成年人了。",
+      "matched": false,
+      "is_repeat": false,
+      "recommended_interval_idx": null,
+      "intervals": []
+    },
+    {
+      "id": 11,
+      "script_text": "第二个是之前宣传的提高婴儿免疫力，这次说的是修复肠道功能、改善皮肤和抗衰。",
+      "matched": false,
+      "is_repeat": false,
+      "recommended_interval_idx": null,
+      "intervals": []
+    },
+    {
+      "id": 12,
+      "script_text": "第三个是渠道也换了，以前是微商群、私域直销，现在呢是直播室靠主播带货。",
+      "matched": true,
+      "is_repeat": false,
+      "recommended_interval_idx": null,
+      "intervals": [
+        {
+          "interval_idx": 0,
+          "start_s": 93.23,
+          "end_s": 104.07,
+          "start_tc": "01:33.230",
+          "end_tc": "01:44.070",
+          "word_start_idx": 340,
+          "word_end_idx": 364,
+          "confidence": 0.2692,
+          "transcript_text": "也是渠道也换了以前是威商群思欲做职销现在是直播式靠主播带",
+          "keep": true,
+          "reason": "matched"
+        }
+      ]
+    },
+    {
+      "id": 13,
+      "script_text": "我也研究了一下牛初乳的科学证据，目前来看确实有一些研究——主要集中在运动员高强度训练后的肠道修复这个特定场景，在这个条件下牛初乳有一定效果。",
+      "matched": true,
+      "is_repeat": false,
+      "recommended_interval_idx": null,
+      "intervals": [
+        {
+          "interval_idx": 0,
+          "start_s": 109.16,
+          "end_s": 127.22,
+          "start_tc": "01:49.160",
+          "end_tc": "02:07.220",
+          "word_start_idx": 379,
+          "word_end_idx": 449,
+          "confidence": 0.446,
+          "transcript_text": "我也研究了一下牛出乳的科学证据目前来看还是有一些研究的主要是集中在运动员高强度训练之后它的长道的修复它的长道修复的这些特定的场景在这个条件下牛出乳确实有一定效果",
+          "keep": true,
+          "reason": "matched"
+        }
+      ]
+    },
+    {
+      "id": 14,
+      "script_text": "但对普通成年人，皮肤、抗衰、日常免疫这些主要卖点，大规模的随机对照试验几乎是空白的。",
+      "matched": true,
+      "is_repeat": false,
+      "recommended_interval_idx": null,
+      "intervals": [
+        {
+          "interval_idx": 0,
+          "start_s": 130.92,
+          "end_s": 143.08,
+          "start_tc": "02:10.920",
+          "end_tc": "02:23.080",
+          "word_start_idx": 462,
+          "word_end_idx": 508,
+          "confidence": 0.3797,
+          "transcript_text": "皮肤、抗衰、日常免疫这些所谓的电商里面主要的卖点暂时还没有经过大规模的随机对照实验这一块几乎是空白的",
+          "keep": true,
+          "reason": "matched"
+        }
+      ]
+    },
+    {
+      "id": 15,
+      "script_text": "彭博社今年2月也做了一篇报道，同样指出目前牛初乳的功效证据还是比较单薄的。",
+      "matched": true,
+      "is_repeat": false,
+      "recommended_interval_idx": null,
+      "intervals": [
+        {
+          "interval_idx": 0,
+          "start_s": 144.46,
+          "end_s": 152.0,
+          "start_tc": "02:24.460",
+          "end_tc": "02:32.000",
+          "word_start_idx": 514,
+          "word_end_idx": 547,
+          "confidence": 0.3636,
+          "transcript_text": "彭博社今年2月份也做了一篇报道说同样指出了目前牛出乳的这些科学证据还是比较",
+          "keep": true,
+          "reason": "matched"
+        }
+      ]
+    },
+    {
+      "id": 16,
+      "script_text": "市场营销这套配方可不是牛初乳的专属。",
+      "matched": true,
+      "is_repeat": false,
+      "recommended_interval_idx": null,
+      "intervals": [
+        {
+          "interval_idx": 0,
+          "start_s": 151.08,
+          "end_s": 153.86,
+          "start_tc": "02:31.080",
+          "end_tc": "02:33.860",
+          "word_start_idx": 545,
+          "word_end_idx": 555,
+          "confidence": 0.2727,
+          "transcript_text": "还是比较担保市场营销这套",
+          "keep": true,
+          "reason": "matched"
+        }
+      ]
+    },
+    {
+      "id": 17,
+      "script_text": "它是所有网红超级食物的共用剧本——找一个人人都有的问题，贴一个科学名词，换受众，换渠道，制造焦虑，卖货变现。",
+      "matched": true,
+      "is_repeat": false,
+      "recommended_interval_idx": null,
+      "intervals": [
+        {
+          "interval_idx": 0,
+          "start_s": 174.12,
+          "end_s": 182.64,
+          "start_tc": "02:54.120",
+          "end_tc": "03:02.640",
+          "word_start_idx": 595,
+          "word_end_idx": 623,
+          "confidence": 0.5135,
+          "transcript_text": "剧本找一个人人都有的问题是吧贴一个科学名词然后换瘦众换渠道制造焦虑卖",
+          "keep": true,
+          "reason": "matched"
+        }
+      ]
+    },
+    {
+      "id": 18,
+      "script_text": "认清这个结构，比专门去研究某个成分省事多了。",
+      "matched": true,
+      "is_repeat": false,
+      "recommended_interval_idx": null,
+      "intervals": [
+        {
+          "interval_idx": 0,
+          "start_s": 183.36,
+          "end_s": 186.58,
+          "start_tc": "03:03.360",
+          "end_tc": "03:06.580",
+          "word_start_idx": 626,
+          "word_end_idx": 640,
+          "confidence": 0.8667,
+          "transcript_text": "认清这个结构比专门去研究某个成分",
+          "keep": true,
+          "reason": "matched"
+        }
+      ]
+    },
+    {
+      "id": 19,
+      "script_text": "我是添爸，今天聊的是一个12年前被禁过的东西，和一套反复复活的套路。",
+      "matched": false,
+      "is_repeat": false,
+      "recommended_interval_idx": null,
+      "intervals": []
+    }
+  ],
+  "adlib_intervals": [
+    {
+      "start_s": 4.26,
+      "end_s": 5.84,
+      "start_tc": "00:04.260",
+      "end_tc": "00:05.840",
+      "duration_s": 1.58,
+      "word_start_idx": 13,
+      "word_end_idx": 20,
+      "transcript_text": "宝剑品叫牛出乳吗"
+    },
+    {
+      "start_s": 8.58,
+      "end_s": 12.14,
+      "start_tc": "00:08.580",
+      "end_tc": "00:12.140",
+      "duration_s": 3.56,
+      "word_start_idx": 31,
+      "word_end_idx": 44,
+      "transcript_text": "到底是怎么回事先说牛出乳当年可是号"
+    },
+    {
+      "start_s": 17.12,
+      "end_s": 17.76,
+      "start_tc": "00:17.120",
+      "end_tc": "00:17.760",
+      "duration_s": 0.64,
+      "word_start_idx": 66,
+      "word_end_idx": 69,
+      "transcript_text": "的免疫力"
+    },
+    {
+      "start_s": 20.54,
+      "end_s": 21.06,
+      "start_tc": "00:20.540",
+      "end_tc": "00:21.060",
+      "duration_s": 0.52,
+      "word_start_idx": 82,
+      "word_end_idx": 83,
+      "transcript_text": "结果"
+    },
+    {
+      "start_s": 27.22,
+      "end_s": 28.78,
+      "start_tc": "00:27.220",
+      "end_tc": "00:28.780",
+      "duration_s": 1.56,
+      "word_start_idx": 108,
+      "word_end_idx": 114,
+      "transcript_text": "盖链瞬间杀了车"
+    },
+    {
+      "start_s": 41.4,
+      "end_s": 45.58,
+      "start_tc": "00:41.400",
+      "end_tc": "00:45.580",
+      "duration_s": 4.18,
+      "word_start_idx": 161,
+      "word_end_idx": 172,
+      "transcript_text": "非常困难的也没什么标准所以很多的"
+    },
+    {
+      "start_s": 49.56,
+      "end_s": 54.56,
+      "start_tc": "00:49.560",
+      "end_tc": "00:54.560",
+      "duration_s": 5.0,
+      "word_start_idx": 189,
+      "word_end_idx": 207,
+      "transcript_text": "的社会乱象这两年牛出乳又回来了但是这一次它这个"
+    },
+    {
+      "start_s": 65.12,
+      "end_s": 67.04,
+      "start_tc": "01:05.120",
+      "end_tc": "01:07.040",
+      "duration_s": 1.92,
+      "word_start_idx": 247,
+      "word_end_idx": 252,
+      "transcript_text": "整整涨了300倍"
+    },
+    {
+      "start_s": 73.85,
+      "end_s": 93.23,
+      "start_tc": "01:13.850",
+      "end_tc": "01:33.230",
+      "duration_s": 19.38,
+      "word_start_idx": 276,
+      "word_end_idx": 339,
+      "transcript_text": "这第一个就是对象变了从原来的银尔换成了成年人了第二个是宣传提高免银尔免移力这次改了是修复长道的功能改善皮肤和抗设和抗改善皮肤和抗衰老第三"
+    },
+    {
+      "start_s": 104.07,
+      "end_s": 107.83,
+      "start_tc": "01:44.070",
+      "end_tc": "01:47.830",
+      "duration_s": 3.76,
+      "word_start_idx": 365,
+      "word_end_idx": 378,
+      "transcript_text": "户我也研究了一下牛出乳的科学证据"
+    },
+    {
+      "start_s": 128.02,
+      "end_s": 130.92,
+      "start_tc": "02:08.020",
+      "end_tc": "02:10.920",
+      "duration_s": 2.9,
+      "word_start_idx": 450,
+      "word_end_idx": 461,
+      "transcript_text": "但是针对于普通的成年人像做"
+    },
+    {
+      "start_s": 143.08,
+      "end_s": 144.46,
+      "start_tc": "02:23.080",
+      "end_tc": "02:24.460",
+      "duration_s": 1.38,
+      "word_start_idx": 509,
+      "word_end_idx": 513,
+      "transcript_text": "这也难免像"
+    },
+    {
+      "start_s": 162.84,
+      "end_s": 174.12,
+      "start_tc": "02:42.840",
+      "end_tc": "02:54.120",
+      "duration_s": 11.28,
+      "word_start_idx": 556,
+      "word_end_idx": 594,
+      "transcript_text": "现在市场营销现在牛出乳这套市场营销的配方它也不是专属的这是所谓的所有的超级网红食品共同的"
+    },
+    {
+      "start_s": 182.64,
+      "end_s": 183.36,
+      "start_tc": "03:02.640",
+      "end_tc": "03:03.360",
+      "duration_s": 0.72,
+      "word_start_idx": 624,
+      "word_end_idx": 625,
+      "transcript_text": "败现"
+    },
+    {
+      "start_s": 186.58,
+      "end_s": 195.4,
+      "start_tc": "03:06.580",
+      "end_tc": "03:15.400",
+      "duration_s": 8.82,
+      "word_start_idx": 641,
+      "word_end_idx": 668,
+      "transcript_text": "我觉得省事多了所以对于牛出乳你怎么看呢我是天霸咱们今天就聊到这儿下次再见"
+    }
+  ]
+}

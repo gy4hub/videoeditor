@@ -1,0 +1,4406 @@
+{
+  "source": "raw_audio.wav",
+  "model": "/sessions/amazing-confident-bardeen/.cache/huggingface/hub/models--Systran--faster-whisper-base/snapshots/main",
+  "language": "zh",
+  "language_probability": 1,
+  "duration_s": 197.952,
+  "transcribe_time_s": 24.51,
+  "words": [
+    {
+      "word": "还",
+      "start": 2.0,
+      "end": 2.44,
+      "confidence": 0.5808
+    },
+    {
+      "word": "记",
+      "start": 2.44,
+      "end": 2.6,
+      "confidence": 0.9979
+    },
+    {
+      "word": "得",
+      "start": 2.6,
+      "end": 2.72,
+      "confidence": 0.8642
+    },
+    {
+      "word": "当",
+      "start": 2.72,
+      "end": 2.84,
+      "confidence": 0.9023
+    },
+    {
+      "word": "年",
+      "start": 2.84,
+      "end": 2.98,
+      "confidence": 0.9669
+    },
+    {
+      "word": "那个",
+      "start": 2.98,
+      "end": 3.18,
+      "confidence": 0.7217
+    },
+    {
+      "word": "红",
+      "start": 3.18,
+      "end": 3.4,
+      "confidence": 0.9174
+    },
+    {
+      "word": "鸡",
+      "start": 3.4,
+      "end": 3.56,
+      "confidence": 0.8051
+    },
+    {
+      "word": "翼",
+      "start": 3.56,
+      "end": 3.78,
+      "confidence": 0.4275
+    },
+    {
+      "word": "石",
+      "start": 3.78,
+      "end": 3.9,
+      "confidence": 0.8682
+    },
+    {
+      "word": "的",
+      "start": 3.9,
+      "end": 4.04,
+      "confidence": 0.9762
+    },
+    {
+      "word": "嬰",
+      "start": 4.04,
+      "end": 4.16,
+      "confidence": 0.6825
+    },
+    {
+      "word": "儿",
+      "start": 4.16,
+      "end": 4.26,
+      "confidence": 0.9438
+    },
+    {
+      "word": "宝",
+      "start": 4.26,
+      "end": 4.38,
+      "confidence": 0.9591
+    },
+    {
+      "word": "剑",
+      "start": 4.38,
+      "end": 4.56,
+      "confidence": 0.7157
+    },
+    {
+      "word": "品",
+      "start": 4.56,
+      "end": 4.74,
+      "confidence": 0.9533
+    },
+    {
+      "word": "叫",
+      "start": 4.74,
+      "end": 5.0,
+      "confidence": 0.8686
+    },
+    {
+      "word": "牛",
+      "start": 5.0,
+      "end": 5.2,
+      "confidence": 0.8755
+    },
+    {
+      "word": "出",
+      "start": 5.2,
+      "end": 5.48,
+      "confidence": 0.6437
+    },
+    {
+      "word": "乳",
+      "start": 5.48,
+      "end": 5.66,
+      "confidence": 0.808
+    },
+    {
+      "word": "吗",
+      "start": 5.66,
+      "end": 5.84,
+      "confidence": 0.7271
+    },
+    {
+      "word": "现在",
+      "start": 6.22,
+      "end": 6.58,
+      "confidence": 0.6331
+    },
+    {
+      "word": "他",
+      "start": 6.58,
+      "end": 6.78,
+      "confidence": 0.5941
+    },
+    {
+      "word": "又",
+      "start": 6.78,
+      "end": 6.9,
+      "confidence": 0.9823
+    },
+    {
+      "word": "杀",
+      "start": 6.9,
+      "end": 7.08,
+      "confidence": 0.8621
+    },
+    {
+      "word": "回",
+      "start": 7.08,
+      "end": 7.28,
+      "confidence": 0.9947
+    },
+    {
+      "word": "来了",
+      "start": 7.28,
+      "end": 7.54,
+      "confidence": 0.9743
+    },
+    {
+      "word": "咱",
+      "start": 7.54,
+      "end": 7.92,
+      "confidence": 0.9665
+    },
+    {
+      "word": "们",
+      "start": 7.92,
+      "end": 8.02,
+      "confidence": 0.9954
+    },
+    {
+      "word": "看看",
+      "start": 8.02,
+      "end": 8.24,
+      "confidence": 0.9946
+    },
+    {
+      "word": "这",
+      "start": 8.24,
+      "end": 8.58,
+      "confidence": 0.919
+    },
+    {
+      "word": "到底",
+      "start": 8.58,
+      "end": 8.8,
+      "confidence": 0.999
+    },
+    {
+      "word": "是",
+      "start": 8.8,
+      "end": 8.98,
+      "confidence": 0.9973
+    },
+    {
+      "word": "怎么",
+      "start": 8.98,
+      "end": 9.18,
+      "confidence": 0.9745
+    },
+    {
+      "word": "回",
+      "start": 9.18,
+      "end": 9.36,
+      "confidence": 0.9899
+    },
+    {
+      "word": "事",
+      "start": 9.36,
+      "end": 9.5,
+      "confidence": 0.9999
+    },
+    {
+      "word": "先",
+      "start": 10.02,
+      "end": 10.38,
+      "confidence": 0.9232
+    },
+    {
+      "word": "说",
+      "start": 10.38,
+      "end": 10.58,
+      "confidence": 0.9988
+    },
+    {
+      "word": "牛",
+      "start": 10.58,
+      "end": 10.7,
+      "confidence": 0.9984
+    },
+    {
+      "word": "出",
+      "start": 10.7,
+      "end": 10.94,
+      "confidence": 0.9974
+    },
+    {
+      "word": "乳",
+      "start": 10.94,
+      "end": 11.06,
+      "confidence": 0.9609
+    },
+    {
+      "word": "当",
+      "start": 11.06,
+      "end": 11.52,
+      "confidence": 0.5643
+    },
+    {
+      "word": "年",
+      "start": 11.52,
+      "end": 11.68,
+      "confidence": 0.9964
+    },
+    {
+      "word": "可是",
+      "start": 11.68,
+      "end": 12.0,
+      "confidence": 0.9918
+    },
+    {
+      "word": "号",
+      "start": 12.0,
+      "end": 12.14,
+      "confidence": 0.5357
+    },
+    {
+      "word": "称",
+      "start": 12.14,
+      "end": 12.3,
+      "confidence": 0.9767
+    },
+    {
+      "word": "乃",
+      "start": 12.3,
+      "end": 12.52,
+      "confidence": 0.6247
+    },
+    {
+      "word": "中",
+      "start": 12.52,
+      "end": 12.66,
+      "confidence": 0.8841
+    },
+    {
+      "word": "黄",
+      "start": 12.66,
+      "end": 12.84,
+      "confidence": 0.9096
+    },
+    {
+      "word": "金",
+      "start": 12.84,
+      "end": 13.04,
+      "confidence": 0.9825
+    },
+    {
+      "word": "还有",
+      "start": 13.04,
+      "end": 13.6,
+      "confidence": 0.9074
+    },
+    {
+      "word": "大",
+      "start": 13.6,
+      "end": 13.82,
+      "confidence": 0.9916
+    },
+    {
+      "word": "量",
+      "start": 13.82,
+      "end": 13.96,
+      "confidence": 0.9945
+    },
+    {
+      "word": "的",
+      "start": 13.96,
+      "end": 14.12,
+      "confidence": 0.9409
+    },
+    {
+      "word": "免",
+      "start": 14.12,
+      "end": 14.3,
+      "confidence": 0.9716
+    },
+    {
+      "word": "疫",
+      "start": 14.3,
+      "end": 14.5,
+      "confidence": 0.9156
+    },
+    {
+      "word": "阴",
+      "start": 14.5,
+      "end": 14.68,
+      "confidence": 0.6234
+    },
+    {
+      "word": "子、",
+      "start": 14.68,
+      "end": 14.86,
+      "confidence": 0.9752
+    },
+    {
+      "word": "生",
+      "start": 14.98,
+      "end": 15.22,
+      "confidence": 0.8388
+    },
+    {
+      "word": "长",
+      "start": 15.22,
+      "end": 15.38,
+      "confidence": 0.8962
+    },
+    {
+      "word": "阴",
+      "start": 15.38,
+      "end": 15.54,
+      "confidence": 0.9948
+    },
+    {
+      "word": "子",
+      "start": 15.54,
+      "end": 15.78,
+      "confidence": 0.999
+    },
+    {
+      "word": "可以",
+      "start": 15.78,
+      "end": 16.5,
+      "confidence": 0.9744
+    },
+    {
+      "word": "提",
+      "start": 16.5,
+      "end": 16.72,
+      "confidence": 0.9922
+    },
+    {
+      "word": "高",
+      "start": 16.72,
+      "end": 16.86,
+      "confidence": 0.9965
+    },
+    {
+      "word": "孩子",
+      "start": 16.86,
+      "end": 17.12,
+      "confidence": 0.9944
+    },
+    {
+      "word": "的",
+      "start": 17.12,
+      "end": 17.26,
+      "confidence": 0.8787
+    },
+    {
+      "word": "免",
+      "start": 17.26,
+      "end": 17.38,
+      "confidence": 0.9991
+    },
+    {
+      "word": "疫",
+      "start": 17.38,
+      "end": 17.54,
+      "confidence": 0.9793
+    },
+    {
+      "word": "力",
+      "start": 17.54,
+      "end": 17.76,
+      "confidence": 0.9766
+    },
+    {
+      "word": "当",
+      "start": 17.76,
+      "end": 18.3,
+      "confidence": 0.9894
+    },
+    {
+      "word": "年的",
+      "start": 18.3,
+      "end": 18.58,
+      "confidence": 0.9843
+    },
+    {
+      "word": "宣",
+      "start": 18.58,
+      "end": 18.74,
+      "confidence": 0.9844
+    },
+    {
+      "word": "传",
+      "start": 18.74,
+      "end": 18.94,
+      "confidence": 0.9988
+    },
+    {
+      "word": "能",
+      "start": 18.94,
+      "end": 19.06,
+      "confidence": 0.6276
+    },
+    {
+      "word": "那",
+      "start": 19.06,
+      "end": 19.18,
+      "confidence": 0.2063
+    },
+    {
+      "word": "真",
+      "start": 19.18,
+      "end": 19.34,
+      "confidence": 0.958
+    },
+    {
+      "word": "是",
+      "start": 19.34,
+      "end": 19.5,
+      "confidence": 0.9948
+    },
+    {
+      "word": "铺",
+      "start": 19.5,
+      "end": 19.66,
+      "confidence": 0.7828
+    },
+    {
+      "word": "天",
+      "start": 19.66,
+      "end": 19.78,
+      "confidence": 0.7266
+    },
+    {
+      "word": "盖",
+      "start": 19.78,
+      "end": 19.98,
+      "confidence": 0.9489
+    },
+    {
+      "word": "地",
+      "start": 19.98,
+      "end": 20.12,
+      "confidence": 0.9004
+    },
+    {
+      "word": "结",
+      "start": 20.54,
+      "end": 20.9,
+      "confidence": 0.8476
+    },
+    {
+      "word": "果",
+      "start": 20.9,
+      "end": 21.06,
+      "confidence": 0.9993
+    },
+    {
+      "word": "20",
+      "start": 21.06,
+      "end": 21.78,
+      "confidence": 0.5084
+    },
+    {
+      "word": "12",
+      "start": 21.78,
+      "end": 22.04,
+      "confidence": 0.994
+    },
+    {
+      "word": "年",
+      "start": 22.04,
+      "end": 22.34,
+      "confidence": 0.9943
+    },
+    {
+      "word": "卫",
+      "start": 22.34,
+      "end": 22.88,
+      "confidence": 0.8512
+    },
+    {
+      "word": "生",
+      "start": 22.88,
+      "end": 23.0,
+      "confidence": 0.994
+    },
+    {
+      "word": "部",
+      "start": 23.0,
+      "end": 23.2,
+      "confidence": 0.976
+    },
+    {
+      "word": "的",
+      "start": 23.2,
+      "end": 23.32,
+      "confidence": 0.9876
+    },
+    {
+      "word": "一直",
+      "start": 23.32,
+      "end": 23.48,
+      "confidence": 0.3023
+    },
+    {
+      "word": "禁",
+      "start": 23.48,
+      "end": 23.74,
+      "confidence": 0.6887
+    },
+    {
+      "word": "令",
+      "start": 23.74,
+      "end": 23.94,
+      "confidence": 0.9885
+    },
+    {
+      "word": "因",
+      "start": 23.94,
+      "end": 24.44,
+      "confidence": 0.1792
+    },
+    {
+      "word": "幼",
+      "start": 24.44,
+      "end": 24.62,
+      "confidence": 0.6453
+    },
+    {
+      "word": "儿",
+      "start": 24.62,
+      "end": 24.7,
+      "confidence": 0.9626
+    },
+    {
+      "word": "产",
+      "start": 24.7,
+      "end": 24.86,
+      "confidence": 0.9883
+    },
+    {
+      "word": "品",
+      "start": 24.86,
+      "end": 25.12,
+      "confidence": 1.0
+    },
+    {
+      "word": "禁",
+      "start": 25.12,
+      "end": 25.56,
+      "confidence": 0.9483
+    },
+    {
+      "word": "止",
+      "start": 25.56,
+      "end": 25.72,
+      "confidence": 0.9449
+    },
+    {
+      "word": "天",
+      "start": 25.72,
+      "end": 25.88,
+      "confidence": 0.9328
+    },
+    {
+      "word": "家",
+      "start": 25.88,
+      "end": 26.02,
+      "confidence": 0.2939
+    },
+    {
+      "word": "牛",
+      "start": 26.02,
+      "end": 26.14,
+      "confidence": 0.9983
+    },
+    {
+      "word": "出",
+      "start": 26.14,
+      "end": 26.34,
+      "confidence": 0.9983
+    },
+    {
+      "word": "乳",
+      "start": 26.34,
+      "end": 26.48,
+      "confidence": 0.9898
+    },
+    {
+      "word": "让",
+      "start": 26.48,
+      "end": 26.96,
+      "confidence": 0.9302
+    },
+    {
+      "word": "这个",
+      "start": 26.96,
+      "end": 27.22,
+      "confidence": 0.7965
+    },
+    {
+      "word": "盖",
+      "start": 27.22,
+      "end": 27.36,
+      "confidence": 0.9856
+    },
+    {
+      "word": "链",
+      "start": 27.36,
+      "end": 27.58,
+      "confidence": 0.7111
+    },
+    {
+      "word": "瞬",
+      "start": 27.58,
+      "end": 28.04,
+      "confidence": 0.6993
+    },
+    {
+      "word": "间",
+      "start": 28.04,
+      "end": 28.2,
+      "confidence": 0.9837
+    },
+    {
+      "word": "杀",
+      "start": 28.2,
+      "end": 28.4,
+      "confidence": 0.9764
+    },
+    {
+      "word": "了",
+      "start": 28.4,
+      "end": 28.56,
+      "confidence": 0.9962
+    },
+    {
+      "word": "车",
+      "start": 28.56,
+      "end": 28.78,
+      "confidence": 0.9941
+    },
+    {
+      "word": "当",
+      "start": 29.22,
+      "end": 29.58,
+      "confidence": 0.9921
+    },
+    {
+      "word": "时",
+      "start": 29.58,
+      "end": 29.8,
+      "confidence": 0.9957
+    },
+    {
+      "word": "的",
+      "start": 29.8,
+      "end": 29.92,
+      "confidence": 0.9946
+    },
+    {
+      "word": "理",
+      "start": 29.92,
+      "end": 30.06,
+      "confidence": 0.9512
+    },
+    {
+      "word": "由",
+      "start": 30.06,
+      "end": 30.22,
+      "confidence": 0.9975
+    },
+    {
+      "word": "其实",
+      "start": 30.22,
+      "end": 30.72,
+      "confidence": 0.9644
+    },
+    {
+      "word": "非常",
+      "start": 30.72,
+      "end": 31.16,
+      "confidence": 0.9875
+    },
+    {
+      "word": "合",
+      "start": 31.16,
+      "end": 31.36,
+      "confidence": 0.9842
+    },
+    {
+      "word": "理",
+      "start": 31.36,
+      "end": 31.5,
+      "confidence": 0.9973
+    },
+    {
+      "word": "因为",
+      "start": 31.5,
+      "end": 31.9,
+      "confidence": 0.6916
+    },
+    {
+      "word": "要",
+      "start": 31.9,
+      "end": 32.04,
+      "confidence": 0.1364
+    },
+    {
+      "word": "所",
+      "start": 32.04,
+      "end": 32.18,
+      "confidence": 0.8167
+    },
+    {
+      "word": "谓",
+      "start": 32.18,
+      "end": 32.3,
+      "confidence": 0.9962
+    },
+    {
+      "word": "的",
+      "start": 32.3,
+      "end": 32.44,
+      "confidence": 0.9903
+    },
+    {
+      "word": "牛",
+      "start": 32.44,
+      "end": 32.56,
+      "confidence": 0.8634
+    },
+    {
+      "word": "出",
+      "start": 32.56,
+      "end": 32.76,
+      "confidence": 0.4225
+    },
+    {
+      "word": "乳",
+      "start": 32.76,
+      "end": 32.86,
+      "confidence": 0.4597
+    },
+    {
+      "word": "是",
+      "start": 32.86,
+      "end": 33.52,
+      "confidence": 0.8129
+    },
+    {
+      "word": "牛",
+      "start": 33.52,
+      "end": 33.96,
+      "confidence": 0.9944
+    },
+    {
+      "word": "刚",
+      "start": 33.96,
+      "end": 34.68,
+      "confidence": 0.9021
+    },
+    {
+      "word": "好",
+      "start": 34.68,
+      "end": 34.98,
+      "confidence": 0.9939
+    },
+    {
+      "word": "产",
+      "start": 34.98,
+      "end": 35.18,
+      "confidence": 0.91
+    },
+    {
+      "word": "宰",
+      "start": 35.18,
+      "end": 35.4,
+      "confidence": 0.7396
+    },
+    {
+      "word": "的",
+      "start": 35.4,
+      "end": 35.58,
+      "confidence": 0.9869
+    },
+    {
+      "word": "7",
+      "start": 35.58,
+      "end": 35.8,
+      "confidence": 0.4287
+    },
+    {
+      "word": "天",
+      "start": 35.8,
+      "end": 35.98,
+      "confidence": 0.9976
+    },
+    {
+      "word": "内",
+      "start": 35.98,
+      "end": 36.16,
+      "confidence": 0.9736
+    },
+    {
+      "word": "的",
+      "start": 36.16,
+      "end": 36.32,
+      "confidence": 0.9758
+    },
+    {
+      "word": "乳",
+      "start": 36.32,
+      "end": 36.48,
+      "confidence": 0.8431
+    },
+    {
+      "word": "滋",
+      "start": 36.48,
+      "end": 36.64,
+      "confidence": 0.5095
+    },
+    {
+      "word": "在",
+      "start": 36.64,
+      "end": 37.4,
+      "confidence": 0.9869
+    },
+    {
+      "word": "工",
+      "start": 37.4,
+      "end": 37.62,
+      "confidence": 0.9679
+    },
+    {
+      "word": "业",
+      "start": 37.62,
+      "end": 37.82,
+      "confidence": 0.9928
+    },
+    {
+      "word": "化",
+      "start": 37.82,
+      "end": 38.14,
+      "confidence": 0.9697
+    },
+    {
+      "word": "的",
+      "start": 38.14,
+      "end": 38.4,
+      "confidence": 0.9898
+    },
+    {
+      "word": "这个",
+      "start": 38.4,
+      "end": 38.62,
+      "confidence": 0.6952
+    },
+    {
+      "word": "过",
+      "start": 38.62,
+      "end": 38.98,
+      "confidence": 0.9827
+    },
+    {
+      "word": "程",
+      "start": 38.98,
+      "end": 39.14,
+      "confidence": 0.9931
+    },
+    {
+      "word": "中",
+      "start": 39.14,
+      "end": 39.4,
+      "confidence": 0.9994
+    },
+    {
+      "word": "收",
+      "start": 39.4,
+      "end": 39.98,
+      "confidence": 0.9304
+    },
+    {
+      "word": "集",
+      "start": 39.98,
+      "end": 40.26,
+      "confidence": 0.9696
+    },
+    {
+      "word": "质",
+      "start": 40.26,
+      "end": 40.6,
+      "confidence": 0.8194
+    },
+    {
+      "word": "量",
+      "start": 40.6,
+      "end": 40.7,
+      "confidence": 0.9997
+    },
+    {
+      "word": "控",
+      "start": 40.7,
+      "end": 40.9,
+      "confidence": 0.9982
+    },
+    {
+      "word": "制",
+      "start": 40.9,
+      "end": 41.12,
+      "confidence": 0.9988
+    },
+    {
+      "word": "都是",
+      "start": 41.12,
+      "end": 41.4,
+      "confidence": 0.9733
+    },
+    {
+      "word": "非常",
+      "start": 41.4,
+      "end": 41.8,
+      "confidence": 0.9954
+    },
+    {
+      "word": "困",
+      "start": 41.8,
+      "end": 42.02,
+      "confidence": 0.9862
+    },
+    {
+      "word": "难",
+      "start": 42.02,
+      "end": 42.26,
+      "confidence": 0.9946
+    },
+    {
+      "word": "的",
+      "start": 42.26,
+      "end": 42.4,
+      "confidence": 0.8432
+    },
+    {
+      "word": "也",
+      "start": 42.4,
+      "end": 42.88,
+      "confidence": 0.9572
+    },
+    {
+      "word": "没",
+      "start": 42.88,
+      "end": 43.22,
+      "confidence": 0.9935
+    },
+    {
+      "word": "什么",
+      "start": 43.22,
+      "end": 43.46,
+      "confidence": 0.9928
+    },
+    {
+      "word": "标",
+      "start": 43.46,
+      "end": 43.74,
+      "confidence": 0.9861
+    },
+    {
+      "word": "准",
+      "start": 43.74,
+      "end": 43.94,
+      "confidence": 0.9999
+    },
+    {
+      "word": "所以",
+      "start": 43.94,
+      "end": 44.72,
+      "confidence": 0.67
+    },
+    {
+      "word": "很多",
+      "start": 44.72,
+      "end": 45.42,
+      "confidence": 0.9359
+    },
+    {
+      "word": "的",
+      "start": 45.42,
+      "end": 45.58,
+      "confidence": 0.9923
+    },
+    {
+      "word": "不",
+      "start": 45.58,
+      "end": 45.7,
+      "confidence": 0.5466
+    },
+    {
+      "word": "良",
+      "start": 45.7,
+      "end": 45.84,
+      "confidence": 0.7074
+    },
+    {
+      "word": "商",
+      "start": 45.84,
+      "end": 46.02,
+      "confidence": 0.9944
+    },
+    {
+      "word": "家",
+      "start": 46.02,
+      "end": 46.24,
+      "confidence": 0.9869
+    },
+    {
+      "word": "以",
+      "start": 46.24,
+      "end": 46.74,
+      "confidence": 0.6834
+    },
+    {
+      "word": "次",
+      "start": 46.74,
+      "end": 46.9,
+      "confidence": 0.5948
+    },
+    {
+      "word": "充",
+      "start": 46.9,
+      "end": 47.02,
+      "confidence": 0.7999
+    },
+    {
+      "word": "好",
+      "start": 47.02,
+      "end": 47.26,
+      "confidence": 0.7904
+    },
+    {
+      "word": "混",
+      "start": 47.26,
+      "end": 47.68,
+      "confidence": 0.5481
+    },
+    {
+      "word": "水",
+      "start": 47.68,
+      "end": 47.8,
+      "confidence": 0.9768
+    },
+    {
+      "word": "摸",
+      "start": 47.8,
+      "end": 47.98,
+      "confidence": 0.5249
+    },
+    {
+      "word": "鱼",
+      "start": 47.98,
+      "end": 48.16,
+      "confidence": 0.9273
+    },
+    {
+      "word": "造",
+      "start": 48.16,
+      "end": 48.8,
+      "confidence": 0.9834
+    },
+    {
+      "word": "成",
+      "start": 48.8,
+      "end": 48.96,
+      "confidence": 0.9998
+    },
+    {
+      "word": "了",
+      "start": 48.96,
+      "end": 49.06,
+      "confidence": 0.9968
+    },
+    {
+      "word": "很多",
+      "start": 49.06,
+      "end": 49.56,
+      "confidence": 0.9932
+    },
+    {
+      "word": "的",
+      "start": 49.56,
+      "end": 49.84,
+      "confidence": 0.9941
+    },
+    {
+      "word": "社",
+      "start": 49.84,
+      "end": 49.94,
+      "confidence": 0.9841
+    },
+    {
+      "word": "会",
+      "start": 49.94,
+      "end": 50.06,
+      "confidence": 0.9944
+    },
+    {
+      "word": "乱",
+      "start": 50.06,
+      "end": 50.22,
+      "confidence": 0.9709
+    },
+    {
+      "word": "象",
+      "start": 50.22,
+      "end": 50.46,
+      "confidence": 0.8811
+    },
+    {
+      "word": "这",
+      "start": 50.9,
+      "end": 51.3,
+      "confidence": 0.4797
+    },
+    {
+      "word": "两",
+      "start": 51.3,
+      "end": 51.52,
+      "confidence": 0.9616
+    },
+    {
+      "word": "年",
+      "start": 51.52,
+      "end": 51.68,
+      "confidence": 0.993
+    },
+    {
+      "word": "牛",
+      "start": 51.68,
+      "end": 51.82,
+      "confidence": 0.9749
+    },
+    {
+      "word": "出",
+      "start": 51.82,
+      "end": 52.0,
+      "confidence": 0.988
+    },
+    {
+      "word": "乳",
+      "start": 52.0,
+      "end": 52.08,
+      "confidence": 0.8964
+    },
+    {
+      "word": "又",
+      "start": 52.08,
+      "end": 52.22,
+      "confidence": 0.9943
+    },
+    {
+      "word": "回",
+      "start": 52.22,
+      "end": 52.44,
+      "confidence": 0.9966
+    },
+    {
+      "word": "来了",
+      "start": 52.44,
+      "end": 52.72,
+      "confidence": 0.9873
+    },
+    {
+      "word": "但是",
+      "start": 52.72,
+      "end": 53.32,
+      "confidence": 0.9542
+    },
+    {
+      "word": "这",
+      "start": 53.32,
+      "end": 53.52,
+      "confidence": 0.9772
+    },
+    {
+      "word": "一次",
+      "start": 53.52,
+      "end": 53.76,
+      "confidence": 0.5399
+    },
+    {
+      "word": "它",
+      "start": 53.76,
+      "end": 54.32,
+      "confidence": 0.332
+    },
+    {
+      "word": "这个",
+      "start": 54.32,
+      "end": 54.56,
+      "confidence": 0.935
+    },
+    {
+      "word": "火",
+      "start": 54.56,
+      "end": 54.8,
+      "confidence": 0.977
+    },
+    {
+      "word": "是",
+      "start": 54.8,
+      "end": 55.1,
+      "confidence": 0.9851
+    },
+    {
+      "word": "从",
+      "start": 55.1,
+      "end": 55.3,
+      "confidence": 0.9912
+    },
+    {
+      "word": "美",
+      "start": 55.3,
+      "end": 55.56,
+      "confidence": 0.9921
+    },
+    {
+      "word": "国",
+      "start": 55.56,
+      "end": 55.94,
+      "confidence": 0.9983
+    },
+    {
+      "word": "烧",
+      "start": 55.94,
+      "end": 56.42,
+      "confidence": 0.9542
+    },
+    {
+      "word": "到",
+      "start": 56.42,
+      "end": 56.56,
+      "confidence": 0.9922
+    },
+    {
+      "word": "国",
+      "start": 56.56,
+      "end": 56.76,
+      "confidence": 0.9514
+    },
+    {
+      "word": "内",
+      "start": 56.76,
+      "end": 56.94,
+      "confidence": 0.9968
+    },
+    {
+      "word": "的",
+      "start": 56.94,
+      "end": 57.08,
+      "confidence": 0.9977
+    },
+    {
+      "word": "美",
+      "start": 57.08,
+      "end": 57.76,
+      "confidence": 0.9763
+    },
+    {
+      "word": "国",
+      "start": 57.76,
+      "end": 57.9,
+      "confidence": 0.9997
+    },
+    {
+      "word": "这",
+      "start": 57.9,
+      "end": 58.04,
+      "confidence": 0.9956
+    },
+    {
+      "word": "两",
+      "start": 58.04,
+      "end": 58.2,
+      "confidence": 0.9846
+    },
+    {
+      "word": "年",
+      "start": 58.2,
+      "end": 58.38,
+      "confidence": 0.9969
+    },
+    {
+      "word": "牛",
+      "start": 58.38,
+      "end": 58.66,
+      "confidence": 0.9891
+    },
+    {
+      "word": "出",
+      "start": 58.66,
+      "end": 58.82,
+      "confidence": 0.9914
+    },
+    {
+      "word": "乳",
+      "start": 58.82,
+      "end": 58.92,
+      "confidence": 0.9497
+    },
+    {
+      "word": "产",
+      "start": 58.92,
+      "end": 59.08,
+      "confidence": 0.9868
+    },
+    {
+      "word": "品",
+      "start": 59.08,
+      "end": 59.22,
+      "confidence": 0.9999
+    },
+    {
+      "word": "从",
+      "start": 59.22,
+      "end": 59.64,
+      "confidence": 0.8001
+    },
+    {
+      "word": "原",
+      "start": 59.64,
+      "end": 59.98,
+      "confidence": 0.9306
+    },
+    {
+      "word": "来",
+      "start": 59.98,
+      "end": 60.12,
+      "confidence": 0.9954
+    },
+    {
+      "word": "的",
+      "start": 60.12,
+      "end": 60.28,
+      "confidence": 0.9573
+    },
+    {
+      "word": "61",
+      "start": 60.28,
+      "end": 60.6,
+      "confidence": 0.8274
+    },
+    {
+      "word": "万",
+      "start": 60.6,
+      "end": 61.04,
+      "confidence": 0.9777
+    },
+    {
+      "word": "美元",
+      "start": 61.04,
+      "end": 61.42,
+      "confidence": 0.9656
+    },
+    {
+      "word": "市",
+      "start": 61.42,
+      "end": 62.1,
+      "confidence": 0.9836
+    },
+    {
+      "word": "场",
+      "start": 62.1,
+      "end": 62.3,
+      "confidence": 0.9969
+    },
+    {
+      "word": "份",
+      "start": 62.3,
+      "end": 62.58,
+      "confidence": 0.8082
+    },
+    {
+      "word": "额",
+      "start": 62.58,
+      "end": 62.76,
+      "confidence": 0.9669
+    },
+    {
+      "word": "一下",
+      "start": 62.76,
+      "end": 63.1,
+      "confidence": 0.6358
+    },
+    {
+      "word": "子",
+      "start": 63.1,
+      "end": 63.62,
+      "confidence": 0.9973
+    },
+    {
+      "word": "涨",
+      "start": 63.62,
+      "end": 63.78,
+      "confidence": 0.6205
+    },
+    {
+      "word": "到了",
+      "start": 63.78,
+      "end": 64.02,
+      "confidence": 0.9789
+    },
+    {
+      "word": "1,",
+      "start": 64.02,
+      "end": 64.24,
+      "confidence": 0.3267
+    },
+    {
+      "word": "900",
+      "start": 64.36,
+      "end": 64.66,
+      "confidence": 0.9497
+    },
+    {
+      "word": "万",
+      "start": 64.66,
+      "end": 64.82,
+      "confidence": 0.9928
+    },
+    {
+      "word": "美元",
+      "start": 64.82,
+      "end": 65.12,
+      "confidence": 0.9991
+    },
+    {
+      "word": "整",
+      "start": 65.12,
+      "end": 65.76,
+      "confidence": 0.7447
+    },
+    {
+      "word": "整",
+      "start": 65.76,
+      "end": 65.94,
+      "confidence": 0.9839
+    },
+    {
+      "word": "涨",
+      "start": 65.94,
+      "end": 66.26,
+      "confidence": 0.9689
+    },
+    {
+      "word": "了",
+      "start": 66.26,
+      "end": 66.4,
+      "confidence": 0.9931
+    },
+    {
+      "word": "300",
+      "start": 66.4,
+      "end": 66.68,
+      "confidence": 0.8061
+    },
+    {
+      "word": "倍",
+      "start": 66.68,
+      "end": 67.04,
+      "confidence": 0.9168
+    },
+    {
+      "word": "这",
+      "start": 67.64,
+      "end": 68.08,
+      "confidence": 0.7452
+    },
+    {
+      "word": "一次",
+      "start": 68.08,
+      "end": 68.36,
+      "confidence": 0.9672
+    },
+    {
+      "word": "有",
+      "start": 68.36,
+      "end": 68.72,
+      "confidence": 0.9731
+    },
+    {
+      "word": "什么",
+      "start": 68.72,
+      "end": 68.9,
+      "confidence": 0.982
+    },
+    {
+      "word": "不",
+      "start": 68.9,
+      "end": 69.08,
+      "confidence": 0.9946
+    },
+    {
+      "word": "一",
+      "start": 69.08,
+      "end": 69.24,
+      "confidence": 0.9827
+    },
+    {
+      "word": "样",
+      "start": 69.24,
+      "end": 69.34,
+      "confidence": 0.9998
+    },
+    {
+      "word": "的",
+      "start": 69.34,
+      "end": 69.62,
+      "confidence": 0.624
+    },
+    {
+      "word": "这",
+      "start": 70.81,
+      "end": 71.25,
+      "confidence": 0.9268
+    },
+    {
+      "word": "一次",
+      "start": 71.25,
+      "end": 71.45,
+      "confidence": 0.9163
+    },
+    {
+      "word": "有",
+      "start": 71.45,
+      "end": 71.59,
+      "confidence": 0.9914
+    },
+    {
+      "word": "什么",
+      "start": 71.59,
+      "end": 71.69,
+      "confidence": 0.9862
+    },
+    {
+      "word": "不",
+      "start": 71.69,
+      "end": 71.89,
+      "confidence": 0.9981
+    },
+    {
+      "word": "一",
+      "start": 71.89,
+      "end": 72.05,
+      "confidence": 0.9973
+    },
+    {
+      "word": "样",
+      "start": 72.05,
+      "end": 72.17,
+      "confidence": 0.9999
+    },
+    {
+      "word": "我",
+      "start": 72.17,
+      "end": 72.57,
+      "confidence": 0.205
+    },
+    {
+      "word": "总",
+      "start": 72.57,
+      "end": 72.73,
+      "confidence": 0.998
+    },
+    {
+      "word": "结",
+      "start": 72.73,
+      "end": 72.87,
+      "confidence": 0.9743
+    },
+    {
+      "word": "有",
+      "start": 72.87,
+      "end": 73.01,
+      "confidence": 0.9648
+    },
+    {
+      "word": "三",
+      "start": 73.01,
+      "end": 73.23,
+      "confidence": 0.7685
+    },
+    {
+      "word": "个",
+      "start": 73.23,
+      "end": 73.39,
+      "confidence": 0.9987
+    },
+    {
+      "word": "变",
+      "start": 73.39,
+      "end": 73.55,
+      "confidence": 0.9584
+    },
+    {
+      "word": "化",
+      "start": 73.55,
+      "end": 73.85,
+      "confidence": 0.9971
+    },
+    {
+      "word": "这",
+      "start": 73.85,
+      "end": 74.41,
+      "confidence": 0.3264
+    },
+    {
+      "word": "第一",
+      "start": 74.41,
+      "end": 74.67,
+      "confidence": 0.6269
+    },
+    {
+      "word": "个",
+      "start": 74.67,
+      "end": 74.93,
+      "confidence": 0.9668
+    },
+    {
+      "word": "就是",
+      "start": 74.93,
+      "end": 75.15,
+      "confidence": 0.6796
+    },
+    {
+      "word": "对",
+      "start": 75.15,
+      "end": 75.31,
+      "confidence": 0.9762
+    },
+    {
+      "word": "象",
+      "start": 75.31,
+      "end": 75.49,
+      "confidence": 0.9696
+    },
+    {
+      "word": "变",
+      "start": 75.49,
+      "end": 75.65,
+      "confidence": 0.9413
+    },
+    {
+      "word": "了",
+      "start": 75.65,
+      "end": 75.83,
+      "confidence": 0.9342
+    },
+    {
+      "word": "从",
+      "start": 75.83,
+      "end": 76.25,
+      "confidence": 0.9767
+    },
+    {
+      "word": "原",
+      "start": 76.25,
+      "end": 76.41,
+      "confidence": 0.9991
+    },
+    {
+      "word": "来",
+      "start": 76.41,
+      "end": 76.55,
+      "confidence": 0.9981
+    },
+    {
+      "word": "的",
+      "start": 76.55,
+      "end": 76.73,
+      "confidence": 0.9931
+    },
+    {
+      "word": "银",
+      "start": 76.73,
+      "end": 77.09,
+      "confidence": 0.6844
+    },
+    {
+      "word": "尔",
+      "start": 77.09,
+      "end": 77.31,
+      "confidence": 0.6544
+    },
+    {
+      "word": "换",
+      "start": 77.31,
+      "end": 77.85,
+      "confidence": 0.8909
+    },
+    {
+      "word": "成",
+      "start": 77.85,
+      "end": 78.03,
+      "confidence": 0.997
+    },
+    {
+      "word": "了",
+      "start": 78.03,
+      "end": 78.17,
+      "confidence": 0.8993
+    },
+    {
+      "word": "成",
+      "start": 78.17,
+      "end": 78.45,
+      "confidence": 0.6909
+    },
+    {
+      "word": "年",
+      "start": 78.45,
+      "end": 78.61,
+      "confidence": 0.702
+    },
+    {
+      "word": "人",
+      "start": 78.61,
+      "end": 78.79,
+      "confidence": 0.9957
+    },
+    {
+      "word": "了",
+      "start": 78.79,
+      "end": 78.91,
+      "confidence": 0.9033
+    },
+    {
+      "word": "第二",
+      "start": 78.91,
+      "end": 79.63,
+      "confidence": 0.741
+    },
+    {
+      "word": "个",
+      "start": 79.63,
+      "end": 79.83,
+      "confidence": 0.9983
+    },
+    {
+      "word": "是",
+      "start": 79.83,
+      "end": 80.25,
+      "confidence": 0.9606
+    },
+    {
+      "word": "宣",
+      "start": 80.25,
+      "end": 80.55,
+      "confidence": 0.9732
+    },
+    {
+      "word": "传",
+      "start": 80.55,
+      "end": 80.85,
+      "confidence": 0.9988
+    },
+    {
+      "word": "提",
+      "start": 80.85,
+      "end": 81.37,
+      "confidence": 0.9831
+    },
+    {
+      "word": "高",
+      "start": 81.37,
+      "end": 81.51,
+      "confidence": 0.9778
+    },
+    {
+      "word": "免",
+      "start": 81.51,
+      "end": 81.67,
+      "confidence": 0.9393
+    },
+    {
+      "word": "银",
+      "start": 81.67,
+      "end": 81.89,
+      "confidence": 0.7025
+    },
+    {
+      "word": "尔",
+      "start": 81.89,
+      "end": 82.03,
+      "confidence": 0.9988
+    },
+    {
+      "word": "免",
+      "start": 82.03,
+      "end": 82.15,
+      "confidence": 0.9948
+    },
+    {
+      "word": "移",
+      "start": 82.15,
+      "end": 82.33,
+      "confidence": 0.6789
+    },
+    {
+      "word": "力",
+      "start": 82.33,
+      "end": 82.45,
+      "confidence": 0.8935
+    },
+    {
+      "word": "这",
+      "start": 82.45,
+      "end": 82.99,
+      "confidence": 0.9592
+    },
+    {
+      "word": "次",
+      "start": 82.99,
+      "end": 83.21,
+      "confidence": 0.8302
+    },
+    {
+      "word": "改",
+      "start": 83.21,
+      "end": 83.67,
+      "confidence": 0.9183
+    },
+    {
+      "word": "了",
+      "start": 83.67,
+      "end": 83.89,
+      "confidence": 0.9132
+    },
+    {
+      "word": "是",
+      "start": 83.89,
+      "end": 84.47,
+      "confidence": 0.9642
+    },
+    {
+      "word": "修",
+      "start": 84.47,
+      "end": 84.79,
+      "confidence": 0.9847
+    },
+    {
+      "word": "复",
+      "start": 84.79,
+      "end": 85.09,
+      "confidence": 0.9718
+    },
+    {
+      "word": "长",
+      "start": 85.09,
+      "end": 85.33,
+      "confidence": 0.6494
+    },
+    {
+      "word": "道",
+      "start": 85.33,
+      "end": 85.53,
+      "confidence": 0.8768
+    },
+    {
+      "word": "的",
+      "start": 85.53,
+      "end": 85.71,
+      "confidence": 0.9853
+    },
+    {
+      "word": "功",
+      "start": 85.71,
+      "end": 85.87,
+      "confidence": 0.9917
+    },
+    {
+      "word": "能",
+      "start": 85.87,
+      "end": 86.11,
+      "confidence": 0.9997
+    },
+    {
+      "word": "改",
+      "start": 86.11,
+      "end": 86.61,
+      "confidence": 0.9713
+    },
+    {
+      "word": "善",
+      "start": 86.61,
+      "end": 86.79,
+      "confidence": 0.9931
+    },
+    {
+      "word": "皮",
+      "start": 86.79,
+      "end": 87.05,
+      "confidence": 0.9635
+    },
+    {
+      "word": "肤",
+      "start": 87.05,
+      "end": 87.29,
+      "confidence": 0.8057
+    },
+    {
+      "word": "和",
+      "start": 87.29,
+      "end": 87.69,
+      "confidence": 0.984
+    },
+    {
+      "word": "抗",
+      "start": 87.69,
+      "end": 87.87,
+      "confidence": 0.9031
+    },
+    {
+      "word": "设",
+      "start": 87.87,
+      "end": 88.03,
+      "confidence": 0.53
+    },
+    {
+      "word": "和",
+      "start": 88.03,
+      "end": 88.47,
+      "confidence": 0.7036
+    },
+    {
+      "word": "抗",
+      "start": 88.47,
+      "end": 89.57,
+      "confidence": 0.915
+    },
+    {
+      "word": "改",
+      "start": 90.11,
+      "end": 90.33,
+      "confidence": 0.3603
+    },
+    {
+      "word": "善",
+      "start": 90.33,
+      "end": 90.59,
+      "confidence": 0.9827
+    },
+    {
+      "word": "皮",
+      "start": 90.59,
+      "end": 90.81,
+      "confidence": 0.9354
+    },
+    {
+      "word": "肤",
+      "start": 90.81,
+      "end": 90.99,
+      "confidence": 0.854
+    },
+    {
+      "word": "和",
+      "start": 90.99,
+      "end": 91.37,
+      "confidence": 0.929
+    },
+    {
+      "word": "抗",
+      "start": 91.37,
+      "end": 91.59,
+      "confidence": 0.9282
+    },
+    {
+      "word": "衰",
+      "start": 91.59,
+      "end": 91.77,
+      "confidence": 0.8961
+    },
+    {
+      "word": "老",
+      "start": 91.77,
+      "end": 91.97,
+      "confidence": 0.6801
+    },
+    {
+      "word": "第三",
+      "start": 92.79,
+      "end": 93.23,
+      "confidence": 0.5378
+    },
+    {
+      "word": "也是",
+      "start": 93.23,
+      "end": 93.67,
+      "confidence": 0.7241
+    },
+    {
+      "word": "渠",
+      "start": 93.67,
+      "end": 94.01,
+      "confidence": 0.963
+    },
+    {
+      "word": "道",
+      "start": 94.01,
+      "end": 94.17,
+      "confidence": 0.9967
+    },
+    {
+      "word": "也",
+      "start": 94.17,
+      "end": 94.31,
+      "confidence": 0.7661
+    },
+    {
+      "word": "换",
+      "start": 94.31,
+      "end": 94.51,
+      "confidence": 0.5997
+    },
+    {
+      "word": "了",
+      "start": 94.51,
+      "end": 94.73,
+      "confidence": 0.8622
+    },
+    {
+      "word": "以前",
+      "start": 94.73,
+      "end": 95.39,
+      "confidence": 0.959
+    },
+    {
+      "word": "是",
+      "start": 95.39,
+      "end": 95.83,
+      "confidence": 0.8917
+    },
+    {
+      "word": "威",
+      "start": 95.83,
+      "end": 98.81,
+      "confidence": 0.8423
+    },
+    {
+      "word": "商",
+      "start": 98.81,
+      "end": 99.05,
+      "confidence": 0.7677
+    },
+    {
+      "word": "群",
+      "start": 99.05,
+      "end": 99.27,
+      "confidence": 0.6009
+    },
+    {
+      "word": "思",
+      "start": 99.27,
+      "end": 99.83,
+      "confidence": 0.4445
+    },
+    {
+      "word": "欲",
+      "start": 99.83,
+      "end": 99.99,
+      "confidence": 0.5492
+    },
+    {
+      "word": "做",
+      "start": 99.99,
+      "end": 100.75,
+      "confidence": 0.6127
+    },
+    {
+      "word": "职",
+      "start": 100.75,
+      "end": 100.97,
+      "confidence": 0.5573
+    },
+    {
+      "word": "销",
+      "start": 100.97,
+      "end": 101.17,
+      "confidence": 0.8299
+    },
+    {
+      "word": "现在",
+      "start": 101.89,
+      "end": 102.33,
+      "confidence": 0.7263
+    },
+    {
+      "word": "是",
+      "start": 102.33,
+      "end": 102.77,
+      "confidence": 0.4907
+    },
+    {
+      "word": "直",
+      "start": 102.77,
+      "end": 103.01,
+      "confidence": 0.9834
+    },
+    {
+      "word": "播",
+      "start": 103.01,
+      "end": 103.15,
+      "confidence": 0.9892
+    },
+    {
+      "word": "式",
+      "start": 103.15,
+      "end": 103.37,
+      "confidence": 0.6172
+    },
+    {
+      "word": "靠",
+      "start": 103.37,
+      "end": 103.65,
+      "confidence": 0.9536
+    },
+    {
+      "word": "主",
+      "start": 103.65,
+      "end": 103.79,
+      "confidence": 0.8538
+    },
+    {
+      "word": "播",
+      "start": 103.79,
+      "end": 103.95,
+      "confidence": 0.9996
+    },
+    {
+      "word": "带",
+      "start": 103.95,
+      "end": 104.07,
+      "confidence": 0.6728
+    },
+    {
+      "word": "户",
+      "start": 104.07,
+      "end": 104.31,
+      "confidence": 0.66
+    },
+    {
+      "word": "我也",
+      "start": 104.89,
+      "end": 105.33,
+      "confidence": 0.766
+    },
+    {
+      "word": "研",
+      "start": 105.33,
+      "end": 105.51,
+      "confidence": 0.9981
+    },
+    {
+      "word": "究",
+      "start": 105.51,
+      "end": 105.65,
+      "confidence": 0.9992
+    },
+    {
+      "word": "了",
+      "start": 105.65,
+      "end": 105.77,
+      "confidence": 0.9923
+    },
+    {
+      "word": "一下",
+      "start": 105.77,
+      "end": 106.27,
+      "confidence": 0.9014
+    },
+    {
+      "word": "牛",
+      "start": 106.27,
+      "end": 106.71,
+      "confidence": 0.7723
+    },
+    {
+      "word": "出",
+      "start": 106.71,
+      "end": 106.93,
+      "confidence": 0.3736
+    },
+    {
+      "word": "乳",
+      "start": 106.93,
+      "end": 107.05,
+      "confidence": 0.3169
+    },
+    {
+      "word": "的",
+      "start": 107.05,
+      "end": 107.23,
+      "confidence": 0.9876
+    },
+    {
+      "word": "科",
+      "start": 107.23,
+      "end": 107.35,
+      "confidence": 0.99
+    },
+    {
+      "word": "学",
+      "start": 107.35,
+      "end": 107.45,
+      "confidence": 0.9938
+    },
+    {
+      "word": "证",
+      "start": 107.45,
+      "end": 107.61,
+      "confidence": 0.939
+    },
+    {
+      "word": "据",
+      "start": 107.61,
+      "end": 107.83,
+      "confidence": 0.9948
+    },
+    {
+      "word": "我也",
+      "start": 109.16,
+      "end": 109.6,
+      "confidence": 0.7738
+    },
+    {
+      "word": "研",
+      "start": 109.6,
+      "end": 109.86,
+      "confidence": 0.9991
+    },
+    {
+      "word": "究",
+      "start": 109.86,
+      "end": 109.98,
+      "confidence": 0.9997
+    },
+    {
+      "word": "了",
+      "start": 109.98,
+      "end": 110.1,
+      "confidence": 0.999
+    },
+    {
+      "word": "一下",
+      "start": 110.1,
+      "end": 110.34,
+      "confidence": 0.9558
+    },
+    {
+      "word": "牛",
+      "start": 110.34,
+      "end": 110.9,
+      "confidence": 0.9819
+    },
+    {
+      "word": "出",
+      "start": 110.9,
+      "end": 111.14,
+      "confidence": 0.9962
+    },
+    {
+      "word": "乳",
+      "start": 111.14,
+      "end": 111.22,
+      "confidence": 0.9939
+    },
+    {
+      "word": "的",
+      "start": 111.22,
+      "end": 111.34,
+      "confidence": 0.9894
+    },
+    {
+      "word": "科",
+      "start": 111.34,
+      "end": 111.5,
+      "confidence": 0.9997
+    },
+    {
+      "word": "学",
+      "start": 111.5,
+      "end": 111.62,
+      "confidence": 0.9981
+    },
+    {
+      "word": "证",
+      "start": 111.62,
+      "end": 111.76,
+      "confidence": 0.9996
+    },
+    {
+      "word": "据",
+      "start": 111.76,
+      "end": 111.94,
+      "confidence": 0.9992
+    },
+    {
+      "word": "目前",
+      "start": 111.94,
+      "end": 112.4,
+      "confidence": 0.9364
+    },
+    {
+      "word": "来",
+      "start": 112.4,
+      "end": 112.58,
+      "confidence": 0.946
+    },
+    {
+      "word": "看",
+      "start": 112.58,
+      "end": 112.96,
+      "confidence": 0.9974
+    },
+    {
+      "word": "还是",
+      "start": 112.96,
+      "end": 113.4,
+      "confidence": 0.9215
+    },
+    {
+      "word": "有一",
+      "start": 113.4,
+      "end": 113.66,
+      "confidence": 0.9937
+    },
+    {
+      "word": "些",
+      "start": 113.66,
+      "end": 113.84,
+      "confidence": 0.9991
+    },
+    {
+      "word": "研",
+      "start": 113.84,
+      "end": 113.98,
+      "confidence": 0.9992
+    },
+    {
+      "word": "究",
+      "start": 113.98,
+      "end": 114.14,
+      "confidence": 0.9984
+    },
+    {
+      "word": "的",
+      "start": 114.14,
+      "end": 114.32,
+      "confidence": 0.9604
+    },
+    {
+      "word": "主",
+      "start": 114.32,
+      "end": 114.8,
+      "confidence": 0.9921
+    },
+    {
+      "word": "要",
+      "start": 114.8,
+      "end": 115.02,
+      "confidence": 0.9991
+    },
+    {
+      "word": "是",
+      "start": 115.02,
+      "end": 115.38,
+      "confidence": 0.8192
+    },
+    {
+      "word": "集",
+      "start": 115.38,
+      "end": 115.6,
+      "confidence": 0.9822
+    },
+    {
+      "word": "中",
+      "start": 115.6,
+      "end": 115.74,
+      "confidence": 0.9985
+    },
+    {
+      "word": "在",
+      "start": 115.74,
+      "end": 115.96,
+      "confidence": 0.9932
+    },
+    {
+      "word": "运",
+      "start": 115.96,
+      "end": 116.14,
+      "confidence": 0.9892
+    },
+    {
+      "word": "动",
+      "start": 116.14,
+      "end": 116.3,
+      "confidence": 0.9989
+    },
+    {
+      "word": "员",
+      "start": 116.3,
+      "end": 116.54,
+      "confidence": 0.9622
+    },
+    {
+      "word": "高",
+      "start": 116.54,
+      "end": 116.84,
+      "confidence": 0.9828
+    },
+    {
+      "word": "强",
+      "start": 116.84,
+      "end": 117.12,
+      "confidence": 0.9908
+    },
+    {
+      "word": "度",
+      "start": 117.12,
+      "end": 117.34,
+      "confidence": 0.9973
+    },
+    {
+      "word": "训",
+      "start": 117.34,
+      "end": 117.52,
+      "confidence": 0.9497
+    },
+    {
+      "word": "练",
+      "start": 117.52,
+      "end": 117.64,
+      "confidence": 0.9941
+    },
+    {
+      "word": "之",
+      "start": 117.64,
+      "end": 117.88,
+      "confidence": 0.9788
+    },
+    {
+      "word": "后",
+      "start": 117.88,
+      "end": 118.1,
+      "confidence": 0.9996
+    },
+    {
+      "word": "它的",
+      "start": 118.1,
+      "end": 118.7,
+      "confidence": 0.1703
+    },
+    {
+      "word": "长",
+      "start": 118.7,
+      "end": 119.12,
+      "confidence": 0.4817
+    },
+    {
+      "word": "道",
+      "start": 119.12,
+      "end": 119.34,
+      "confidence": 0.5136
+    },
+    {
+      "word": "的",
+      "start": 119.34,
+      "end": 120.06,
+      "confidence": 0.9081
+    },
+    {
+      "word": "修",
+      "start": 120.06,
+      "end": 120.22,
+      "confidence": 0.9675
+    },
+    {
+      "word": "复",
+      "start": 120.22,
+      "end": 120.52,
+      "confidence": 0.9235
+    },
+    {
+      "word": "它的",
+      "start": 120.52,
+      "end": 121.16,
+      "confidence": 0.4462
+    },
+    {
+      "word": "长",
+      "start": 121.16,
+      "end": 121.64,
+      "confidence": 0.8906
+    },
+    {
+      "word": "道",
+      "start": 121.64,
+      "end": 121.86,
+      "confidence": 0.9989
+    },
+    {
+      "word": "修",
+      "start": 121.86,
+      "end": 122.06,
+      "confidence": 0.993
+    },
+    {
+      "word": "复",
+      "start": 122.06,
+      "end": 122.3,
+      "confidence": 0.9999
+    },
+    {
+      "word": "的",
+      "start": 122.3,
+      "end": 122.44,
+      "confidence": 0.9454
+    },
+    {
+      "word": "这",
+      "start": 122.44,
+      "end": 122.54,
+      "confidence": 0.7041
+    },
+    {
+      "word": "些",
+      "start": 122.54,
+      "end": 122.64,
+      "confidence": 0.9902
+    },
+    {
+      "word": "特",
+      "start": 122.64,
+      "end": 123.12,
+      "confidence": 0.9874
+    },
+    {
+      "word": "定",
+      "start": 123.12,
+      "end": 123.24,
+      "confidence": 0.985
+    },
+    {
+      "word": "的",
+      "start": 123.24,
+      "end": 123.38,
+      "confidence": 0.9894
+    },
+    {
+      "word": "场",
+      "start": 123.38,
+      "end": 123.54,
+      "confidence": 0.8367
+    },
+    {
+      "word": "景",
+      "start": 123.54,
+      "end": 123.72,
+      "confidence": 0.9968
+    },
+    {
+      "word": "在",
+      "start": 123.72,
+      "end": 124.32,
+      "confidence": 0.9659
+    },
+    {
+      "word": "这个",
+      "start": 124.32,
+      "end": 124.6,
+      "confidence": 0.965
+    },
+    {
+      "word": "条",
+      "start": 124.6,
+      "end": 124.78,
+      "confidence": 0.966
+    },
+    {
+      "word": "件",
+      "start": 124.78,
+      "end": 124.86,
+      "confidence": 0.9985
+    },
+    {
+      "word": "下",
+      "start": 124.86,
+      "end": 125.24,
+      "confidence": 0.9917
+    },
+    {
+      "word": "牛",
+      "start": 125.24,
+      "end": 125.6,
+      "confidence": 0.43
+    },
+    {
+      "word": "出",
+      "start": 125.6,
+      "end": 125.78,
+      "confidence": 0.7232
+    },
+    {
+      "word": "乳",
+      "start": 125.78,
+      "end": 125.9,
+      "confidence": 0.5717
+    },
+    {
+      "word": "确",
+      "start": 125.9,
+      "end": 126.36,
+      "confidence": 0.9483
+    },
+    {
+      "word": "实",
+      "start": 126.36,
+      "end": 126.48,
+      "confidence": 0.9891
+    },
+    {
+      "word": "有",
+      "start": 126.48,
+      "end": 126.58,
+      "confidence": 0.877
+    },
+    {
+      "word": "一定",
+      "start": 126.58,
+      "end": 126.78,
+      "confidence": 0.9638
+    },
+    {
+      "word": "效",
+      "start": 126.78,
+      "end": 126.94,
+      "confidence": 0.995
+    },
+    {
+      "word": "果",
+      "start": 126.94,
+      "end": 127.22,
+      "confidence": 0.9996
+    },
+    {
+      "word": "但是",
+      "start": 128.02,
+      "end": 128.42,
+      "confidence": 0.9042
+    },
+    {
+      "word": "针",
+      "start": 128.42,
+      "end": 128.7,
+      "confidence": 0.9615
+    },
+    {
+      "word": "对",
+      "start": 128.7,
+      "end": 128.88,
+      "confidence": 0.9951
+    },
+    {
+      "word": "于",
+      "start": 128.88,
+      "end": 129.02,
+      "confidence": 0.9929
+    },
+    {
+      "word": "普",
+      "start": 129.02,
+      "end": 129.28,
+      "confidence": 0.9943
+    },
+    {
+      "word": "通",
+      "start": 129.28,
+      "end": 129.54,
+      "confidence": 0.9997
+    },
+    {
+      "word": "的",
+      "start": 129.54,
+      "end": 129.66,
+      "confidence": 0.9927
+    },
+    {
+      "word": "成",
+      "start": 129.66,
+      "end": 129.82,
+      "confidence": 0.9297
+    },
+    {
+      "word": "年",
+      "start": 129.82,
+      "end": 129.94,
+      "confidence": 0.8636
+    },
+    {
+      "word": "人",
+      "start": 129.94,
+      "end": 130.34,
+      "confidence": 0.995
+    },
+    {
+      "word": "像",
+      "start": 130.34,
+      "end": 130.68,
+      "confidence": 0.7647
+    },
+    {
+      "word": "做",
+      "start": 130.68,
+      "end": 130.92,
+      "confidence": 0.6804
+    },
+    {
+      "word": "皮",
+      "start": 130.92,
+      "end": 131.14,
+      "confidence": 0.9842
+    },
+    {
+      "word": "肤、",
+      "start": 131.14,
+      "end": 131.42,
+      "confidence": 0.7974
+    },
+    {
+      "word": "抗",
+      "start": 131.76,
+      "end": 131.98,
+      "confidence": 0.9605
+    },
+    {
+      "word": "衰、",
+      "start": 131.98,
+      "end": 132.3,
+      "confidence": 0.7406
+    },
+    {
+      "word": "日",
+      "start": 132.66,
+      "end": 133.02,
+      "confidence": 0.9984
+    },
+    {
+      "word": "常",
+      "start": 133.02,
+      "end": 133.14,
+      "confidence": 0.9504
+    },
+    {
+      "word": "免",
+      "start": 133.14,
+      "end": 133.32,
+      "confidence": 0.9686
+    },
+    {
+      "word": "疫",
+      "start": 133.32,
+      "end": 133.54,
+      "confidence": 0.8695
+    },
+    {
+      "word": "这",
+      "start": 133.54,
+      "end": 133.84,
+      "confidence": 0.541
+    },
+    {
+      "word": "些",
+      "start": 133.84,
+      "end": 134.04,
+      "confidence": 0.9774
+    },
+    {
+      "word": "所",
+      "start": 134.04,
+      "end": 134.76,
+      "confidence": 0.9934
+    },
+    {
+      "word": "谓",
+      "start": 134.76,
+      "end": 134.94,
+      "confidence": 0.9923
+    },
+    {
+      "word": "的",
+      "start": 134.94,
+      "end": 135.08,
+      "confidence": 0.9821
+    },
+    {
+      "word": "电",
+      "start": 135.08,
+      "end": 135.22,
+      "confidence": 0.7468
+    },
+    {
+      "word": "商",
+      "start": 135.22,
+      "end": 135.42,
+      "confidence": 0.9592
+    },
+    {
+      "word": "里",
+      "start": 135.42,
+      "end": 135.82,
+      "confidence": 0.9573
+    },
+    {
+      "word": "面",
+      "start": 135.82,
+      "end": 135.98,
+      "confidence": 0.9117
+    },
+    {
+      "word": "主",
+      "start": 135.98,
+      "end": 136.2,
+      "confidence": 0.9876
+    },
+    {
+      "word": "要",
+      "start": 136.2,
+      "end": 136.3,
+      "confidence": 0.9965
+    },
+    {
+      "word": "的",
+      "start": 136.3,
+      "end": 136.42,
+      "confidence": 0.9808
+    },
+    {
+      "word": "卖",
+      "start": 136.42,
+      "end": 136.6,
+      "confidence": 0.8599
+    },
+    {
+      "word": "点",
+      "start": 136.6,
+      "end": 136.92,
+      "confidence": 0.9905
+    },
+    {
+      "word": "暂",
+      "start": 137.4,
+      "end": 137.8,
+      "confidence": 0.7627
+    },
+    {
+      "word": "时",
+      "start": 137.8,
+      "end": 138.04,
+      "confidence": 0.9984
+    },
+    {
+      "word": "还",
+      "start": 138.04,
+      "end": 138.34,
+      "confidence": 0.9843
+    },
+    {
+      "word": "没有",
+      "start": 138.34,
+      "end": 138.62,
+      "confidence": 0.9847
+    },
+    {
+      "word": "经",
+      "start": 138.62,
+      "end": 138.84,
+      "confidence": 0.987
+    },
+    {
+      "word": "过",
+      "start": 138.84,
+      "end": 139.04,
+      "confidence": 0.9976
+    },
+    {
+      "word": "大",
+      "start": 139.04,
+      "end": 139.28,
+      "confidence": 0.9849
+    },
+    {
+      "word": "规",
+      "start": 139.28,
+      "end": 139.5,
+      "confidence": 0.9932
+    },
+    {
+      "word": "模",
+      "start": 139.5,
+      "end": 139.7,
+      "confidence": 0.9856
+    },
+    {
+      "word": "的",
+      "start": 139.7,
+      "end": 139.9,
+      "confidence": 0.9376
+    },
+    {
+      "word": "随",
+      "start": 139.9,
+      "end": 140.18,
+      "confidence": 0.9664
+    },
+    {
+      "word": "机",
+      "start": 140.18,
+      "end": 140.36,
+      "confidence": 0.9604
+    },
+    {
+      "word": "对",
+      "start": 140.36,
+      "end": 140.5,
+      "confidence": 0.8944
+    },
+    {
+      "word": "照",
+      "start": 140.5,
+      "end": 140.64,
+      "confidence": 0.9877
+    },
+    {
+      "word": "实",
+      "start": 140.64,
+      "end": 140.88,
+      "confidence": 0.7525
+    },
+    {
+      "word": "验",
+      "start": 140.88,
+      "end": 141.18,
+      "confidence": 0.9626
+    },
+    {
+      "word": "这",
+      "start": 141.18,
+      "end": 141.78,
+      "confidence": 0.9647
+    },
+    {
+      "word": "一",
+      "start": 141.78,
+      "end": 141.94,
+      "confidence": 0.9969
+    },
+    {
+      "word": "块",
+      "start": 141.94,
+      "end": 142.02,
+      "confidence": 0.991
+    },
+    {
+      "word": "几",
+      "start": 142.02,
+      "end": 142.24,
+      "confidence": 0.9787
+    },
+    {
+      "word": "乎",
+      "start": 142.24,
+      "end": 142.36,
+      "confidence": 0.9043
+    },
+    {
+      "word": "是",
+      "start": 142.36,
+      "end": 142.54,
+      "confidence": 0.9943
+    },
+    {
+      "word": "空",
+      "start": 142.54,
+      "end": 142.66,
+      "confidence": 0.9018
+    },
+    {
+      "word": "白",
+      "start": 142.66,
+      "end": 142.86,
+      "confidence": 0.9707
+    },
+    {
+      "word": "的",
+      "start": 142.86,
+      "end": 143.08,
+      "confidence": 0.9945
+    },
+    {
+      "word": "这",
+      "start": 143.08,
+      "end": 143.66,
+      "confidence": 0.9405
+    },
+    {
+      "word": "也",
+      "start": 143.66,
+      "end": 143.76,
+      "confidence": 0.9597
+    },
+    {
+      "word": "难",
+      "start": 143.76,
+      "end": 143.9,
+      "confidence": 0.9892
+    },
+    {
+      "word": "免",
+      "start": 143.9,
+      "end": 144.08,
+      "confidence": 0.9949
+    },
+    {
+      "word": "像",
+      "start": 144.08,
+      "end": 144.46,
+      "confidence": 0.7545
+    },
+    {
+      "word": "彭",
+      "start": 144.46,
+      "end": 144.74,
+      "confidence": 0.8588
+    },
+    {
+      "word": "博",
+      "start": 144.74,
+      "end": 144.9,
+      "confidence": 0.955
+    },
+    {
+      "word": "社",
+      "start": 144.9,
+      "end": 145.1,
+      "confidence": 0.9191
+    },
+    {
+      "word": "今年",
+      "start": 145.1,
+      "end": 145.7,
+      "confidence": 0.2436
+    },
+    {
+      "word": "2",
+      "start": 145.7,
+      "end": 145.94,
+      "confidence": 0.7149
+    },
+    {
+      "word": "月",
+      "start": 145.94,
+      "end": 146.06,
+      "confidence": 0.9962
+    },
+    {
+      "word": "份",
+      "start": 146.06,
+      "end": 146.2,
+      "confidence": 0.9834
+    },
+    {
+      "word": "也",
+      "start": 146.2,
+      "end": 146.34,
+      "confidence": 0.9578
+    },
+    {
+      "word": "做",
+      "start": 146.34,
+      "end": 146.5,
+      "confidence": 0.8664
+    },
+    {
+      "word": "了",
+      "start": 146.5,
+      "end": 146.62,
+      "confidence": 0.9974
+    },
+    {
+      "word": "一",
+      "start": 146.62,
+      "end": 146.7,
+      "confidence": 0.9967
+    },
+    {
+      "word": "篇",
+      "start": 146.7,
+      "end": 146.8,
+      "confidence": 0.9903
+    },
+    {
+      "word": "报",
+      "start": 146.8,
+      "end": 146.96,
+      "confidence": 0.9894
+    },
+    {
+      "word": "道",
+      "start": 146.96,
+      "end": 147.14,
+      "confidence": 0.9177
+    },
+    {
+      "word": "说",
+      "start": 147.14,
+      "end": 147.58,
+      "confidence": 0.1003
+    },
+    {
+      "word": "同",
+      "start": 147.58,
+      "end": 147.78,
+      "confidence": 0.9572
+    },
+    {
+      "word": "样",
+      "start": 147.78,
+      "end": 147.98,
+      "confidence": 0.9969
+    },
+    {
+      "word": "指",
+      "start": 147.98,
+      "end": 148.18,
+      "confidence": 0.5178
+    },
+    {
+      "word": "出",
+      "start": 148.18,
+      "end": 148.3,
+      "confidence": 0.9897
+    },
+    {
+      "word": "了",
+      "start": 148.3,
+      "end": 148.4,
+      "confidence": 0.8971
+    },
+    {
+      "word": "目前",
+      "start": 148.4,
+      "end": 148.74,
+      "confidence": 0.9856
+    },
+    {
+      "word": "牛",
+      "start": 148.74,
+      "end": 149.28,
+      "confidence": 0.7914
+    },
+    {
+      "word": "出",
+      "start": 149.28,
+      "end": 149.52,
+      "confidence": 0.7088
+    },
+    {
+      "word": "乳",
+      "start": 149.52,
+      "end": 149.68,
+      "confidence": 0.5404
+    },
+    {
+      "word": "的",
+      "start": 149.68,
+      "end": 149.9,
+      "confidence": 0.9505
+    },
+    {
+      "word": "这",
+      "start": 149.9,
+      "end": 150.26,
+      "confidence": 0.9654
+    },
+    {
+      "word": "些",
+      "start": 150.26,
+      "end": 150.4,
+      "confidence": 0.9943
+    },
+    {
+      "word": "科",
+      "start": 150.4,
+      "end": 150.56,
+      "confidence": 0.987
+    },
+    {
+      "word": "学",
+      "start": 150.56,
+      "end": 150.68,
+      "confidence": 0.9969
+    },
+    {
+      "word": "证",
+      "start": 150.68,
+      "end": 150.86,
+      "confidence": 0.897
+    },
+    {
+      "word": "据",
+      "start": 150.86,
+      "end": 151.08,
+      "confidence": 0.9923
+    },
+    {
+      "word": "还是",
+      "start": 151.08,
+      "end": 151.62,
+      "confidence": 0.938
+    },
+    {
+      "word": "比",
+      "start": 151.62,
+      "end": 151.86,
+      "confidence": 0.992
+    },
+    {
+      "word": "较",
+      "start": 151.86,
+      "end": 152.0,
+      "confidence": 0.9991
+    },
+    {
+      "word": "担",
+      "start": 152.0,
+      "end": 152.1,
+      "confidence": 0.6598
+    },
+    {
+      "word": "保",
+      "start": 152.1,
+      "end": 152.36,
+      "confidence": 0.9918
+    },
+    {
+      "word": "市",
+      "start": 152.36,
+      "end": 153.02,
+      "confidence": 0.9579
+    },
+    {
+      "word": "场",
+      "start": 153.02,
+      "end": 153.18,
+      "confidence": 0.9951
+    },
+    {
+      "word": "营",
+      "start": 153.18,
+      "end": 153.38,
+      "confidence": 0.8915
+    },
+    {
+      "word": "销",
+      "start": 153.38,
+      "end": 153.5,
+      "confidence": 0.9463
+    },
+    {
+      "word": "这",
+      "start": 153.5,
+      "end": 153.7,
+      "confidence": 0.9891
+    },
+    {
+      "word": "套",
+      "start": 153.7,
+      "end": 153.86,
+      "confidence": 0.9927
+    },
+    {
+      "word": "现在",
+      "start": 162.84,
+      "end": 163.28,
+      "confidence": 0.5615
+    },
+    {
+      "word": "市",
+      "start": 163.28,
+      "end": 163.54,
+      "confidence": 0.9484
+    },
+    {
+      "word": "场",
+      "start": 163.54,
+      "end": 163.68,
+      "confidence": 0.9979
+    },
+    {
+      "word": "营",
+      "start": 163.68,
+      "end": 163.84,
+      "confidence": 0.9961
+    },
+    {
+      "word": "销",
+      "start": 163.84,
+      "end": 164.16,
+      "confidence": 0.6582
+    },
+    {
+      "word": "现在",
+      "start": 164.16,
+      "end": 165.0,
+      "confidence": 0.1869
+    },
+    {
+      "word": "牛",
+      "start": 165.0,
+      "end": 166.54,
+      "confidence": 0.935
+    },
+    {
+      "word": "出",
+      "start": 166.54,
+      "end": 166.72,
+      "confidence": 0.998
+    },
+    {
+      "word": "乳",
+      "start": 166.72,
+      "end": 166.84,
+      "confidence": 0.983
+    },
+    {
+      "word": "这",
+      "start": 166.84,
+      "end": 166.98,
+      "confidence": 0.9607
+    },
+    {
+      "word": "套",
+      "start": 166.98,
+      "end": 167.16,
+      "confidence": 0.9998
+    },
+    {
+      "word": "市",
+      "start": 167.16,
+      "end": 167.4,
+      "confidence": 0.9952
+    },
+    {
+      "word": "场",
+      "start": 167.4,
+      "end": 167.54,
+      "confidence": 0.9986
+    },
+    {
+      "word": "营",
+      "start": 167.54,
+      "end": 167.7,
+      "confidence": 0.9983
+    },
+    {
+      "word": "销",
+      "start": 167.7,
+      "end": 167.88,
+      "confidence": 0.9991
+    },
+    {
+      "word": "的",
+      "start": 167.88,
+      "end": 168.02,
+      "confidence": 0.995
+    },
+    {
+      "word": "配",
+      "start": 168.02,
+      "end": 168.22,
+      "confidence": 0.9756
+    },
+    {
+      "word": "方",
+      "start": 168.22,
+      "end": 168.48,
+      "confidence": 0.9922
+    },
+    {
+      "word": "它",
+      "start": 168.48,
+      "end": 168.84,
+      "confidence": 0.224
+    },
+    {
+      "word": "也",
+      "start": 168.84,
+      "end": 169.06,
+      "confidence": 0.9854
+    },
+    {
+      "word": "不是",
+      "start": 169.06,
+      "end": 169.46,
+      "confidence": 0.994
+    },
+    {
+      "word": "专",
+      "start": 169.46,
+      "end": 169.64,
+      "confidence": 0.9837
+    },
+    {
+      "word": "属",
+      "start": 169.64,
+      "end": 169.88,
+      "confidence": 0.9892
+    },
+    {
+      "word": "的",
+      "start": 169.88,
+      "end": 170.34,
+      "confidence": 0.9137
+    },
+    {
+      "word": "这是",
+      "start": 170.34,
+      "end": 170.8,
+      "confidence": 0.38
+    },
+    {
+      "word": "所",
+      "start": 170.8,
+      "end": 171.14,
+      "confidence": 0.9814
+    },
+    {
+      "word": "谓",
+      "start": 171.14,
+      "end": 171.26,
+      "confidence": 0.9963
+    },
+    {
+      "word": "的",
+      "start": 171.26,
+      "end": 171.36,
+      "confidence": 0.9762
+    },
+    {
+      "word": "所有",
+      "start": 171.36,
+      "end": 171.76,
+      "confidence": 0.9834
+    },
+    {
+      "word": "的",
+      "start": 171.76,
+      "end": 171.96,
+      "confidence": 0.9569
+    },
+    {
+      "word": "超",
+      "start": 171.96,
+      "end": 172.26,
+      "confidence": 0.9546
+    },
+    {
+      "word": "级",
+      "start": 172.26,
+      "end": 172.54,
+      "confidence": 0.9888
+    },
+    {
+      "word": "网",
+      "start": 172.54,
+      "end": 172.82,
+      "confidence": 0.7614
+    },
+    {
+      "word": "红",
+      "start": 172.82,
+      "end": 173.04,
+      "confidence": 0.9857
+    },
+    {
+      "word": "食",
+      "start": 173.04,
+      "end": 173.28,
+      "confidence": 0.9314
+    },
+    {
+      "word": "品",
+      "start": 173.28,
+      "end": 173.48,
+      "confidence": 0.999
+    },
+    {
+      "word": "共",
+      "start": 173.48,
+      "end": 173.78,
+      "confidence": 0.7273
+    },
+    {
+      "word": "同",
+      "start": 173.78,
+      "end": 173.98,
+      "confidence": 0.9893
+    },
+    {
+      "word": "的",
+      "start": 173.98,
+      "end": 174.12,
+      "confidence": 0.992
+    },
+    {
+      "word": "剧",
+      "start": 174.12,
+      "end": 174.28,
+      "confidence": 0.8754
+    },
+    {
+      "word": "本",
+      "start": 174.28,
+      "end": 174.44,
+      "confidence": 0.9847
+    },
+    {
+      "word": "找",
+      "start": 174.92,
+      "end": 175.14,
+      "confidence": 0.837
+    },
+    {
+      "word": "一个",
+      "start": 175.14,
+      "end": 175.44,
+      "confidence": 0.9828
+    },
+    {
+      "word": "人",
+      "start": 175.44,
+      "end": 175.7,
+      "confidence": 0.9709
+    },
+    {
+      "word": "人",
+      "start": 175.7,
+      "end": 175.82,
+      "confidence": 0.9907
+    },
+    {
+      "word": "都有",
+      "start": 175.82,
+      "end": 176.02,
+      "confidence": 0.97
+    },
+    {
+      "word": "的",
+      "start": 176.02,
+      "end": 176.18,
+      "confidence": 0.9895
+    },
+    {
+      "word": "问题",
+      "start": 176.18,
+      "end": 176.44,
+      "confidence": 0.9991
+    },
+    {
+      "word": "是",
+      "start": 176.44,
+      "end": 176.82,
+      "confidence": 0.6263
+    },
+    {
+      "word": "吧",
+      "start": 176.82,
+      "end": 177.0,
+      "confidence": 0.9955
+    },
+    {
+      "word": "贴",
+      "start": 177.0,
+      "end": 177.5,
+      "confidence": 0.9149
+    },
+    {
+      "word": "一个",
+      "start": 177.5,
+      "end": 177.82,
+      "confidence": 0.9923
+    },
+    {
+      "word": "科",
+      "start": 177.82,
+      "end": 178.12,
+      "confidence": 0.9955
+    },
+    {
+      "word": "学",
+      "start": 178.12,
+      "end": 178.48,
+      "confidence": 0.9964
+    },
+    {
+      "word": "名",
+      "start": 178.48,
+      "end": 178.76,
+      "confidence": 0.8981
+    },
+    {
+      "word": "词",
+      "start": 178.76,
+      "end": 179.1,
+      "confidence": 0.8763
+    },
+    {
+      "word": "然后",
+      "start": 179.1,
+      "end": 179.68,
+      "confidence": 0.8553
+    },
+    {
+      "word": "换",
+      "start": 179.68,
+      "end": 180.5,
+      "confidence": 0.9339
+    },
+    {
+      "word": "瘦",
+      "start": 180.5,
+      "end": 180.7,
+      "confidence": 0.7949
+    },
+    {
+      "word": "众",
+      "start": 180.7,
+      "end": 180.98,
+      "confidence": 0.6321
+    },
+    {
+      "word": "换",
+      "start": 180.98,
+      "end": 181.26,
+      "confidence": 0.988
+    },
+    {
+      "word": "渠",
+      "start": 181.26,
+      "end": 181.48,
+      "confidence": 0.8012
+    },
+    {
+      "word": "道",
+      "start": 181.48,
+      "end": 181.66,
+      "confidence": 0.994
+    },
+    {
+      "word": "制",
+      "start": 181.66,
+      "end": 181.9,
+      "confidence": 0.7105
+    },
+    {
+      "word": "造",
+      "start": 181.9,
+      "end": 182.04,
+      "confidence": 0.9978
+    },
+    {
+      "word": "焦",
+      "start": 182.04,
+      "end": 182.22,
+      "confidence": 0.6977
+    },
+    {
+      "word": "虑",
+      "start": 182.22,
+      "end": 182.4,
+      "confidence": 0.8929
+    },
+    {
+      "word": "卖",
+      "start": 182.4,
+      "end": 182.64,
+      "confidence": 0.8045
+    },
+    {
+      "word": "败",
+      "start": 182.64,
+      "end": 182.74,
+      "confidence": 0.8921
+    },
+    {
+      "word": "现",
+      "start": 182.74,
+      "end": 183.36,
+      "confidence": 0.0009
+    },
+    {
+      "word": "认",
+      "start": 183.36,
+      "end": 183.96,
+      "confidence": 0.5578
+    },
+    {
+      "word": "清",
+      "start": 183.96,
+      "end": 184.14,
+      "confidence": 0.9536
+    },
+    {
+      "word": "这个",
+      "start": 184.14,
+      "end": 184.38,
+      "confidence": 0.8908
+    },
+    {
+      "word": "结",
+      "start": 184.38,
+      "end": 184.52,
+      "confidence": 0.9388
+    },
+    {
+      "word": "构",
+      "start": 184.52,
+      "end": 184.66,
+      "confidence": 0.9405
+    },
+    {
+      "word": "比",
+      "start": 184.66,
+      "end": 185.02,
+      "confidence": 0.4719
+    },
+    {
+      "word": "专",
+      "start": 185.02,
+      "end": 185.22,
+      "confidence": 0.9922
+    },
+    {
+      "word": "门",
+      "start": 185.22,
+      "end": 185.36,
+      "confidence": 0.999
+    },
+    {
+      "word": "去",
+      "start": 185.36,
+      "end": 185.58,
+      "confidence": 0.5666
+    },
+    {
+      "word": "研",
+      "start": 185.58,
+      "end": 185.74,
+      "confidence": 0.9873
+    },
+    {
+      "word": "究",
+      "start": 185.74,
+      "end": 185.9,
+      "confidence": 0.9986
+    },
+    {
+      "word": "某",
+      "start": 185.9,
+      "end": 186.14,
+      "confidence": 0.661
+    },
+    {
+      "word": "个",
+      "start": 186.14,
+      "end": 186.26,
+      "confidence": 0.9859
+    },
+    {
+      "word": "成",
+      "start": 186.26,
+      "end": 186.38,
+      "confidence": 0.9335
+    },
+    {
+      "word": "分",
+      "start": 186.38,
+      "end": 186.58,
+      "confidence": 0.8851
+    },
+    {
+      "word": "我觉得",
+      "start": 186.58,
+      "end": 187.04,
+      "confidence": 0.6995
+    },
+    {
+      "word": "省",
+      "start": 187.04,
+      "end": 187.66,
+      "confidence": 0.8715
+    },
+    {
+      "word": "事",
+      "start": 187.66,
+      "end": 187.78,
+      "confidence": 0.9818
+    },
+    {
+      "word": "多",
+      "start": 187.78,
+      "end": 187.96,
+      "confidence": 0.9616
+    },
+    {
+      "word": "了",
+      "start": 187.96,
+      "end": 188.24,
+      "confidence": 0.9758
+    },
+    {
+      "word": "所以",
+      "start": 188.76,
+      "end": 188.96,
+      "confidence": 0.9471
+    },
+    {
+      "word": "对",
+      "start": 188.96,
+      "end": 190.02,
+      "confidence": 0.8493
+    },
+    {
+      "word": "于",
+      "start": 190.02,
+      "end": 190.16,
+      "confidence": 0.9885
+    },
+    {
+      "word": "牛",
+      "start": 190.16,
+      "end": 190.28,
+      "confidence": 0.9448
+    },
+    {
+      "word": "出",
+      "start": 190.28,
+      "end": 190.5,
+      "confidence": 0.5606
+    },
+    {
+      "word": "乳",
+      "start": 190.5,
+      "end": 190.62,
+      "confidence": 0.3655
+    },
+    {
+      "word": "你",
+      "start": 190.62,
+      "end": 191.04,
+      "confidence": 0.6793
+    },
+    {
+      "word": "怎么",
+      "start": 191.04,
+      "end": 191.24,
+      "confidence": 0.9773
+    },
+    {
+      "word": "看",
+      "start": 191.24,
+      "end": 191.42,
+      "confidence": 0.9971
+    },
+    {
+      "word": "呢",
+      "start": 191.42,
+      "end": 191.58,
+      "confidence": 0.5103
+    },
+    {
+      "word": "我是",
+      "start": 192.1,
+      "end": 192.3,
+      "confidence": 0.8888
+    },
+    {
+      "word": "天",
+      "start": 192.3,
+      "end": 192.52,
+      "confidence": 0.9762
+    },
+    {
+      "word": "霸",
+      "start": 192.52,
+      "end": 192.66,
+      "confidence": 0.8572
+    },
+    {
+      "word": "咱",
+      "start": 192.66,
+      "end": 193.08,
+      "confidence": 0.9611
+    },
+    {
+      "word": "们",
+      "start": 193.08,
+      "end": 193.18,
+      "confidence": 0.9993
+    },
+    {
+      "word": "今天",
+      "start": 193.18,
+      "end": 193.52,
+      "confidence": 0.9852
+    },
+    {
+      "word": "就",
+      "start": 193.52,
+      "end": 193.92,
+      "confidence": 0.9249
+    },
+    {
+      "word": "聊",
+      "start": 193.92,
+      "end": 194.06,
+      "confidence": 0.9909
+    },
+    {
+      "word": "到",
+      "start": 194.06,
+      "end": 194.18,
+      "confidence": 0.996
+    },
+    {
+      "word": "这",
+      "start": 194.18,
+      "end": 194.3,
+      "confidence": 0.993
+    },
+    {
+      "word": "儿",
+      "start": 194.3,
+      "end": 194.54,
+      "confidence": 0.7372
+    },
+    {
+      "word": "下次",
+      "start": 194.54,
+      "end": 194.98,
+      "confidence": 0.8422
+    },
+    {
+      "word": "再见",
+      "start": 194.98,
+      "end": 195.4,
+      "confidence": 0.9976
+    }
+  ],
+  "segments": [
+    {
+      "start": 2.0,
+      "end": 5.84,
+      "text": "还记得当年那个红鸡翼石的嬰儿宝剑品叫牛出乳吗"
+    },
+    {
+      "start": 6.22,
+      "end": 7.54,
+      "text": "现在他又杀回来了"
+    },
+    {
+      "start": 7.54,
+      "end": 9.5,
+      "text": "咱们看看这到底是怎么回事"
+    },
+    {
+      "start": 10.02,
+      "end": 13.04,
+      "text": "先说牛出乳当年可是号称乃中黄金"
+    },
+    {
+      "start": 13.04,
+      "end": 15.78,
+      "text": "还有大量的免疫阴子、生长阴子"
+    },
+    {
+      "start": 15.78,
+      "end": 17.76,
+      "text": "可以提高孩子的免疫力"
+    },
+    {
+      "start": 17.76,
+      "end": 20.12,
+      "text": "当年的宣传能那真是铺天盖地"
+    },
+    {
+      "start": 20.54,
+      "end": 22.34,
+      "text": "结果2012年"
+    },
+    {
+      "start": 22.34,
+      "end": 23.94,
+      "text": "卫生部的一直禁令"
+    },
+    {
+      "start": 23.94,
+      "end": 26.48,
+      "text": "因幼儿产品禁止天家牛出乳"
+    },
+    {
+      "start": 26.48,
+      "end": 28.78,
+      "text": "让这个盖链瞬间杀了车"
+    },
+    {
+      "start": 29.22,
+      "end": 31.5,
+      "text": "当时的理由其实非常合理"
+    },
+    {
+      "start": 31.5,
+      "end": 32.86,
+      "text": "因为要所谓的牛出乳"
+    },
+    {
+      "start": 32.86,
+      "end": 36.64,
+      "text": "是牛刚好产宰的7天内的乳滋"
+    },
+    {
+      "start": 36.64,
+      "end": 39.4,
+      "text": "在工业化的这个过程中"
+    },
+    {
+      "start": 39.4,
+      "end": 42.4,
+      "text": "收集质量控制都是非常困难的"
+    },
+    {
+      "start": 42.4,
+      "end": 43.94,
+      "text": "也没什么标准"
+    },
+    {
+      "start": 43.94,
+      "end": 46.24,
+      "text": "所以很多的不良商家"
+    },
+    {
+      "start": 46.24,
+      "end": 48.16,
+      "text": "以次充好混水摸鱼"
+    },
+    {
+      "start": 48.16,
+      "end": 50.46,
+      "text": "造成了很多的社会乱象"
+    },
+    {
+      "start": 50.9,
+      "end": 52.72,
+      "text": "这两年牛出乳又回来了"
+    },
+    {
+      "start": 52.72,
+      "end": 53.76,
+      "text": "但是这一次"
+    },
+    {
+      "start": 53.76,
+      "end": 57.08,
+      "text": "它这个火是从美国烧到国内的"
+    },
+    {
+      "start": 57.08,
+      "end": 59.22,
+      "text": "美国这两年牛出乳产品"
+    },
+    {
+      "start": 59.22,
+      "end": 62.76,
+      "text": "从原来的61万美元市场份额"
+    },
+    {
+      "start": 62.76,
+      "end": 65.12,
+      "text": "一下子涨到了1,900万美元"
+    },
+    {
+      "start": 65.12,
+      "end": 67.04,
+      "text": "整整涨了300倍"
+    },
+    {
+      "start": 67.64,
+      "end": 69.62,
+      "text": "这一次有什么不一样的"
+    },
+    {
+      "start": 70.81,
+      "end": 72.17,
+      "text": "这一次有什么不一样"
+    },
+    {
+      "start": 72.17,
+      "end": 73.85,
+      "text": "我总结有三个变化"
+    },
+    {
+      "start": 73.85,
+      "end": 75.83,
+      "text": "这第一个就是对象变了"
+    },
+    {
+      "start": 75.83,
+      "end": 78.91,
+      "text": "从原来的银尔换成了成年人了"
+    },
+    {
+      "start": 78.91,
+      "end": 80.85,
+      "text": "第二个是宣传"
+    },
+    {
+      "start": 80.85,
+      "end": 82.45,
+      "text": "提高免银尔免移力"
+    },
+    {
+      "start": 82.45,
+      "end": 86.11,
+      "text": "这次改了是修复长道的功能"
+    },
+    {
+      "start": 86.11,
+      "end": 89.57,
+      "text": "改善皮肤和抗设和抗"
+    },
+    {
+      "start": 90.11,
+      "end": 91.97,
+      "text": "改善皮肤和抗衰老"
+    },
+    {
+      "start": 92.79,
+      "end": 94.73,
+      "text": "第三也是渠道也换了"
+    },
+    {
+      "start": 94.73,
+      "end": 99.27,
+      "text": "以前是威商群"
+    },
+    {
+      "start": 99.27,
+      "end": 101.17,
+      "text": "思欲做职销"
+    },
+    {
+      "start": 101.89,
+      "end": 104.31,
+      "text": "现在是直播式靠主播带户"
+    },
+    {
+      "start": 104.89,
+      "end": 106.27,
+      "text": "我也研究了一下"
+    },
+    {
+      "start": 106.27,
+      "end": 107.83,
+      "text": "牛出乳的科学证据"
+    },
+    {
+      "start": 109.16,
+      "end": 110.34,
+      "text": "我也研究了一下"
+    },
+    {
+      "start": 110.34,
+      "end": 111.94,
+      "text": "牛出乳的科学证据"
+    },
+    {
+      "start": 111.94,
+      "end": 114.32,
+      "text": "目前来看还是有一些研究的"
+    },
+    {
+      "start": 114.32,
+      "end": 118.1,
+      "text": "主要是集中在运动员高强度训练之后"
+    },
+    {
+      "start": 118.1,
+      "end": 120.52,
+      "text": "它的长道的修复"
+    },
+    {
+      "start": 120.52,
+      "end": 123.72,
+      "text": "它的长道修复的这些特定的场景"
+    },
+    {
+      "start": 123.72,
+      "end": 125.24,
+      "text": "在这个条件下"
+    },
+    {
+      "start": 125.24,
+      "end": 127.22,
+      "text": "牛出乳确实有一定效果"
+    },
+    {
+      "start": 128.02,
+      "end": 130.34,
+      "text": "但是针对于普通的成年人"
+    },
+    {
+      "start": 130.34,
+      "end": 133.54,
+      "text": "像做皮肤、抗衰、日常免疫"
+    },
+    {
+      "start": 133.54,
+      "end": 136.92,
+      "text": "这些所谓的电商里面主要的卖点"
+    },
+    {
+      "start": 137.4,
+      "end": 141.18,
+      "text": "暂时还没有经过大规模的随机对照实验"
+    },
+    {
+      "start": 141.18,
+      "end": 143.08,
+      "text": "这一块几乎是空白的"
+    },
+    {
+      "start": 143.08,
+      "end": 145.1,
+      "text": "这也难免像彭博社"
+    },
+    {
+      "start": 145.1,
+      "end": 147.14,
+      "text": "今年2月份也做了一篇报道"
+    },
+    {
+      "start": 147.14,
+      "end": 148.74,
+      "text": "说同样指出了目前"
+    },
+    {
+      "start": 148.74,
+      "end": 151.08,
+      "text": "牛出乳的这些科学证据"
+    },
+    {
+      "start": 151.08,
+      "end": 153.86,
+      "text": "还是比较担保市场营销这套"
+    },
+    {
+      "start": 162.84,
+      "end": 164.16,
+      "text": "现在市场营销"
+    },
+    {
+      "start": 164.16,
+      "end": 168.48,
+      "text": "现在牛出乳这套市场营销的配方"
+    },
+    {
+      "start": 168.48,
+      "end": 170.34,
+      "text": "它也不是专属的"
+    },
+    {
+      "start": 170.34,
+      "end": 174.44,
+      "text": "这是所谓的所有的超级网红食品共同的剧本"
+    },
+    {
+      "start": 174.92,
+      "end": 176.44,
+      "text": "找一个人人都有的问题"
+    },
+    {
+      "start": 176.44,
+      "end": 177.0,
+      "text": "是吧"
+    },
+    {
+      "start": 177.0,
+      "end": 179.1,
+      "text": "贴一个科学名词"
+    },
+    {
+      "start": 179.1,
+      "end": 183.36,
+      "text": "然后换瘦众换渠道制造焦虑卖败现"
+    },
+    {
+      "start": 183.36,
+      "end": 186.58,
+      "text": "认清这个结构比专门去研究某个成分"
+    },
+    {
+      "start": 186.58,
+      "end": 188.24,
+      "text": "我觉得省事多了"
+    },
+    {
+      "start": 188.76,
+      "end": 190.62,
+      "text": "所以对于牛出乳"
+    },
+    {
+      "start": 190.62,
+      "end": 191.58,
+      "text": "你怎么看呢"
+    },
+    {
+      "start": 192.1,
+      "end": 192.66,
+      "text": "我是天霸"
+    },
+    {
+      "start": 192.66,
+      "end": 194.54,
+      "text": "咱们今天就聊到这儿"
+    },
+    {
+      "start": 194.54,
+      "end": 195.4,
+      "text": "下次再见"
+    }
+  ]
+}

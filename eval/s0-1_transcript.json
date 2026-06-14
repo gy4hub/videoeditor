@@ -1,0 +1,1338 @@
+{
+  "source": "test_speech.wav",
+  "model": "/sessions/amazing-confident-bardeen/.cache/huggingface/hub/models--Systran--faster-whisper-tiny/snapshots/main",
+  "language": "zh",
+  "language_probability": 1,
+  "duration_s": 76.536,
+  "transcribe_time_s": 3.9,
+  "words": [
+    {
+      "word": "欢",
+      "start": 0.0,
+      "end": 0.4,
+      "confidence": 0.827
+    },
+    {
+      "word": "迎",
+      "start": 0.4,
+      "end": 0.64,
+      "confidence": 0.9999
+    },
+    {
+      "word": "来",
+      "start": 0.64,
+      "end": 0.94,
+      "confidence": 0.9707
+    },
+    {
+      "word": "到",
+      "start": 0.94,
+      "end": 1.26,
+      "confidence": 0.9897
+    },
+    {
+      "word": "视",
+      "start": 1.26,
+      "end": 1.48,
+      "confidence": 0.8595
+    },
+    {
+      "word": "频",
+      "start": 1.48,
+      "end": 1.8,
+      "confidence": 0.9912
+    },
+    {
+      "word": "剪",
+      "start": 1.8,
+      "end": 2.1,
+      "confidence": 0.7828
+    },
+    {
+      "word": "辑",
+      "start": 2.1,
+      "end": 2.32,
+      "confidence": 0.8416
+    },
+    {
+      "word": "自",
+      "start": 2.32,
+      "end": 2.56,
+      "confidence": 0.7862
+    },
+    {
+      "word": "动",
+      "start": 2.56,
+      "end": 2.74,
+      "confidence": 0.9923
+    },
+    {
+      "word": "画",
+      "start": 2.74,
+      "end": 3.06,
+      "confidence": 0.3803
+    },
+    {
+      "word": "馆",
+      "start": 3.06,
+      "end": 3.34,
+      "confidence": 0.7815
+    },
+    {
+      "word": "线",
+      "start": 3.34,
+      "end": 3.6,
+      "confidence": 0.7165
+    },
+    {
+      "word": "项",
+      "start": 3.6,
+      "end": 3.94,
+      "confidence": 0.8724
+    },
+    {
+      "word": "目",
+      "start": 3.94,
+      "end": 4.08,
+      "confidence": 0.9814
+    },
+    {
+      "word": "的",
+      "start": 4.08,
+      "end": 4.4,
+      "confidence": 0.9972
+    },
+    {
+      "word": "测",
+      "start": 4.4,
+      "end": 4.68,
+      "confidence": 0.8538
+    },
+    {
+      "word": "试",
+      "start": 4.68,
+      "end": 4.86,
+      "confidence": 0.9051
+    },
+    {
+      "word": "环",
+      "start": 4.86,
+      "end": 5.24,
+      "confidence": 0.803
+    },
+    {
+      "word": "节",
+      "start": 5.24,
+      "end": 5.88,
+      "confidence": 0.9709
+    },
+    {
+      "word": "今天",
+      "start": 5.88,
+      "end": 6.52,
+      "confidence": 0.7894
+    },
+    {
+      "word": "我们",
+      "start": 6.52,
+      "end": 7.04,
+      "confidence": 0.9875
+    },
+    {
+      "word": "来",
+      "start": 7.04,
+      "end": 7.28,
+      "confidence": 0.9901
+    },
+    {
+      "word": "聊",
+      "start": 7.28,
+      "end": 7.56,
+      "confidence": 0.9049
+    },
+    {
+      "word": "一",
+      "start": 7.56,
+      "end": 7.7,
+      "confidence": 0.9023
+    },
+    {
+      "word": "聊",
+      "start": 7.7,
+      "end": 8.04,
+      "confidence": 0.9993
+    },
+    {
+      "word": "人",
+      "start": 8.04,
+      "end": 8.34,
+      "confidence": 0.6472
+    },
+    {
+      "word": "工",
+      "start": 8.34,
+      "end": 8.56,
+      "confidence": 0.978
+    },
+    {
+      "word": "智",
+      "start": 8.56,
+      "end": 8.84,
+      "confidence": 0.9543
+    },
+    {
+      "word": "能",
+      "start": 8.84,
+      "end": 9.06,
+      "confidence": 0.9936
+    },
+    {
+      "word": "在",
+      "start": 9.06,
+      "end": 9.46,
+      "confidence": 0.7489
+    },
+    {
+      "word": "视",
+      "start": 9.46,
+      "end": 9.64,
+      "confidence": 0.9705
+    },
+    {
+      "word": "频",
+      "start": 9.64,
+      "end": 9.88,
+      "confidence": 0.9926
+    },
+    {
+      "word": "制",
+      "start": 9.88,
+      "end": 10.16,
+      "confidence": 0.3744
+    },
+    {
+      "word": "作",
+      "start": 10.16,
+      "end": 10.34,
+      "confidence": 0.9967
+    },
+    {
+      "word": "中",
+      "start": 10.34,
+      "end": 10.58,
+      "confidence": 0.998
+    },
+    {
+      "word": "的",
+      "start": 10.58,
+      "end": 10.86,
+      "confidence": 0.9941
+    },
+    {
+      "word": "应",
+      "start": 10.86,
+      "end": 11.1,
+      "confidence": 0.8965
+    },
+    {
+      "word": "用",
+      "start": 11.1,
+      "end": 11.92,
+      "confidence": 0.9928
+    },
+    {
+      "word": "人",
+      "start": 11.92,
+      "end": 12.42,
+      "confidence": 0.9702
+    },
+    {
+      "word": "工",
+      "start": 12.42,
+      "end": 12.72,
+      "confidence": 0.9993
+    },
+    {
+      "word": "智",
+      "start": 12.72,
+      "end": 12.98,
+      "confidence": 0.9989
+    },
+    {
+      "word": "能",
+      "start": 12.98,
+      "end": 13.28,
+      "confidence": 0.9998
+    },
+    {
+      "word": "在",
+      "start": 13.28,
+      "end": 13.62,
+      "confidence": 0.9691
+    },
+    {
+      "word": "视",
+      "start": 13.62,
+      "end": 13.78,
+      "confidence": 0.9958
+    },
+    {
+      "word": "频",
+      "start": 13.78,
+      "end": 14.04,
+      "confidence": 0.9989
+    },
+    {
+      "word": "制",
+      "start": 14.04,
+      "end": 14.28,
+      "confidence": 0.9806
+    },
+    {
+      "word": "作",
+      "start": 14.28,
+      "end": 14.48,
+      "confidence": 0.9977
+    },
+    {
+      "word": "中",
+      "start": 14.48,
+      "end": 14.72,
+      "confidence": 0.9999
+    },
+    {
+      "word": "的",
+      "start": 14.72,
+      "end": 15.02,
+      "confidence": 0.9971
+    },
+    {
+      "word": "应",
+      "start": 15.02,
+      "end": 15.12,
+      "confidence": 0.9953
+    },
+    {
+      "word": "用",
+      "start": 15.12,
+      "end": 15.76,
+      "confidence": 0.9998
+    },
+    {
+      "word": "已经",
+      "start": 15.76,
+      "end": 16.4,
+      "confidence": 0.65
+    },
+    {
+      "word": "越",
+      "start": 16.4,
+      "end": 16.8,
+      "confidence": 0.9916
+    },
+    {
+      "word": "来",
+      "start": 16.8,
+      "end": 17.0,
+      "confidence": 0.9976
+    },
+    {
+      "word": "越",
+      "start": 17.0,
+      "end": 17.18,
+      "confidence": 0.9999
+    },
+    {
+      "word": "广",
+      "start": 17.18,
+      "end": 17.54,
+      "confidence": 0.863
+    },
+    {
+      "word": "泛",
+      "start": 17.54,
+      "end": 17.82,
+      "confidence": 0.91
+    },
+    {
+      "word": "了",
+      "start": 17.82,
+      "end": 18.52,
+      "confidence": 0.9955
+    },
+    {
+      "word": "首先",
+      "start": 18.52,
+      "end": 19.18,
+      "confidence": 0.6843
+    },
+    {
+      "word": "我们",
+      "start": 19.18,
+      "end": 20.0,
+      "confidence": 0.9297
+    },
+    {
+      "word": "看一下",
+      "start": 20.0,
+      "end": 20.64,
+      "confidence": 0.7655
+    },
+    {
+      "word": "语",
+      "start": 20.64,
+      "end": 21.3,
+      "confidence": 0.7779
+    },
+    {
+      "word": "音",
+      "start": 21.3,
+      "end": 21.4,
+      "confidence": 0.9071
+    },
+    {
+      "word": "时",
+      "start": 21.4,
+      "end": 21.74,
+      "confidence": 0.7141
+    },
+    {
+      "word": "别",
+      "start": 21.74,
+      "end": 21.98,
+      "confidence": 0.9734
+    },
+    {
+      "word": "技",
+      "start": 21.98,
+      "end": 22.4,
+      "confidence": 0.9022
+    },
+    {
+      "word": "术",
+      "start": 22.4,
+      "end": 22.82,
+      "confidence": 0.9861
+    },
+    {
+      "word": "语",
+      "start": 22.82,
+      "end": 23.38,
+      "confidence": 0.9662
+    },
+    {
+      "word": "音",
+      "start": 23.38,
+      "end": 23.62,
+      "confidence": 0.9977
+    },
+    {
+      "word": "时",
+      "start": 23.62,
+      "end": 23.86,
+      "confidence": 0.9839
+    },
+    {
+      "word": "别",
+      "start": 23.86,
+      "end": 24.14,
+      "confidence": 0.9926
+    },
+    {
+      "word": "技",
+      "start": 24.14,
+      "end": 24.42,
+      "confidence": 0.998
+    },
+    {
+      "word": "术",
+      "start": 24.42,
+      "end": 24.72,
+      "confidence": 1.0
+    },
+    {
+      "word": "可以",
+      "start": 24.72,
+      "end": 25.02,
+      "confidence": 0.9709
+    },
+    {
+      "word": "把",
+      "start": 25.02,
+      "end": 25.42,
+      "confidence": 0.9584
+    },
+    {
+      "word": "说",
+      "start": 25.42,
+      "end": 25.68,
+      "confidence": 0.9068
+    },
+    {
+      "word": "话",
+      "start": 25.68,
+      "end": 25.88,
+      "confidence": 0.9773
+    },
+    {
+      "word": "的",
+      "start": 25.88,
+      "end": 26.2,
+      "confidence": 0.8821
+    },
+    {
+      "word": "声",
+      "start": 26.2,
+      "end": 26.4,
+      "confidence": 0.9879
+    },
+    {
+      "word": "音",
+      "start": 26.4,
+      "end": 26.96,
+      "confidence": 0.9989
+    },
+    {
+      "word": "转",
+      "start": 26.96,
+      "end": 27.42,
+      "confidence": 0.5226
+    },
+    {
+      "word": "换",
+      "start": 27.42,
+      "end": 27.76,
+      "confidence": 0.5748
+    },
+    {
+      "word": "成",
+      "start": 27.76,
+      "end": 28.08,
+      "confidence": 0.7734
+    },
+    {
+      "word": "文",
+      "start": 28.08,
+      "end": 28.44,
+      "confidence": 0.8782
+    },
+    {
+      "word": "字",
+      "start": 28.44,
+      "end": 28.92,
+      "confidence": 0.9902
+    },
+    {
+      "word": "转",
+      "start": 28.92,
+      "end": 29.38,
+      "confidence": 0.6376
+    },
+    {
+      "word": "换",
+      "start": 29.38,
+      "end": 29.72,
+      "confidence": 0.9967
+    },
+    {
+      "word": "成",
+      "start": 29.72,
+      "end": 30.06,
+      "confidence": 0.9995
+    },
+    {
+      "word": "文",
+      "start": 30.06,
+      "end": 30.34,
+      "confidence": 0.9924
+    },
+    {
+      "word": "字",
+      "start": 30.34,
+      "end": 30.54,
+      "confidence": 0.9996
+    },
+    {
+      "word": "之",
+      "start": 30.54,
+      "end": 30.92,
+      "confidence": 0.9479
+    },
+    {
+      "word": "后",
+      "start": 30.92,
+      "end": 31.28,
+      "confidence": 0.9995
+    },
+    {
+      "word": "我们",
+      "start": 31.28,
+      "end": 31.86,
+      "confidence": 0.8031
+    },
+    {
+      "word": "就可以",
+      "start": 31.86,
+      "end": 32.32,
+      "confidence": 0.9364
+    },
+    {
+      "word": "做",
+      "start": 32.32,
+      "end": 32.8,
+      "confidence": 0.9617
+    },
+    {
+      "word": "很多",
+      "start": 32.8,
+      "end": 33.34,
+      "confidence": 0.9801
+    },
+    {
+      "word": "事情",
+      "start": 33.34,
+      "end": 33.82,
+      "confidence": 0.9814
+    },
+    {
+      "word": "了",
+      "start": 33.82,
+      "end": 34.66,
+      "confidence": 0.9574
+    },
+    {
+      "word": "比如",
+      "start": 34.66,
+      "end": 35.08,
+      "confidence": 0.777
+    },
+    {
+      "word": "说",
+      "start": 35.08,
+      "end": 36.06,
+      "confidence": 0.978
+    },
+    {
+      "word": "自",
+      "start": 36.06,
+      "end": 36.26,
+      "confidence": 0.7457
+    },
+    {
+      "word": "动",
+      "start": 36.26,
+      "end": 36.58,
+      "confidence": 0.9871
+    },
+    {
+      "word": "生",
+      "start": 36.58,
+      "end": 36.86,
+      "confidence": 0.91
+    },
+    {
+      "word": "成",
+      "start": 36.86,
+      "end": 37.18,
+      "confidence": 0.8651
+    },
+    {
+      "word": "字",
+      "start": 37.18,
+      "end": 37.54,
+      "confidence": 0.6416
+    },
+    {
+      "word": "幕",
+      "start": 37.54,
+      "end": 37.98,
+      "confidence": 0.9046
+    },
+    {
+      "word": "自",
+      "start": 37.98,
+      "end": 38.36,
+      "confidence": 0.8197
+    },
+    {
+      "word": "动",
+      "start": 38.36,
+      "end": 38.68,
+      "confidence": 0.9971
+    },
+    {
+      "word": "剪",
+      "start": 38.68,
+      "end": 38.98,
+      "confidence": 0.6976
+    },
+    {
+      "word": "辑",
+      "start": 38.98,
+      "end": 39.2,
+      "confidence": 0.7407
+    },
+    {
+      "word": "视",
+      "start": 39.2,
+      "end": 39.54,
+      "confidence": 0.8911
+    },
+    {
+      "word": "频",
+      "start": 39.54,
+      "end": 40.14,
+      "confidence": 0.9639
+    },
+    {
+      "word": "等等",
+      "start": 40.14,
+      "end": 41.46,
+      "confidence": 0.957
+    },
+    {
+      "word": "等等",
+      "start": 41.46,
+      "end": 41.88,
+      "confidence": 0.9887
+    },
+    {
+      "word": "这",
+      "start": 41.88,
+      "end": 42.26,
+      "confidence": 0.9763
+    },
+    {
+      "word": "些",
+      "start": 42.26,
+      "end": 42.48,
+      "confidence": 0.9982
+    },
+    {
+      "word": "功",
+      "start": 42.48,
+      "end": 42.82,
+      "confidence": 0.9955
+    },
+    {
+      "word": "能",
+      "start": 42.82,
+      "end": 43.3,
+      "confidence": 0.9984
+    },
+    {
+      "word": "都",
+      "start": 43.3,
+      "end": 43.82,
+      "confidence": 0.9603
+    },
+    {
+      "word": "非常",
+      "start": 43.82,
+      "end": 44.38,
+      "confidence": 0.9882
+    },
+    {
+      "word": "实",
+      "start": 44.38,
+      "end": 44.8,
+      "confidence": 0.6455
+    },
+    {
+      "word": "用",
+      "start": 44.8,
+      "end": 45.34,
+      "confidence": 0.9048
+    },
+    {
+      "word": "好",
+      "start": 45.34,
+      "end": 46.1,
+      "confidence": 0.8656
+    },
+    {
+      "word": "让",
+      "start": 46.1,
+      "end": 46.7,
+      "confidence": 0.919
+    },
+    {
+      "word": "我们",
+      "start": 46.7,
+      "end": 47.18,
+      "confidence": 0.9905
+    },
+    {
+      "word": "继",
+      "start": 47.18,
+      "end": 47.5,
+      "confidence": 0.9619
+    },
+    {
+      "word": "续",
+      "start": 47.5,
+      "end": 47.94,
+      "confidence": 0.9992
+    },
+    {
+      "word": "来",
+      "start": 47.94,
+      "end": 48.46,
+      "confidence": 0.9868
+    },
+    {
+      "word": "看一下",
+      "start": 48.46,
+      "end": 48.92,
+      "confidence": 0.378
+    },
+    {
+      "word": "一个",
+      "start": 48.92,
+      "end": 49.38,
+      "confidence": 0.9757
+    },
+    {
+      "word": "话",
+      "start": 49.38,
+      "end": 49.74,
+      "confidence": 0.9288
+    },
+    {
+      "word": "题",
+      "start": 49.74,
+      "end": 50.5,
+      "confidence": 0.9961
+    },
+    {
+      "word": "下",
+      "start": 50.5,
+      "end": 51.0,
+      "confidence": 0.5787
+    },
+    {
+      "word": "一个",
+      "start": 51.0,
+      "end": 51.3,
+      "confidence": 0.9938
+    },
+    {
+      "word": "话",
+      "start": 51.3,
+      "end": 51.72,
+      "confidence": 0.9947
+    },
+    {
+      "word": "题",
+      "start": 51.72,
+      "end": 52.1,
+      "confidence": 0.9989
+    },
+    {
+      "word": "是",
+      "start": 52.1,
+      "end": 52.4,
+      "confidence": 0.9795
+    },
+    {
+      "word": "关",
+      "start": 52.4,
+      "end": 52.64,
+      "confidence": 0.9766
+    },
+    {
+      "word": "于",
+      "start": 52.64,
+      "end": 52.86,
+      "confidence": 0.9983
+    },
+    {
+      "word": "视",
+      "start": 52.86,
+      "end": 53.16,
+      "confidence": 0.9832
+    },
+    {
+      "word": "频",
+      "start": 53.16,
+      "end": 53.36,
+      "confidence": 0.9966
+    },
+    {
+      "word": "的",
+      "start": 53.36,
+      "end": 53.7,
+      "confidence": 0.9745
+    },
+    {
+      "word": "自",
+      "start": 53.7,
+      "end": 53.86,
+      "confidence": 0.9833
+    },
+    {
+      "word": "动",
+      "start": 53.86,
+      "end": 54.14,
+      "confidence": 0.9959
+    },
+    {
+      "word": "切",
+      "start": 54.14,
+      "end": 54.44,
+      "confidence": 0.7837
+    },
+    {
+      "word": "割",
+      "start": 54.44,
+      "end": 54.76,
+      "confidence": 0.9822
+    },
+    {
+      "word": "与",
+      "start": 54.76,
+      "end": 55.04,
+      "confidence": 0.8736
+    },
+    {
+      "word": "拼",
+      "start": 55.04,
+      "end": 55.38,
+      "confidence": 0.7508
+    },
+    {
+      "word": "阶",
+      "start": 55.38,
+      "end": 55.96,
+      "confidence": 0.451
+    },
+    {
+      "word": "通",
+      "start": 55.96,
+      "end": 56.46,
+      "confidence": 0.9926
+    },
+    {
+      "word": "过",
+      "start": 56.46,
+      "end": 56.74,
+      "confidence": 0.6789
+    },
+    {
+      "word": "精",
+      "start": 56.74,
+      "end": 57.02,
+      "confidence": 0.2497
+    },
+    {
+      "word": "确",
+      "start": 57.02,
+      "end": 57.24,
+      "confidence": 0.9169
+    },
+    {
+      "word": "的",
+      "start": 57.24,
+      "end": 57.54,
+      "confidence": 0.9839
+    },
+    {
+      "word": "时间",
+      "start": 57.54,
+      "end": 57.86,
+      "confidence": 0.9635
+    },
+    {
+      "word": "出",
+      "start": 57.86,
+      "end": 58.66,
+      "confidence": 0.4101
+    },
+    {
+      "word": "我们",
+      "start": 58.66,
+      "end": 59.22,
+      "confidence": 0.9294
+    },
+    {
+      "word": "可以",
+      "start": 59.22,
+      "end": 59.6,
+      "confidence": 0.9892
+    },
+    {
+      "word": "把",
+      "start": 59.6,
+      "end": 59.98,
+      "confidence": 0.9912
+    },
+    {
+      "word": "视",
+      "start": 59.98,
+      "end": 60.22,
+      "confidence": 0.9758
+    },
+    {
+      "word": "频",
+      "start": 60.22,
+      "end": 60.44,
+      "confidence": 0.99
+    },
+    {
+      "word": "的",
+      "start": 60.44,
+      "end": 60.68,
+      "confidence": 0.9793
+    },
+    {
+      "word": "某",
+      "start": 60.68,
+      "end": 60.86,
+      "confidence": 0.9126
+    },
+    {
+      "word": "一",
+      "start": 60.86,
+      "end": 61.06,
+      "confidence": 0.9813
+    },
+    {
+      "word": "段",
+      "start": 61.06,
+      "end": 61.4,
+      "confidence": 0.9887
+    },
+    {
+      "word": "切",
+      "start": 61.4,
+      "end": 61.66,
+      "confidence": 0.7565
+    },
+    {
+      "word": "出来",
+      "start": 61.66,
+      "end": 62.32,
+      "confidence": 0.963
+    },
+    {
+      "word": "把",
+      "start": 62.32,
+      "end": 63.02,
+      "confidence": 0.8931
+    },
+    {
+      "word": "视",
+      "start": 63.02,
+      "end": 63.26,
+      "confidence": 0.9988
+    },
+    {
+      "word": "频",
+      "start": 63.26,
+      "end": 63.48,
+      "confidence": 0.9989
+    },
+    {
+      "word": "的",
+      "start": 63.48,
+      "end": 63.7,
+      "confidence": 0.9952
+    },
+    {
+      "word": "某",
+      "start": 63.7,
+      "end": 63.9,
+      "confidence": 0.9986
+    },
+    {
+      "word": "一",
+      "start": 63.9,
+      "end": 64.12,
+      "confidence": 0.9991
+    },
+    {
+      "word": "段",
+      "start": 64.12,
+      "end": 64.44,
+      "confidence": 0.9997
+    },
+    {
+      "word": "切",
+      "start": 64.44,
+      "end": 64.7,
+      "confidence": 0.9994
+    },
+    {
+      "word": "出来",
+      "start": 64.7,
+      "end": 65.5,
+      "confidence": 0.991
+    },
+    {
+      "word": "然后",
+      "start": 65.5,
+      "end": 66.22,
+      "confidence": 0.8817
+    },
+    {
+      "word": "再",
+      "start": 66.22,
+      "end": 66.7,
+      "confidence": 0.9198
+    },
+    {
+      "word": "拼",
+      "start": 66.7,
+      "end": 66.96,
+      "confidence": 0.8399
+    },
+    {
+      "word": "阶",
+      "start": 66.96,
+      "end": 67.2,
+      "confidence": 0.5831
+    },
+    {
+      "word": "到",
+      "start": 67.2,
+      "end": 67.48,
+      "confidence": 0.7506
+    },
+    {
+      "word": "一起",
+      "start": 67.48,
+      "end": 68.28,
+      "confidence": 0.9535
+    },
+    {
+      "word": "这样",
+      "start": 68.28,
+      "end": 68.94,
+      "confidence": 0.8999
+    },
+    {
+      "word": "就",
+      "start": 68.94,
+      "end": 69.34,
+      "confidence": 0.996
+    },
+    {
+      "word": "完成",
+      "start": 69.34,
+      "end": 69.66,
+      "confidence": 0.9994
+    },
+    {
+      "word": "了",
+      "start": 69.66,
+      "end": 70.16,
+      "confidence": 0.9997
+    },
+    {
+      "word": "视",
+      "start": 70.16,
+      "end": 70.32,
+      "confidence": 0.9984
+    },
+    {
+      "word": "频",
+      "start": 70.32,
+      "end": 70.6,
+      "confidence": 0.9993
+    },
+    {
+      "word": "的",
+      "start": 70.6,
+      "end": 70.86,
+      "confidence": 0.9943
+    },
+    {
+      "word": "粗",
+      "start": 70.86,
+      "end": 71.06,
+      "confidence": 0.7186
+    },
+    {
+      "word": "剪",
+      "start": 71.06,
+      "end": 71.3,
+      "confidence": 0.6391
+    },
+    {
+      "word": "工作",
+      "start": 71.3,
+      "end": 72.04,
+      "confidence": 0.9726
+    },
+    {
+      "word": "谢谢",
+      "start": 72.04,
+      "end": 72.88,
+      "confidence": 0.877
+    },
+    {
+      "word": "大家",
+      "start": 72.88,
+      "end": 73.5,
+      "confidence": 0.9877
+    },
+    {
+      "word": "的",
+      "start": 73.5,
+      "end": 73.82,
+      "confidence": 0.9984
+    },
+    {
+      "word": "收",
+      "start": 73.82,
+      "end": 74.04,
+      "confidence": 0.9563
+    },
+    {
+      "word": "听",
+      "start": 74.04,
+      "end": 74.56,
+      "confidence": 0.85
+    },
+    {
+      "word": "我们",
+      "start": 74.56,
+      "end": 75.14,
+      "confidence": 0.8713
+    },
+    {
+      "word": "下次",
+      "start": 75.14,
+      "end": 75.54,
+      "confidence": 0.9826
+    },
+    {
+      "word": "再见",
+      "start": 75.54,
+      "end": 76.18,
+      "confidence": 0.9937
+    }
+  ],
+  "segments": [
+    {
+      "start": 0.0,
+      "end": 5.88,
+      "text": "欢迎来到视频剪辑自动画馆线项目的测试环节"
+    },
+    {
+      "start": 5.88,
+      "end": 8.04,
+      "text": "今天我们来聊一聊"
+    },
+    {
+      "start": 8.04,
+      "end": 11.92,
+      "text": "人工智能在视频制作中的应用"
+    },
+    {
+      "start": 11.92,
+      "end": 15.76,
+      "text": "人工智能在视频制作中的应用"
+    },
+    {
+      "start": 15.76,
+      "end": 18.52,
+      "text": "已经越来越广泛了"
+    },
+    {
+      "start": 18.52,
+      "end": 22.82,
+      "text": "首先我们看一下语音时别技术"
+    },
+    {
+      "start": 22.82,
+      "end": 26.96,
+      "text": "语音时别技术可以把说话的声音"
+    },
+    {
+      "start": 26.96,
+      "end": 28.92,
+      "text": "转换成文字"
+    },
+    {
+      "start": 28.92,
+      "end": 31.28,
+      "text": "转换成文字之后"
+    },
+    {
+      "start": 31.28,
+      "end": 34.66,
+      "text": "我们就可以做很多事情了"
+    },
+    {
+      "start": 34.66,
+      "end": 37.98,
+      "text": "比如说自动生成字幕"
+    },
+    {
+      "start": 37.98,
+      "end": 40.14,
+      "text": "自动剪辑视频"
+    },
+    {
+      "start": 40.14,
+      "end": 43.3,
+      "text": "等等等等这些功能"
+    },
+    {
+      "start": 43.3,
+      "end": 45.34,
+      "text": "都非常实用"
+    },
+    {
+      "start": 45.34,
+      "end": 46.1,
+      "text": "好"
+    },
+    {
+      "start": 46.1,
+      "end": 50.5,
+      "text": "让我们继续来看一下一个话题"
+    },
+    {
+      "start": 50.5,
+      "end": 55.96,
+      "text": "下一个话题是关于视频的自动切割与拼阶"
+    },
+    {
+      "start": 55.96,
+      "end": 58.66,
+      "text": "通过精确的时间出"
+    },
+    {
+      "start": 58.66,
+      "end": 62.32,
+      "text": "我们可以把视频的某一段切出来"
+    },
+    {
+      "start": 62.32,
+      "end": 65.5,
+      "text": "把视频的某一段切出来"
+    },
+    {
+      "start": 65.5,
+      "end": 68.28,
+      "text": "然后再拼阶到一起"
+    },
+    {
+      "start": 68.28,
+      "end": 72.04,
+      "text": "这样就完成了视频的粗剪工作"
+    },
+    {
+      "start": 72.04,
+      "end": 74.56,
+      "text": "谢谢大家的收听"
+    },
+    {
+      "start": 74.56,
+      "end": 76.18,
+      "text": "我们下次再见"
+    }
+  ]
+}

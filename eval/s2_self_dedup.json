@@ -1,0 +1,345 @@
+{
+  "transcript_source": "eval/s2_transcript_medium.json",
+  "total_pairs": 15,
+  "config": {
+    "MAX_GAP_S": 15.0,
+    "WIN_MIN_CHARS": 4,
+    "WIN_MAX_CHARS": 60,
+    "NGRAM": 2,
+    "SIM_THRESHOLD": 0.55,
+    "STUTTER_MAX_GAP_S": 3.0,
+    "MIN_WORDS": 3
+  },
+  "pairs": [
+    {
+      "pair_id": 0,
+      "dup_type": "full_repeat",
+      "similarity": 0.5714,
+      "gap_s": 4.72,
+      "seg_a": {
+        "word_start": 15,
+        "word_end": 19,
+        "start_s": 4.56,
+        "end_s": 5.68,
+        "text": "品叫牛出乳"
+      },
+      "seg_b": {
+        "word_start": 37,
+        "word_end": 40,
+        "start_s": 10.4,
+        "end_s": 11.08,
+        "text": "说牛出乳"
+      },
+      "suggested_action": "drop_a_keep_b",
+      "decided_by": "self_dedup_rule"
+    },
+    {
+      "pair_id": 1,
+      "dup_type": "full_repeat",
+      "similarity": 0.5714,
+      "gap_s": 14.8,
+      "seg_a": {
+        "word_start": 36,
+        "word_end": 40,
+        "start_s": 10.04,
+        "end_s": 11.08,
+        "text": "先说牛出乳"
+      },
+      "seg_b": {
+        "word_start": 106,
+        "word_end": 109,
+        "start_s": 25.88,
+        "end_s": 26.7,
+        "text": "加牛出乳"
+      },
+      "suggested_action": "drop_a_keep_b",
+      "decided_by": "self_dedup_rule"
+    },
+    {
+      "pair_id": 2,
+      "dup_type": "stutter_restart",
+      "similarity": 0.5714,
+      "gap_s": 2.58,
+      "seg_a": {
+        "word_start": 52,
+        "word_end": 56,
+        "start_s": 13.58,
+        "end_s": 14.52,
+        "text": "大量的免疫"
+      },
+      "seg_b": {
+        "word_start": 68,
+        "word_end": 71,
+        "start_s": 17.1,
+        "end_s": 17.74,
+        "text": "的免疫力"
+      },
+      "suggested_action": "drop_a_keep_b",
+      "decided_by": "self_dedup_rule"
+    },
+    {
+      "pair_id": 3,
+      "dup_type": "full_repeat",
+      "similarity": 0.5714,
+      "gap_s": 5.64,
+      "seg_a": {
+        "word_start": 105,
+        "word_end": 109,
+        "start_s": 25.72,
+        "end_s": 26.7,
+        "text": "添加牛出乳"
+      },
+      "seg_b": {
+        "word_start": 133,
+        "word_end": 136,
+        "start_s": 32.34,
+        "end_s": 32.88,
+        "text": "的牛出乳"
+      },
+      "suggested_action": "drop_a_keep_b",
+      "decided_by": "self_dedup_rule"
+    },
+    {
+      "pair_id": 4,
+      "dup_type": "full_repeat",
+      "similarity": 0.6667,
+      "gap_s": 3.26,
+      "seg_a": {
+        "word_start": 178,
+        "word_end": 180,
+        "start_s": 44.82,
+        "end_s": 45.72,
+        "text": "很多的不"
+      },
+      "seg_b": {
+        "word_start": 195,
+        "word_end": 197,
+        "start_s": 48.98,
+        "end_s": 49.8,
+        "text": "了很多的"
+      },
+      "suggested_action": "drop_a_keep_b",
+      "decided_by": "self_dedup_rule"
+    },
+    {
+      "pair_id": 5,
+      "dup_type": "full_repeat",
+      "similarity": 1.0,
+      "gap_s": 6.1,
+      "seg_a": {
+        "word_start": 203,
+        "word_end": 206,
+        "start_s": 51.34,
+        "end_s": 51.98,
+        "text": "两年牛出"
+      },
+      "seg_b": {
+        "word_start": 229,
+        "word_end": 232,
+        "start_s": 58.08,
+        "end_s": 58.82,
+        "text": "两年牛出"
+      },
+      "suggested_action": "drop_a_keep_b",
+      "decided_by": "self_dedup_rule"
+    },
+    {
+      "pair_id": 6,
+      "dup_type": "full_repeat",
+      "similarity": 0.6,
+      "gap_s": 14.98,
+      "seg_a": {
+        "word_start": 235,
+        "word_end": 241,
+        "start_s": 59.08,
+        "end_s": 61.06,
+        "text": "品从原来的61万"
+      },
+      "seg_b": {
+        "word_start": 292,
+        "word_end": 295,
+        "start_s": 76.04,
+        "end_s": 76.74,
+        "text": "从原来的"
+      },
+      "suggested_action": "drop_a_keep_b",
+      "decided_by": "self_dedup_rule"
+    },
+    {
+      "pair_id": 7,
+      "dup_type": "stutter_restart",
+      "similarity": 1.0,
+      "gap_s": 2.34,
+      "seg_a": {
+        "word_start": 262,
+        "word_end": 264,
+        "start_s": 68.06,
+        "end_s": 68.9,
+        "text": "一次有什么"
+      },
+      "seg_b": {
+        "word_start": 270,
+        "word_end": 272,
+        "start_s": 71.24,
+        "end_s": 71.72,
+        "text": "一次有什么"
+      },
+      "suggested_action": "drop_a_keep_b",
+      "decided_by": "self_dedup_rule"
+    },
+    {
+      "pair_id": 8,
+      "dup_type": "stutter_restart",
+      "similarity": 1.0,
+      "gap_s": 2.14,
+      "seg_a": {
+        "word_start": 265,
+        "word_end": 268,
+        "start_s": 68.9,
+        "end_s": 69.58,
+        "text": "不一样的"
+      },
+      "seg_b": {
+        "word_start": 273,
+        "word_end": 276,
+        "start_s": 71.72,
+        "end_s": 72.32,
+        "text": "不一样的"
+      },
+      "suggested_action": "drop_a_keep_b",
+      "decided_by": "self_dedup_rule"
+    },
+    {
+      "pair_id": 9,
+      "dup_type": "full_repeat",
+      "similarity": 1.0,
+      "gap_s": 3.67,
+      "seg_a": {
+        "word_start": 364,
+        "word_end": 367,
+        "start_s": 105.3,
+        "end_s": 106.02,
+        "text": "研究了一下"
+      },
+      "seg_b": {
+        "word_start": 378,
+        "word_end": 381,
+        "start_s": 109.69,
+        "end_s": 110.31,
+        "text": "研究了一下,"
+      },
+      "suggested_action": "drop_a_keep_b",
+      "decided_by": "self_dedup_rule"
+    },
+    {
+      "pair_id": 10,
+      "dup_type": "full_repeat",
+      "similarity": 1.0,
+      "gap_s": 3.39,
+      "seg_a": {
+        "word_start": 368,
+        "word_end": 371,
+        "start_s": 106.02,
+        "end_s": 107.22,
+        "text": "牛出乳的"
+      },
+      "seg_b": {
+        "word_start": 382,
+        "word_end": 385,
+        "start_s": 110.61,
+        "end_s": 111.35,
+        "text": "牛出乳的"
+      },
+      "suggested_action": "drop_a_keep_b",
+      "decided_by": "self_dedup_rule"
+    },
+    {
+      "pair_id": 11,
+      "dup_type": "full_repeat",
+      "similarity": 1.0,
+      "gap_s": 3.55,
+      "seg_a": {
+        "word_start": 372,
+        "word_end": 375,
+        "start_s": 107.22,
+        "end_s": 107.8,
+        "text": "科学证据"
+      },
+      "seg_b": {
+        "word_start": 386,
+        "word_end": 389,
+        "start_s": 111.35,
+        "end_s": 111.95,
+        "text": "科学证据"
+      },
+      "suggested_action": "drop_a_keep_b",
+      "decided_by": "self_dedup_rule"
+    },
+    {
+      "pair_id": 12,
+      "dup_type": "full_repeat",
+      "similarity": 0.6,
+      "gap_s": 13.66,
+      "seg_a": {
+        "word_start": 378,
+        "word_end": 384,
+        "start_s": 109.69,
+        "end_s": 111.23,
+        "text": "研究了一下,牛出乳"
+      },
+      "seg_b": {
+        "word_start": 438,
+        "word_end": 441,
+        "start_s": 124.89,
+        "end_s": 125.93,
+        "text": "下,牛出乳"
+      },
+      "suggested_action": "drop_a_keep_b",
+      "decided_by": "self_dedup_rule"
+    },
+    {
+      "pair_id": 13,
+      "dup_type": "stutter_restart",
+      "similarity": 0.6,
+      "gap_s": 0.54,
+      "seg_a": {
+        "word_start": 411,
+        "word_end": 417,
+        "start_s": 117.33,
+        "end_s": 119.93,
+        "text": "训练之后,他的肠道"
+      },
+      "seg_b": {
+        "word_start": 421,
+        "word_end": 423,
+        "start_s": 120.47,
+        "end_s": 121.87,
+        "text": "他的肠道"
+      },
+      "suggested_action": "drop_a_keep_b",
+      "decided_by": "self_dedup_rule"
+    },
+    {
+      "pair_id": 14,
+      "dup_type": "full_repeat",
+      "similarity": 0.6,
+      "gap_s": 13.63,
+      "seg_a": {
+        "word_start": 544,
+        "word_end": 551,
+        "start_s": 151.63,
+        "end_s": 153.57,
+        "text": "比较单薄市场营销"
+      },
+      "seg_b": {
+        "word_start": 560,
+        "word_end": 563,
+        "start_s": 167.2,
+        "end_s": 167.86,
+        "text": "市场营销"
+      },
+      "suggested_action": "drop_a_keep_b",
+      "decided_by": "self_dedup_rule"
+    }
+  ]
+}

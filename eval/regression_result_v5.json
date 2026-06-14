@@ -1,0 +1,69 @@
+{
+  "video": "output/s1_roughcut_v5.mp4",
+  "checklist": "eval/regression_checklist.json",
+  "method": "source-level EDL verification (tiny-ASR supplement)",
+  "total": 8,
+  "passed": 8,
+  "failed": 0,
+  "skipped": 0,
+  "errored": 0,
+  "overall": "PASS",
+  "results": [
+    {
+      "id": "v1-R1",
+      "category": "regression",
+      "description": "这一次第一次 src[67.13-70.69] dropped: No keep segment covers the drop range",
+      "status": "PASS",
+      "detail": "这一次第一次 src[67.13-70.69] dropped: No keep segment covers the drop range"
+    },
+    {
+      "id": "v1-R2",
+      "category": "regression",
+      "description": "我也研究第一次 src[104.32-109.05] dropped: No keep segment covers the drop range",
+      "status": "PASS",
+      "detail": "我也研究第一次 src[104.32-109.05] dropped: No keep segment covers the drop range"
+    },
+    {
+      "id": "v1-R3",
+      "category": "regression",
+      "description": "肠道第一次 src[118.23-120.47] dropped: No keep segment covers the drop range",
+      "status": "PASS",
+      "detail": "肠道第一次 src[118.23-120.47] dropped: No keep segment covers the drop range"
+    },
+    {
+      "id": "v1-R4",
+      "category": "regression",
+      "description": "市场营销这套 src[152.35-153.83] dropped: No keep segment covers the drop range",
+      "status": "PASS",
+      "detail": "市场营销这套 src[152.35-153.83] dropped: No keep segment covers the drop range"
+    },
+    {
+      "id": "v4-A",
+      "category": "regression",
+      "description": "改善皮肤和抗第一次 src[86.32-89.30] dropped: No keep segment covers the drop range",
+      "status": "PASS",
+      "detail": "改善皮肤和抗第一次 src[86.32-89.30] dropped: No keep segment covers the drop range"
+    },
+    {
+      "id": "v4-B",
+      "category": "regression",
+      "description": "群第一次 src[96.64-97.98] dropped: No keep segment covers the drop range",
+      "status": "PASS",
+      "detail": "群第一次 src[96.64-97.98] dropped: No keep segment covers the drop range"
+    },
+    {
+      "id": "v4-C",
+      "category": "regression",
+      "description": "货[104.920] <= seg24_end[104.920]",
+      "status": "PASS",
+      "detail": "货[104.920] <= seg24_end[104.920]"
+    },
+    {
+      "id": "v4-D",
+      "category": "regression",
+      "description": "再见[195.500]+500ms <= seg40_end[196.000]",
+      "status": "PASS",
+      "detail": "再见[195.500]+500ms <= seg40_end[196.000]"
+    }
+  ]
+}

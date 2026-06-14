@@ -1,0 +1,55 @@
+{
+  "method": "rms_content+video_hash_best5",
+  "all_pass": true,
+  "threshold_rms": 0.01,
+  "threshold_hash_dist": 10,
+  "offsets_tried": [
+    0.3,
+    0.6,
+    1.0,
+    1.5,
+    2.5
+  ],
+  "results": [
+    {
+      "idx": 0,
+      "id": 1,
+      "v6_rms": 0.4918,
+      "src_rms": 0.5394,
+      "best_hash_d": 0,
+      "pass": true
+    },
+    {
+      "idx": 9,
+      "id": 10,
+      "v6_rms": 0.421,
+      "src_rms": 0.0818,
+      "best_hash_d": 0,
+      "pass": true
+    },
+    {
+      "idx": 18,
+      "id": 20,
+      "v6_rms": 0.4696,
+      "src_rms": 0.4269,
+      "best_hash_d": 5,
+      "pass": true
+    },
+    {
+      "idx": 27,
+      "id": 30,
+      "v6_rms": 0.3617,
+      "src_rms": 0.362,
+      "best_hash_d": 4,
+      "pass": true
+    },
+    {
+      "idx": 35,
+      "id": 40,
+      "v6_rms": 0.2068,
+      "src_rms": 0.121,
+      "best_hash_d": 5,
+      "pass": true
+    }
+  ]
+}

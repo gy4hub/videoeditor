@@ -1,0 +1,88 @@
+{
+  "source": "v5_chk_end.wav",
+  "model": "small",
+  "language": "zh",
+  "language_probability": 1,
+  "duration_s": 11.945,
+  "transcribe_time_s": 1.94,
+  "words": [
+    {
+      "word": "我觉得",
+      "start": 2.13,
+      "end": 2.91,
+      "confidence": 0.2607
+    },
+    {
+      "word": "省",
+      "start": 2.91,
+      "end": 3.61,
+      "confidence": 0.99
+    },
+    {
+      "word": "事",
+      "start": 3.61,
+      "end": 3.73,
+      "confidence": 0.9844
+    },
+    {
+      "word": "多",
+      "start": 3.73,
+      "end": 3.91,
+      "confidence": 0.8943
+    },
+    {
+      "word": "了",
+      "start": 3.91,
+      "end": 4.13,
+      "confidence": 0.9806
+    },
+    {
+      "word": "所以",
+      "start": 4.13,
+      "end": 4.91,
+      "confidence": 0.6394
+    },
+    {
+      "word": "对",
+      "start": 4.91,
+      "end": 5.97,
+      "confidence": 0.517
+    },
+    {
+      "word": "于",
+      "start": 5.97,
+      "end": 6.09,
+      "confidence": 0.972
+    },
+    {
+      "word": "牛",
+      "start": 6.09,
+      "end": 6.25,
+      "confidence": 0.9708
+    },
+    {
+      "word": "出",
+      "start": 6.25,
+      "end": 6.41,
+      "confidence": 0.7717
+    },
+    {
+      "word": "乳",
+      "start": 6.41,
+      "end": 6.75,
+      "confidence": 0.6311
+    }
+  ],
+  "segments": [
+    {
+      "start": 2.13,
+      "end": 4.13,
+      "text": "我觉得省事多了"
+    },
+    {
+      "start": 4.13,
+      "end": 6.75,
+      "text": "所以对于牛出乳"
+    }
+  ]
+}

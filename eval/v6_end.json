@@ -1,0 +1,345 @@
+{
+  "source": "v6_end.wav",
+  "model": "small",
+  "language": "zh",
+  "language_probability": 1,
+  "duration_s": 14.065,
+  "transcribe_time_s": 3.42,
+  "words": [
+    {
+      "word": "交",
+      "start": 0.0,
+      "end": 0.2,
+      "confidence": 0.2563
+    },
+    {
+      "word": "率",
+      "start": 0.2,
+      "end": 0.42,
+      "confidence": 0.5712
+    },
+    {
+      "word": "卖",
+      "start": 0.42,
+      "end": 0.64,
+      "confidence": 0.564
+    },
+    {
+      "word": "货",
+      "start": 0.64,
+      "end": 0.84,
+      "confidence": 0.9795
+    },
+    {
+      "word": "变",
+      "start": 0.84,
+      "end": 1.0,
+      "confidence": 0.9752
+    },
+    {
+      "word": "现",
+      "start": 1.0,
+      "end": 1.36,
+      "confidence": 0.8869
+    },
+    {
+      "word": "认",
+      "start": 1.36,
+      "end": 2.0,
+      "confidence": 0.9113
+    },
+    {
+      "word": "清",
+      "start": 2.0,
+      "end": 2.16,
+      "confidence": 0.9787
+    },
+    {
+      "word": "这个",
+      "start": 2.16,
+      "end": 2.36,
+      "confidence": 0.576
+    },
+    {
+      "word": "结",
+      "start": 2.36,
+      "end": 2.54,
+      "confidence": 0.9879
+    },
+    {
+      "word": "构",
+      "start": 2.54,
+      "end": 2.72,
+      "confidence": 0.9985
+    },
+    {
+      "word": "比",
+      "start": 2.72,
+      "end": 3.04,
+      "confidence": 0.8033
+    },
+    {
+      "word": "专",
+      "start": 3.04,
+      "end": 3.24,
+      "confidence": 0.9989
+    },
+    {
+      "word": "门",
+      "start": 3.24,
+      "end": 3.42,
+      "confidence": 0.9997
+    },
+    {
+      "word": "去",
+      "start": 3.42,
+      "end": 3.58,
+      "confidence": 0.9841
+    },
+    {
+      "word": "研",
+      "start": 3.58,
+      "end": 3.76,
+      "confidence": 0.999
+    },
+    {
+      "word": "究",
+      "start": 3.76,
+      "end": 3.92,
+      "confidence": 0.9996
+    },
+    {
+      "word": "某",
+      "start": 3.92,
+      "end": 4.12,
+      "confidence": 0.9874
+    },
+    {
+      "word": "个",
+      "start": 4.12,
+      "end": 4.26,
+      "confidence": 0.9871
+    },
+    {
+      "word": "成",
+      "start": 4.26,
+      "end": 4.44,
+      "confidence": 0.9957
+    },
+    {
+      "word": "分",
+      "start": 4.44,
+      "end": 4.64,
+      "confidence": 0.9276
+    },
+    {
+      "word": "我觉得",
+      "start": 4.64,
+      "end": 5.06,
+      "confidence": 0.9701
+    },
+    {
+      "word": "省",
+      "start": 5.06,
+      "end": 5.7,
+      "confidence": 0.9925
+    },
+    {
+      "word": "事",
+      "start": 5.7,
+      "end": 5.84,
+      "confidence": 0.9969
+    },
+    {
+      "word": "多",
+      "start": 5.84,
+      "end": 6.04,
+      "confidence": 0.8353
+    },
+    {
+      "word": "了",
+      "start": 6.04,
+      "end": 6.26,
+      "confidence": 0.9969
+    },
+    {
+      "word": "所以",
+      "start": 6.26,
+      "end": 7.02,
+      "confidence": 0.925
+    },
+    {
+      "word": "对",
+      "start": 7.68,
+      "end": 8.08,
+      "confidence": 0.888
+    },
+    {
+      "word": "于",
+      "start": 8.08,
+      "end": 8.22,
+      "confidence": 0.9963
+    },
+    {
+      "word": "牛",
+      "start": 8.22,
+      "end": 8.36,
+      "confidence": 0.9914
+    },
+    {
+      "word": "出",
+      "start": 8.36,
+      "end": 8.54,
+      "confidence": 0.7241
+    },
+    {
+      "word": "乳",
+      "start": 8.54,
+      "end": 8.7,
+      "confidence": 0.6535
+    },
+    {
+      "word": "你",
+      "start": 8.7,
+      "end": 9.1,
+      "confidence": 0.817
+    },
+    {
+      "word": "怎么",
+      "start": 9.1,
+      "end": 9.28,
+      "confidence": 0.9917
+    },
+    {
+      "word": "看",
+      "start": 9.28,
+      "end": 9.5,
+      "confidence": 0.9974
+    },
+    {
+      "word": "呢",
+      "start": 9.5,
+      "end": 9.74,
+      "confidence": 0.4996
+    },
+    {
+      "word": "我是",
+      "start": 9.74,
+      "end": 10.38,
+      "confidence": 0.8605
+    },
+    {
+      "word": "天",
+      "start": 10.38,
+      "end": 10.58,
+      "confidence": 0.9361
+    },
+    {
+      "word": "爸",
+      "start": 10.58,
+      "end": 10.76,
+      "confidence": 0.3333
+    },
+    {
+      "word": "咱",
+      "start": 10.76,
+      "end": 11.14,
+      "confidence": 0.9563
+    },
+    {
+      "word": "们",
+      "start": 11.14,
+      "end": 11.24,
+      "confidence": 0.9986
+    },
+    {
+      "word": "今天",
+      "start": 11.24,
+      "end": 11.56,
+      "confidence": 0.9981
+    },
+    {
+      "word": "就",
+      "start": 11.56,
+      "end": 11.98,
+      "confidence": 0.9923
+    },
+    {
+      "word": "聊",
+      "start": 11.98,
+      "end": 12.12,
+      "confidence": 0.9981
+    },
+    {
+      "word": "到",
+      "start": 12.12,
+      "end": 12.24,
+      "confidence": 0.9991
+    },
+    {
+      "word": "这",
+      "start": 12.24,
+      "end": 12.4,
+      "confidence": 0.9841
+    },
+    {
+      "word": "下次",
+      "start": 12.4,
+      "end": 13.08,
+      "confidence": 0.7695
+    },
+    {
+      "word": "再见",
+      "start": 13.08,
+      "end": 13.4,
+      "confidence": 0.9972
+    }
+  ],
+  "segments": [
+    {
+      "start": 0.0,
+      "end": 1.36,
+      "text": "交率卖货变现"
+    },
+    {
+      "start": 1.36,
+      "end": 4.64,
+      "text": "认清这个结构比专门去研究某个成分"
+    },
+    {
+      "start": 4.64,
+      "end": 6.26,
+      "text": "我觉得省事多了"
+    },
+    {
+      "start": 6.26,
+      "end": 7.02,
+      "text": "所以"
+    },
+    {
+      "start": 7.68,
+      "end": 8.7,
+      "text": "对于牛出乳"
+    },
+    {
+      "start": 8.7,
+      "end": 9.74,
+      "text": "你怎么看呢"
+    },
+    {
+      "start": 9.74,
+      "end": 10.76,
+      "text": "我是天爸"
+    },
+    {
+      "start": 10.76,
+      "end": 12.4,
+      "text": "咱们今天就聊到这"
+    },
+    {
+      "start": 12.4,
+      "end": 13.4,
+      "text": "下次再见"
+    }
+  ]
+}

@@ -1,0 +1,734 @@
+{
+  "source": "raw_audio_seg2a.wav",
+  "model": "Systran/faster-whisper-medium",
+  "seg_offset_s": 0,
+  "language": "zh",
+  "transcribe_time_s": 21.34,
+  "words": [
+    {
+      "word": "这",
+      "start": 0.52,
+      "end": 0.92,
+      "confidence": 0.3964
+    },
+    {
+      "word": "两",
+      "start": 0.92,
+      "end": 1.12,
+      "confidence": 0.9854
+    },
+    {
+      "word": "年",
+      "start": 1.12,
+      "end": 1.28,
+      "confidence": 0.9946
+    },
+    {
+      "word": "牛",
+      "start": 1.28,
+      "end": 1.46,
+      "confidence": 0.858
+    },
+    {
+      "word": "畜",
+      "start": 1.46,
+      "end": 1.62,
+      "confidence": 0.6663
+    },
+    {
+      "word": "乳",
+      "start": 1.62,
+      "end": 1.64,
+      "confidence": 0.7293
+    },
+    {
+      "word": "又",
+      "start": 1.64,
+      "end": 1.96,
+      "confidence": 0.9796
+    },
+    {
+      "word": "回",
+      "start": 1.96,
+      "end": 2.16,
+      "confidence": 0.9949
+    },
+    {
+      "word": "来了",
+      "start": 2.16,
+      "end": 2.62,
+      "confidence": 0.9915
+    },
+    {
+      "word": "但是",
+      "start": 2.62,
+      "end": 3.02,
+      "confidence": 0.5411
+    },
+    {
+      "word": "这",
+      "start": 3.02,
+      "end": 3.22,
+      "confidence": 0.8989
+    },
+    {
+      "word": "次",
+      "start": 3.22,
+      "end": 3.7,
+      "confidence": 0.7606
+    },
+    {
+      "word": "它",
+      "start": 3.7,
+      "end": 3.96,
+      "confidence": 0.4098
+    },
+    {
+      "word": "这个",
+      "start": 3.96,
+      "end": 4.24,
+      "confidence": 0.8559
+    },
+    {
+      "word": "火",
+      "start": 4.24,
+      "end": 4.46,
+      "confidence": 0.9924
+    },
+    {
+      "word": "啊",
+      "start": 4.46,
+      "end": 4.68,
+      "confidence": 0.1061
+    },
+    {
+      "word": "是",
+      "start": 4.68,
+      "end": 4.7,
+      "confidence": 0.8176
+    },
+    {
+      "word": "从",
+      "start": 4.7,
+      "end": 4.96,
+      "confidence": 0.9979
+    },
+    {
+      "word": "美",
+      "start": 4.96,
+      "end": 5.38,
+      "confidence": 0.9972
+    },
+    {
+      "word": "国",
+      "start": 5.38,
+      "end": 5.84,
+      "confidence": 0.9998
+    },
+    {
+      "word": "烧",
+      "start": 5.84,
+      "end": 6.02,
+      "confidence": 0.9909
+    },
+    {
+      "word": "到",
+      "start": 6.02,
+      "end": 6.22,
+      "confidence": 0.997
+    },
+    {
+      "word": "国",
+      "start": 6.22,
+      "end": 6.42,
+      "confidence": 0.9986
+    },
+    {
+      "word": "内",
+      "start": 6.42,
+      "end": 6.6,
+      "confidence": 0.9995
+    },
+    {
+      "word": "的",
+      "start": 6.6,
+      "end": 7.22,
+      "confidence": 0.9731
+    },
+    {
+      "word": "美",
+      "start": 7.22,
+      "end": 7.44,
+      "confidence": 0.9679
+    },
+    {
+      "word": "国",
+      "start": 7.44,
+      "end": 7.56,
+      "confidence": 0.9998
+    },
+    {
+      "word": "这",
+      "start": 7.56,
+      "end": 7.68,
+      "confidence": 0.9904
+    },
+    {
+      "word": "两",
+      "start": 7.68,
+      "end": 7.86,
+      "confidence": 0.9981
+    },
+    {
+      "word": "年",
+      "start": 7.86,
+      "end": 8.08,
+      "confidence": 0.9989
+    },
+    {
+      "word": "牛",
+      "start": 8.08,
+      "end": 8.3,
+      "confidence": 0.9774
+    },
+    {
+      "word": "畜",
+      "start": 8.3,
+      "end": 8.42,
+      "confidence": 0.9847
+    },
+    {
+      "word": "乳",
+      "start": 8.42,
+      "end": 8.54,
+      "confidence": 0.992
+    },
+    {
+      "word": "产",
+      "start": 8.54,
+      "end": 8.72,
+      "confidence": 0.9959
+    },
+    {
+      "word": "品",
+      "start": 8.72,
+      "end": 8.86,
+      "confidence": 0.9999
+    },
+    {
+      "word": "从",
+      "start": 8.86,
+      "end": 9.4,
+      "confidence": 0.2728
+    },
+    {
+      "word": "原",
+      "start": 9.4,
+      "end": 9.64,
+      "confidence": 0.989
+    },
+    {
+      "word": "来",
+      "start": 9.64,
+      "end": 9.84,
+      "confidence": 0.9994
+    },
+    {
+      "word": "的",
+      "start": 9.84,
+      "end": 10.0,
+      "confidence": 0.9934
+    },
+    {
+      "word": "61",
+      "start": 10.0,
+      "end": 10.42,
+      "confidence": 0.9464
+    },
+    {
+      "word": "万",
+      "start": 10.42,
+      "end": 10.72,
+      "confidence": 0.9973
+    },
+    {
+      "word": "美元",
+      "start": 10.72,
+      "end": 11.42,
+      "confidence": 0.9956
+    },
+    {
+      "word": "市",
+      "start": 11.42,
+      "end": 11.8,
+      "confidence": 0.9923
+    },
+    {
+      "word": "场",
+      "start": 11.8,
+      "end": 12.02,
+      "confidence": 0.9996
+    },
+    {
+      "word": "份",
+      "start": 12.02,
+      "end": 12.26,
+      "confidence": 0.9442
+    },
+    {
+      "word": "额",
+      "start": 12.26,
+      "end": 12.54,
+      "confidence": 0.9996
+    },
+    {
+      "word": "啊",
+      "start": 12.54,
+      "end": 13.06,
+      "confidence": 0.2036
+    },
+    {
+      "word": "一下",
+      "start": 13.06,
+      "end": 13.08,
+      "confidence": 0.7299
+    },
+    {
+      "word": "子",
+      "start": 13.08,
+      "end": 13.28,
+      "confidence": 0.996
+    },
+    {
+      "word": "涨",
+      "start": 13.28,
+      "end": 13.4,
+      "confidence": 0.9844
+    },
+    {
+      "word": "到了",
+      "start": 13.4,
+      "end": 13.66,
+      "confidence": 0.9916
+    },
+    {
+      "word": "19",
+      "start": 13.66,
+      "end": 14.14,
+      "confidence": 0.8865
+    },
+    {
+      "word": "00",
+      "start": 14.14,
+      "end": 14.34,
+      "confidence": 0.9966
+    },
+    {
+      "word": "万",
+      "start": 14.34,
+      "end": 14.42,
+      "confidence": 0.9991
+    },
+    {
+      "word": "美元",
+      "start": 14.42,
+      "end": 14.82,
+      "confidence": 0.9976
+    },
+    {
+      "word": "整",
+      "start": 14.82,
+      "end": 15.42,
+      "confidence": 0.2602
+    },
+    {
+      "word": "整",
+      "start": 15.42,
+      "end": 15.64,
+      "confidence": 0.9872
+    },
+    {
+      "word": "涨",
+      "start": 15.64,
+      "end": 15.88,
+      "confidence": 0.9974
+    },
+    {
+      "word": "了",
+      "start": 15.88,
+      "end": 16.14,
+      "confidence": 0.9975
+    },
+    {
+      "word": "300",
+      "start": 16.14,
+      "end": 16.32,
+      "confidence": 0.8467
+    },
+    {
+      "word": "倍",
+      "start": 16.32,
+      "end": 16.92,
+      "confidence": 0.9979
+    },
+    {
+      "word": "那",
+      "start": 16.92,
+      "end": 17.66,
+      "confidence": 0.7531
+    },
+    {
+      "word": "这",
+      "start": 17.66,
+      "end": 17.82,
+      "confidence": 0.9987
+    },
+    {
+      "word": "一次",
+      "start": 17.82,
+      "end": 18.0,
+      "confidence": 0.9911
+    },
+    {
+      "word": "啊",
+      "start": 18.0,
+      "end": 18.26,
+      "confidence": 0.0944
+    },
+    {
+      "word": "有",
+      "start": 18.26,
+      "end": 18.34,
+      "confidence": 0.9599
+    },
+    {
+      "word": "什么",
+      "start": 18.34,
+      "end": 18.52,
+      "confidence": 0.9989
+    },
+    {
+      "word": "不",
+      "start": 18.52,
+      "end": 18.76,
+      "confidence": 0.9997
+    },
+    {
+      "word": "一",
+      "start": 18.76,
+      "end": 18.9,
+      "confidence": 0.9984
+    },
+    {
+      "word": "样",
+      "start": 18.9,
+      "end": 18.96,
+      "confidence": 1.0
+    },
+    {
+      "word": "的",
+      "start": 18.96,
+      "end": 19.9,
+      "confidence": 0.8293
+    },
+    {
+      "word": "那",
+      "start": 20.42,
+      "end": 20.82,
+      "confidence": 0.7441
+    },
+    {
+      "word": "这",
+      "start": 20.82,
+      "end": 20.96,
+      "confidence": 0.9975
+    },
+    {
+      "word": "一次",
+      "start": 20.96,
+      "end": 21.04,
+      "confidence": 0.9856
+    },
+    {
+      "word": "有",
+      "start": 21.04,
+      "end": 21.2,
+      "confidence": 0.9985
+    },
+    {
+      "word": "什么",
+      "start": 21.2,
+      "end": 21.36,
+      "confidence": 0.9988
+    },
+    {
+      "word": "不",
+      "start": 21.36,
+      "end": 21.6,
+      "confidence": 0.9995
+    },
+    {
+      "word": "一",
+      "start": 21.6,
+      "end": 21.7,
+      "confidence": 0.9981
+    },
+    {
+      "word": "样",
+      "start": 21.7,
+      "end": 21.76,
+      "confidence": 0.9999
+    },
+    {
+      "word": "的",
+      "start": 21.76,
+      "end": 22.04,
+      "confidence": 0.8908
+    },
+    {
+      "word": "我",
+      "start": 22.04,
+      "end": 22.24,
+      "confidence": 0.9457
+    },
+    {
+      "word": "总",
+      "start": 22.24,
+      "end": 22.36,
+      "confidence": 0.9989
+    },
+    {
+      "word": "结",
+      "start": 22.36,
+      "end": 22.48,
+      "confidence": 0.999
+    },
+    {
+      "word": "有",
+      "start": 22.48,
+      "end": 22.66,
+      "confidence": 0.9392
+    },
+    {
+      "word": "三",
+      "start": 22.66,
+      "end": 22.9,
+      "confidence": 0.9516
+    },
+    {
+      "word": "个",
+      "start": 22.9,
+      "end": 23.02,
+      "confidence": 0.9992
+    },
+    {
+      "word": "变",
+      "start": 23.02,
+      "end": 23.3,
+      "confidence": 0.9967
+    },
+    {
+      "word": "化",
+      "start": 23.3,
+      "end": 23.76,
+      "confidence": 0.9992
+    },
+    {
+      "word": "第一",
+      "start": 23.76,
+      "end": 24.22,
+      "confidence": 0.1414
+    },
+    {
+      "word": "个",
+      "start": 24.22,
+      "end": 24.62,
+      "confidence": 0.992
+    },
+    {
+      "word": "就是",
+      "start": 24.62,
+      "end": 24.8,
+      "confidence": 0.7355
+    },
+    {
+      "word": "对",
+      "start": 24.8,
+      "end": 24.98,
+      "confidence": 0.9957
+    },
+    {
+      "word": "象",
+      "start": 24.98,
+      "end": 25.12,
+      "confidence": 0.9851
+    },
+    {
+      "word": "变",
+      "start": 25.12,
+      "end": 25.32,
+      "confidence": 0.9992
+    },
+    {
+      "word": "了",
+      "start": 25.32,
+      "end": 25.7,
+      "confidence": 0.9922
+    },
+    {
+      "word": "从",
+      "start": 25.7,
+      "end": 25.88,
+      "confidence": 0.9592
+    },
+    {
+      "word": "原",
+      "start": 25.88,
+      "end": 26.08,
+      "confidence": 0.9983
+    },
+    {
+      "word": "来",
+      "start": 26.08,
+      "end": 26.3,
+      "confidence": 0.9994
+    },
+    {
+      "word": "的",
+      "start": 26.3,
+      "end": 26.66,
+      "confidence": 0.9989
+    },
+    {
+      "word": "婴",
+      "start": 26.66,
+      "end": 26.78,
+      "confidence": 0.9908
+    },
+    {
+      "word": "儿",
+      "start": 26.78,
+      "end": 27.26,
+      "confidence": 0.9969
+    },
+    {
+      "word": "换",
+      "start": 27.26,
+      "end": 27.5,
+      "confidence": 0.7607
+    },
+    {
+      "word": "成",
+      "start": 27.5,
+      "end": 27.72,
+      "confidence": 0.9989
+    },
+    {
+      "word": "了",
+      "start": 27.72,
+      "end": 27.98,
+      "confidence": 0.9804
+    },
+    {
+      "word": "成",
+      "start": 27.98,
+      "end": 28.12,
+      "confidence": 0.9327
+    },
+    {
+      "word": "年",
+      "start": 28.12,
+      "end": 28.24,
+      "confidence": 0.9967
+    },
+    {
+      "word": "人",
+      "start": 28.24,
+      "end": 28.38,
+      "confidence": 0.9994
+    },
+    {
+      "word": "了",
+      "start": 28.38,
+      "end": 28.6,
+      "confidence": 0.9974
+    }
+  ],
+  "segments": [
+    {
+      "start": 0.52,
+      "end": 2.62,
+      "text": "这两年牛畜乳又回来了"
+    },
+    {
+      "start": 2.62,
+      "end": 4.68,
+      "text": "但是这次它这个火啊"
+    },
+    {
+      "start": 4.68,
+      "end": 7.22,
+      "text": "是从美国烧到国内的"
+    },
+    {
+      "start": 7.22,
+      "end": 8.86,
+      "text": "美国这两年牛畜乳产品"
+    },
+    {
+      "start": 8.86,
+      "end": 11.42,
+      "text": "从原来的61万美元"
+    },
+    {
+      "start": 11.42,
+      "end": 13.06,
+      "text": "市场份额啊"
+    },
+    {
+      "start": 13.06,
+      "end": 14.82,
+      "text": "一下子涨到了1900万美元"
+    },
+    {
+      "start": 14.82,
+      "end": 16.92,
+      "text": "整整涨了300倍"
+    },
+    {
+      "start": 16.92,
+      "end": 18.26,
+      "text": "那这一次啊"
+    },
+    {
+      "start": 18.26,
+      "end": 19.9,
+      "text": "有什么不一样的"
+    },
+    {
+      "start": 20.42,
+      "end": 22.04,
+      "text": "那这一次有什么不一样的"
+    },
+    {
+      "start": 22.04,
+      "end": 23.76,
+      "text": "我总结有三个变化"
+    },
+    {
+      "start": 23.76,
+      "end": 25.7,
+      "text": "第一个就是对象变了"
+    },
+    {
+      "start": 25.7,
+      "end": 27.26,
+      "text": "从原来的婴儿"
+    },
+    {
+      "start": 27.26,
+      "end": 28.6,
+      "text": "换成了成年人了"
+    }
+  ]
+}
