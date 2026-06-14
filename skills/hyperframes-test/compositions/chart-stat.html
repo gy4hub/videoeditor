@@ -1,0 +1,176 @@
+<!doctype html>
+<!--
+  chart-stat.html — 大数字强调卡（参数化）
+  用途：突出一个关键统计数字，配小说明，适合"衰弱缓解70%"这类冲击性数据
+  尺寸：720×1280
+
+  --variables 示例：
+  {
+    "number": "70%",
+    "label": "衰弱进展缓解",
+    "sublabel": "SRN901 临床三期数据",
+    "color": "#52e5a0",
+    "duration": 4
+  }
+-->
+<html lang="zh">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=720, height=1280"/>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html, body {
+      width: 720px; height: 1280px; overflow: hidden;
+      background: #0a0a0f;
+      font-family: "PingFang SC", "Noto Sans CJK SC", "Microsoft YaHei", sans-serif;
+    }
+
+    #bg {
+      position: absolute; inset: 0;
+      background: radial-gradient(ellipse at 50% 45%, #0d1f1a 0%, #0a0a0f 65%);
+    }
+
+    /* 大圆形光晕 */
+    #glow {
+      position: absolute;
+      width: 480px; height: 480px;
+      top: 50%; left: 50%;
+      transform: translate(-50%, -55%);
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(82,229,160,0.08) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    /* 装饰圆环 */
+    #ring {
+      position: absolute;
+      width: 520px; height: 520px;
+      top: 50%; left: 50%;
+      transform: translate(-50%, -58%);
+      border-radius: 50%;
+      border: 1px solid rgba(255,255,255,0.06);
+    }
+
+    /* 主数字 */
+    #stat-number {
+      position: absolute;
+      top: 50%; left: 0; right: 0;
+      transform: translateY(-180%);
+      text-align: center;
+      font-size: 180px; font-weight: 900;
+      color: #ffffff;
+      letter-spacing: -4px;
+      line-height: 1;
+      opacity: 0;
+      /* 颜色通过 JS 控制 */
+    }
+
+    /* 主标签 */
+    #stat-label {
+      position: absolute;
+      top: 50%; left: 0; right: 0;
+      transform: translateY(-10%);
+      text-align: center;
+      font-size: 52px; font-weight: 700;
+      color: #ffffff;
+      letter-spacing: 4px;
+      opacity: 0;
+    }
+
+    /* 分隔线 */
+    #divider {
+      position: absolute;
+      top: 50%; left: 180px; right: 180px;
+      transform: translateY(100%);
+      height: 2px;
+      opacity: 0;
+    }
+
+    /* 副说明 */
+    #stat-sublabel {
+      position: absolute;
+      top: 50%; left: 0; right: 0;
+      transform: translateY(200%);
+      text-align: center;
+      font-size: 26px;
+      color: rgba(255,255,255,0.45);
+      letter-spacing: 2px;
+      opacity: 0;
+    }
+
+    #brand {
+      position: absolute; bottom: 60px; left: 0; right: 0;
+      text-align: center;
+      font-size: 20px; color: rgba(255,255,255,0.15);
+      letter-spacing: 4px;
+    }
+  </style>
+</head>
+<body>
+  <div
+    id="root"
+    data-composition-id="chart-stat"
+    data-start="0"
+    data-duration="4"
+    data-width="720"
+    data-height="1280"
+    data-composition-variables='{"number":"70%","label":"衰弱进展缓解","sublabel":"临床数据","color":"#52e5a0","duration":4}'
+  >
+    <div id="bg"></div>
+    <div id="glow"   class="clip" data-start="0" data-duration="4" data-track-index="0"></div>
+    <div id="ring"   class="clip" data-start="0" data-duration="4" data-track-index="0"></div>
+
+    <div id="stat-number"   class="clip" data-start="0" data-duration="4" data-track-index="1">70%</div>
+    <div id="stat-label"    class="clip" data-start="0" data-duration="4" data-track-index="1">衰弱进展缓解</div>
+    <div id="divider"       class="clip" data-start="0" data-duration="4" data-track-index="2"></div>
+    <div id="stat-sublabel" class="clip" data-start="0" data-duration="4" data-track-index="2">临床数据</div>
+
+    <div id="brand" class="clip" data-start="0" data-duration="4" data-track-index="3">添爸说</div>
+  </div>
+
+  <script>
+    const V        = window.__hyperframes?.getVariables?.() ?? {};
+    const number   = V.number   ?? "70%";
+    const label    = V.label    ?? "关键数据";
+    const sublabel = V.sublabel ?? "";
+    const color    = V.color    ?? "#52e5a0";
+    const duration = V.duration ?? 4;
+
+    document.getElementById("root").dataset.duration   = duration;
+    document.getElementById("stat-number").textContent  = number;
+    document.getElementById("stat-label").textContent   = label;
+    document.getElementById("stat-sublabel").textContent = sublabel;
+
+    // 主色应用
+    document.getElementById("stat-number").style.color = color;
+    document.getElementById("divider").style.background = color;
+    document.getElementById("glow").style.background =
+      `radial-gradient(circle, ${color}14 0%, transparent 70%)`;
+
+    // GSAP
+    window.__timelines = window.__timelines || {};
+    const tl = gsap.timeline({ paused: true });
+
+    // 光晕膨胀
+    tl.from("#glow", { scale: 0.3, opacity: 0, duration: 1.2, ease: "power2.out" }, 0);
+    // 数字冲入
+    tl.from("#stat-number", { opacity: 0, scale: 0.4, duration: 0.7, ease: "back.out(2)" }, 0.3);
+    tl.to("#stat-number",   { opacity: 1 }, 0.3);
+    // 标签
+    tl.from("#stat-label",  { opacity: 0, y: 20, duration: 0.5, ease: "power2.out" }, 0.9);
+    tl.to("#stat-label",    { opacity: 1 }, 0.9);
+    // 分隔线展开
+    tl.from("#divider",     { scaleX: 0, transformOrigin: "center", duration: 0.4, ease: "power2.out" }, 1.1);
+    tl.to("#divider",       { opacity: 1 }, 1.1);
+    // 副说明
+    tl.from("#stat-sublabel", { opacity: 0, y: 10, duration: 0.4, ease: "power2.out" }, 1.4);
+    tl.to("#stat-sublabel",   { opacity: 1 }, 1.4);
+
+    // 退出
+    tl.to("#root", { opacity: 0, duration: 0.35, ease: "power1.in" }, duration - 0.5);
+
+    window.__timelines["chart-stat"] = tl;
+  </script>
+</body>
+</html>
