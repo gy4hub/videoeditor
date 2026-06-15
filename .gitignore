@@ -19,6 +19,10 @@ node_modules/
 # HyperFrames 测试脚手架（一次性产物，非交付模板）
 skills/hyperframes-test/test-composition/
 
+# finecut 渲染输出（本地产物，不入库）
+skills/finecut/render_project/compositions/
+skills/finecut/render_project/*.mp4
+
 # ── Python ───────────────────────────────────────────────────────
 __pycache__/
 *.py[cod]
