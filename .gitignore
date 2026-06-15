@@ -13,6 +13,12 @@ reference/
 # 输出目录（所有中间产物）
 output/
 
+# ── Node ─────────────────────────────────────────────────────────
+node_modules/
+
+# HyperFrames 测试脚手架（一次性产物，非交付模板）
+skills/hyperframes-test/test-composition/
+
 # ── Python ───────────────────────────────────────────────────────
 __pycache__/
 *.py[cod]
