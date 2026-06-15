@@ -1,114 +1,83 @@
 ---
 name: finecut
-description: 精剪 — 在粗剪 A-roll 里插入 HyperFrames 动画和 B-roll。当用户说"加图表""加动画""精剪""加 B-roll""数据可视化"时使用。
+description: 精剪 — 在粗剪成片上叠加磨砂玻璃图形层（数据/关键词/章节卡），真人画面全程保留。当用户说"加图表""加动画""精剪""数据可视化""加强调"时使用。
 ---
 
 # Finecut Skill
 
-## 你的任务
+把粗剪的口播成片做成精剪：在**真人画面之上**叠加磨砂玻璃图形层（不切走真人），由人可读的 `finecut-spec.json` 驱动，一次渲染出无缝成片。
 
-读粗剪 EDL (`output/edl_snapped.json`) 和定稿脚本，决定在哪里插什么，然后直接执行渲染和拼接。
+## 范式（务必理解）
 
----
+- **共存，不切走**：粗剪整条作为 A-roll 视频轨进**一个** HyperFrames composition，图形层用磨砂玻璃（`backdrop-filter: blur`）压在上方。添爸全程在画面里。
+- **上方安全区**：所有叠加层放画面**上部**。**底部永远留空** —— 留给烧录字幕和抖音/视频号平台 UI 遮罩。
+- **跟着话走**：图形在添爸开口讲这个点时淡入，讲完该段才淡出（时长由转写时间戳定，典型 6–15s）。
+- 渲染必须在 **Mac（有 Chrome）**执行；ARM64 沙箱无 Chrome 跑不了。
 
-## 可用组件（3 个）
+## 四个模板
 
-### `chart-bar` — 柱状对比图
-**何时用**：讲到两个以上数值对比（"A 比 B 高 33%"、"三组数据"）
-**何时不用**：单个数字（→ chart-stat）、纯文字强调（→ text-highlight）
-**变量**：`title`（图表标题）、`unit`（单位，可空）、`bars`（数组，每项含 `label/value/color`）、`duration`（秒）
+| 模板 | 用途 | 必填 vars | 可选 vars |
+|---|---|---|---|
+| `topbar` | 关键词 / 小标题 | `title` | `sublabel` |
+| `stat` | 一个有冲击力的数字 | `number`, `label` | `sublabel` |
+| `chart` | 两值对比 | `eyebrow`, `bars`(数组,每项 `label/value/unit`) | `delta` |
+| `fullscreen` | 强节点章节感（全屏磨砂压屏，真人虚化） | `lines`(数组) | `caption` |
 
-### `chart-stat` — 大数字强调
-**何时用**：一个有冲击力的数字独立成镜（"70%"、"133%"、"10倍"）
-**何时不用**：有多组数据（→ chart-bar）
-**变量**：`number`（主数字含单位）、`label`（一句话说明）、`sublabel`（来源/备注）、`color`（accent色）、`duration`
+`placement`：`upper`（上方，topbar/stat/chart 用）或 `full`（全屏，fullscreen 用）。
 
-### `text-highlight` — 关键词飞入
-**何时用**：抛出新名词/概念时（"端粒酶"、"mTOR 通路"），或段落转场前的停顿
-**何时不用**：有数字（→ chart-stat 或 chart-bar）
-**变量**：`lines`（数组，1-2行文字）、`accent`（竖线颜色）、`caption`（底部小字，可空）、`duration`
+## 选点与密度规则
 
----
+- 两值对比 → `chart`；单个强数字 → `stat`；新名词/章节转场 → `topbar`；最强节点 → `fullscreen`。
+- 数据来源 = **定稿 ground truth，不捏造**。口播口误与定稿冲突时取定稿（例：口播"300倍"、定稿"61万→1900万/3000%"，用 chart 展示两个真实数值）。
+- 密度：不背靠背；平均每 ~30s 不超过 1 个；`fullscreen` 全片 ≤ 2 个。校验器（`spec.py`）会拦截重叠和超额。
 
-## 执行命令
+## 工作流
 
-### 渲染动画（在 Mac 本机执行，沙箱无 Chrome）
-
-```bash
-HF=skills/hyperframes-test/node_modules/.bin/hyperframes
-PROJ=skills/hyperframes-test
-
-# chart-bar
-$HF render $PROJ \
-  --composition compositions/chart-bar.html \
-  --output output/finecut/<id>.mp4 \
-  --variables '{"title":"...","unit":"%","duration":5,"bars":[{"label":"A","value":100,"color":"#888"},{"label":"B","value":133,"color":"#4a9eff"}]}'
-
-# chart-stat
-$HF render $PROJ \
-  --composition compositions/chart-stat.html \
-  --output output/finecut/<id>.mp4 \
-  --variables '{"number":"70%","label":"衰弱进展缓解","sublabel":"SRN901三期临床","color":"#52e5a0","duration":4}'
-
-# text-highlight
-$HF render $PROJ \
-  --composition compositions/text-highlight.html \
-  --output output/finecut/<id>.mp4 \
-  --variables '{"lines":["端粒酶","激活"],"accent":"#4a9eff","caption":"端粒是细胞衰老的关键","duration":3}'
+```
+1. 转写        python3 src/transcribe.py <粗剪.mp4> -m medium -l zh -o output/<x>_transcript.json
+2. 写 spec     读定稿 + 转写，用 skills/finecut/locate.py 的 locate_phrase 定位每个论点的 (start_s,end_s)，
+               按"四模板/选点规则"产出 finecut-spec.json
+3. 人确认闸    把插入清单（时间码/内容/模板）给 Chen 过目，改/删/调时间后确认
+4. 渲染        python3 skills/finecut/finecut.py render --spec <spec.json> \
+                 --aroll <粗剪.mp4> --total <总秒数> --out output/finecut/<成片>.mp4
+5. 抽帧验收    ffmpeg 抽插入时刻的帧，确认真人在、图形在上方、底部未挡、时长跟着口播
 ```
 
-### 拼接进粗剪（insert 模式 — 视频换动画，配音不断）
+查看 spec 格式范例：`python3 skills/finecut/finecut.py schema`
 
-```bash
-# ① 切前段
-ffmpeg -y -ss 0 -to <at_s> -i output/roughcut_hd.mp4 -c:v libx264 -crf 20 -preset veryfast -c:a aac output/finecut/seg_before.mp4
+## finecut-spec.json 字段
 
-# ② 动画段：视频用 HyperFrames 渲染结果，音频用 roughcut 配音
-ffmpeg -y \
-  -ss <at_s> -to <at_s+dur> -i output/roughcut_hd.mp4 \
-  -i output/finecut/<id>.mp4 \
-  -map 1:v:0 -map 0:a:0 \
-  -c:v libx264 -crf 20 -preset veryfast -c:a aac \
-  output/finecut/seg_overlay.mp4
-
-# ③ 切后段
-ffmpeg -y -ss <at_s+dur> -i output/roughcut_hd.mp4 -c:v libx264 -crf 20 -preset veryfast -c:a aac output/finecut/seg_after.mp4
-
-# ④ concat
-printf "file 'seg_before.mp4'\nfile 'seg_overlay.mp4'\nfile 'seg_after.mp4'\n" > output/finecut/list.txt
-ffmpeg -y -f concat -safe 0 -i output/finecut/list.txt -c copy output/finecut/finecut.mp4
+```json
+{
+  "source": "粗剪.mp4", "fps": 30, "width": 1080, "height": 1920,
+  "inserts": [
+    { "id": 1, "template": "chart", "placement": "upper",
+      "start_s": 53.0, "end_s": 62.5,
+      "based_on": "美国从61万美元涨到1900万美元",
+      "vars": { "eyebrow": "美国牛初乳市场 · 两年",
+                "bars": [{"label":"原来","value":61,"unit":"万美元"},
+                         {"label":"现在","value":1900,"unit":"万美元"}],
+                "delta": "+3000%" } }
+  ]
+}
 ```
+- `start_s/end_s`：用 `locate_phrase(transcript_words, "原话片段")` 求得，再按论点边界微调。
+- 人工改过的项加 `"edited_by": "human"`，重跑时不要覆盖。
 
-### B-roll cutaway（视频+音频全切）
+## 文件
 
-```bash
-ffmpeg -y -ss 0 -t <dur> -i reference/<broll>.mp4 \
-  -c:v libx264 -crf 20 -preset veryfast -c:a aac \
-  output/finecut/seg_broll.mp4
-```
+- `spec.py` — schema + 校验（模板/时间/重叠/全屏数）
+- `locate.py` — `locate_phrase` 由词级时间戳定位论点时间窗
+- `styles.css` — 磨砂玻璃样式（`.fc-panel` 基类 + 上方安全区 + 四模板类）
+- `templates.py` — 四模板的 HTML + GSAP 生成器
+- `build_composition.py` — 组装单 composition（A-roll 轨 + 叠加层 + 主时间线）
+- `finecut.py` — CLI：`build` / `render` / `schema`
+- `render_project/` — HyperFrames 渲染工作目录（生成的 index.html 与 aroll 不入库）
 
----
+## 模板调样式
 
-## 决策规则
+样式集中在 `styles.css`（磨砂质感、字号、安全区都在这）。`templates.py` 只填内容、不写样式（沿用"LLM 填内容不写样式"原则）。改样式后跑 `python3 -m pytest skills/finecut/tests/` 回归，再真机 `hyperframes lint` + snapshot 抽帧确认。
 
-**插入点选择**：
-- 看 EDL 的 segment 边界，找停顿 ≥ 0.5s 的缝隙
-- 优先选"刚说完一个数据"之后的位置
-- B-roll 选"讲到场景/动作/实验"的时候
+## 已验证
 
-**时长**：
-- `chart-bar` 推荐 4-6s
-- `chart-stat` 推荐 3-4s  
-- `text-highlight` 推荐 2.5-3.5s
-- B-roll 推荐 3-5s
-
-**禁止**：
-- 不在句子中间切
-- 不捏造数据，所有数值来自定稿脚本或已知公开数据
-- 同一段落不插超过 1 个动画
-
----
-
-## 输出
-
-成片：`output/finecut/finecut.mp4`
+2026-06-15 用 `reference/粗剪_牛初乳老树开心花.mp4`（1080×1920/154s）端到端验证通过：四模板真机渲染正常、真人全程在、磨砂叠加在上方、底部字幕未挡、配音连续、同输入同输出。
