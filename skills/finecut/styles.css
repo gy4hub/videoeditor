@@ -30,9 +30,11 @@ body { font-family: "PingFang SC", "Noto Sans CJK SC", "Microsoft YaHei", sans-s
 .fc-stat .fc-sublabel { font-size: 24px; color:#9aa6b5; margin-top:6px; }
 .fc-chart .fc-row { display:flex; align-items:flex-end; justify-content:space-between; }
 .fc-chart .fc-col { display:flex; flex-direction:column; }
-.fc-chart .fc-num-small { color:#aab4c2; font-size:40px; font-weight:500; }
+.fc-chart .fc-num-small { color:#aab4c2; font-size:40px; font-weight:500; white-space:nowrap; }
+.fc-chart .fc-num-small .fc-u { font-size:24px; color:#8893a3; }
 .fc-chart .fc-arrow { color:#fff; font-size:52px; opacity:.6; padding:0 8px 6px; }
-.fc-chart .fc-num-big { color:#fff; font-size:88px; font-weight:500; line-height:1; }
+.fc-chart .fc-num-big { color:#fff; font-size:84px; font-weight:500; line-height:1; white-space:nowrap; }
+.fc-chart .fc-num-big .fc-u { font-size:34px; color:#cfe0f7; }
 .fc-chart .fc-delta { color:#52e5a0; font-size:46px; font-weight:500; align-self:flex-end; padding-bottom:10px; margin-left:18px; }
 .fc-chart .fc-cap { color:#9aa6b5; font-size:26px; margin-top:4px; }
 .fc-fullscreen .fc-line { font-size: 96px; font-weight: 500; color:#fff; letter-spacing: 4px; }

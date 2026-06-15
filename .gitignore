@@ -21,6 +21,7 @@ skills/hyperframes-test/test-composition/
 
 # finecut 渲染输出（本地产物，不入库）
 skills/finecut/render_project/compositions/
+skills/finecut/render_project/index.html
 skills/finecut/render_project/*.mp4
 
 # ── Python ───────────────────────────────────────────────────────

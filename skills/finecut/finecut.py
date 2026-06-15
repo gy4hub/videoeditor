@@ -44,18 +44,16 @@ def cmd_build(a):
 
 def cmd_render(a):
     proj = RENDER_PROJ
-    comp_dir = proj / "compositions"; comp_dir.mkdir(parents=True, exist_ok=True)
-    aroll_dst = comp_dir / "aroll.mp4"
-    shutil.copy(a.aroll, aroll_dst)
+    proj.mkdir(parents=True, exist_ok=True)
     spec = load_spec(a.spec)
     errs = validate(spec)
     if errs:
         print("spec 校验失败：", *(f"\n  - {e}" for e in errs), file=sys.stderr); return 1
+    # hyperframes render 要求项目根有 index.html；A-roll 用相对项目根的路径
+    shutil.copy(a.aroll, proj / "aroll.mp4")
     html = build(spec, aroll_src="aroll.mp4", total_s=float(a.total), styles_css=STYLES)
-    comp_path = comp_dir / "finecut.html"
-    comp_path.write_text(html, encoding="utf-8")
-    cmd = [str(HF_BIN), "render", str(proj),
-           "--composition", "compositions/finecut.html", "--output", str(Path(a.out).resolve())]
+    (proj / "index.html").write_text(html, encoding="utf-8")
+    cmd = [str(HF_BIN), "render", str(proj), "--output", str(Path(a.out).resolve())]
     print("渲染中：", " ".join(cmd))
     return subprocess.run(cmd).returncode
 
