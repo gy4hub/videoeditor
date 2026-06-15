@@ -1,0 +1,9 @@
+{
+  "name": "finecut-render-project",
+  "private": true,
+  "description": "finecut 精剪渲染项目（HyperFrames）。node_modules 不入库，跑 npm install 安装。",
+  "dependencies": {
+    "hyperframes": "^0.6.90",
+    "sharp": "^0.35.1"
+  }
+}

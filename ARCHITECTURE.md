@@ -23,11 +23,13 @@
 粗剪整条作为 A-roll 视频轨进单个 HyperFrames composition，图形层（磨砂玻璃，四模板 topbar/stat/chart/fullscreen）叠在画面上方，真人全程保留，由 `finecut-spec.json` 驱动、一次渲染出片。
 
 实现：`skills/finecut/`（spec.py / locate.py / styles.css / templates.py / build_composition.py / finecut.py）。
+渲染项目自带依赖：`skills/finecut/render_project/`（package.json，跑 `npm install` 装 node_modules，不入库）。
+一键运行：`scripts/finecut.command`（Mac 双击）。真实示例：`skills/finecut/examples/niuchuru_spec.json`。
 设计与计划：`docs/superpowers/specs/2026-06-15-finecut-redesign-design.md`、`docs/superpowers/plans/2026-06-15-finecut-redesign.md`。
 
 ⚠️ HyperFrames 渲染必须在 **Mac 本机**执行（ARM64 沙箱无 Chrome）。Agent 写 spec，`finecut.py render` 渲染。
 
-旧的纯黑整屏模板 `skills/hyperframes-test/compositions/`（chart-bar / chart-stat / text-highlight）已被磨砂叠加层取代，标记为旧实验，不再作为精剪主模板。分镜模板参考 `skills/video-spec-templates/`。
+> 历史：旧的纯黑整屏模板（hyperframes-test/chart-bar/chart-stat/text-highlight）已被磨砂叠加层取代，`skills/hyperframes-test/` 整目录于 2026-06-15 删除（finecut 已自带渲染依赖）。分镜模板参考 `skills/video-spec-templates/`。
 
 ## 已废弃 / 非主路径（勿在其上扩展）
 

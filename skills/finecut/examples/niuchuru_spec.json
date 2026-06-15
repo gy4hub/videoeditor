@@ -1,0 +1,23 @@
+{
+  "source": "粗剪_牛初乳老树开心花.mp4",
+  "fps": 30, "width": 1080, "height": 1920,
+  "inserts": [
+    { "id": 1, "template": "topbar", "placement": "upper", "start_s": 9.3, "end_s": 13.0,
+      "based_on": "当年可是号称奶中黄金",
+      "vars": { "title": "奶中黄金", "sublabel": "当年宣传卖点" } },
+    { "id": 2, "template": "stat", "placement": "upper", "start_s": 18.5, "end_s": 24.5,
+      "based_on": "2012年卫生部的一纸禁令，婴幼儿产品禁止添加牛初乳",
+      "vars": { "number": "2012", "label": "卫生部禁令", "sublabel": "婴幼儿产品禁止添加牛初乳" } },
+    { "id": 3, "template": "chart", "placement": "upper", "start_s": 53.0, "end_s": 62.5,
+      "based_on": "美国从61万美元涨到1900万美元",
+      "vars": { "eyebrow": "美国牛初乳市场 · 两年",
+                "bars": [ {"label":"原来","value":61,"unit":"万美元"}, {"label":"现在","value":1900,"unit":"万美元"} ],
+                "delta": "+3000%" } },
+    { "id": 4, "template": "fullscreen", "placement": "full", "start_s": 64.0, "end_s": 67.0,
+      "based_on": "我总结有三个变化",
+      "vars": { "lines": ["三个变化"], "caption": "对象 · 故事 · 渠道" } },
+    { "id": 5, "template": "topbar", "placement": "upper", "start_s": 124.5, "end_s": 130.0,
+      "based_on": "彭博社今年2月报道，证据比较单薄",
+      "vars": { "title": "证据单薄", "sublabel": "彭博社 2026.2 报道" } }
+  ]
+}
