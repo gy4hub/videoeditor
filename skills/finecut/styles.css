@@ -1,0 +1,40 @@
+/* skills/finecut/styles.css */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html, body { margin: 0; width: 1080px; height: 1920px; overflow: hidden; background: #000; }
+body { font-family: "PingFang SC", "Noto Sans CJK SC", "Microsoft YaHei", sans-serif; }
+
+.fc-panel {
+  position: absolute;
+  background: rgba(18, 22, 30, 0.42);
+  -webkit-backdrop-filter: blur(28px) saturate(1.2);
+  backdrop-filter: blur(28px) saturate(1.2);
+  border: 1px solid rgba(255,255,255,0.18);
+  border-radius: 32px;
+  box-shadow: 0 12px 40px rgba(0,0,0,0.35);
+  color: #ffffff;
+}
+.fc-upper { top: 150px; left: 70px; right: 70px; padding: 40px 52px; }
+.fc-full {
+  top: 0; left: 0; right: 0; bottom: 0; border-radius: 0; border: none;
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  background: rgba(8, 10, 14, 0.55);
+  -webkit-backdrop-filter: blur(18px) saturate(1.1);
+  backdrop-filter: blur(18px) saturate(1.1);
+}
+.fc-eyebrow { display:flex; align-items:center; gap:14px; color:#cfe0f7; font-size:30px; letter-spacing:2px; margin-bottom:24px; }
+.fc-eyebrow .dot { width:14px; height:14px; border-radius:50%; background:#4a9eff; }
+.fc-topbar .fc-title { font-size: 52px; font-weight: 500; letter-spacing: 2px; }
+.fc-topbar .fc-sub { color:#9aa6b5; font-size:28px; margin-top:8px; }
+.fc-stat .fc-number { font-size: 120px; font-weight: 500; line-height: 1; }
+.fc-stat .fc-label { font-size: 34px; color:#cfe0f7; margin-top:12px; }
+.fc-stat .fc-sublabel { font-size: 24px; color:#9aa6b5; margin-top:6px; }
+.fc-chart .fc-row { display:flex; align-items:flex-end; justify-content:space-between; }
+.fc-chart .fc-col { display:flex; flex-direction:column; }
+.fc-chart .fc-num-small { color:#aab4c2; font-size:40px; font-weight:500; }
+.fc-chart .fc-arrow { color:#fff; font-size:52px; opacity:.6; padding:0 8px 6px; }
+.fc-chart .fc-num-big { color:#fff; font-size:88px; font-weight:500; line-height:1; }
+.fc-chart .fc-delta { color:#52e5a0; font-size:46px; font-weight:500; align-self:flex-end; padding-bottom:10px; margin-left:18px; }
+.fc-chart .fc-cap { color:#9aa6b5; font-size:26px; margin-top:4px; }
+.fc-fullscreen .fc-line { font-size: 96px; font-weight: 500; color:#fff; letter-spacing: 4px; }
+.fc-fullscreen .fc-accent { width:6px; height:96px; background:#4a9eff; margin-bottom:24px; }
+.fc-fullscreen .fc-caption { font-size: 32px; color:#cfe0f7; margin-top: 28px; }
