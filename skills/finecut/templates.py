@@ -50,5 +50,9 @@ _BUILDERS = {"topbar": _topbar, "stat": _stat, "chart": _chart, "fullscreen": _f
 def build_overlay(ins, track_index: int) -> dict:
     inner, extra_class = _BUILDERS[ins.template](ins)
     html = _wrap(ins, track_index, extra_class, inner)
-    tl = [f'tl.from("#ins{ins.id}", {{opacity:0, y:-24, duration:0.5, ease:"power2.out"}}, {ins.start_s});']
+    fade_out_at = round(ins.end_s - 0.4, 3)
+    tl = [
+        f'tl.from("#ins{ins.id}", {{opacity:0, y:-24, duration:0.5, ease:"power2.out"}}, {ins.start_s});',
+        f'tl.to("#ins{ins.id}", {{opacity:0, duration:0.4, ease:"power1.in"}}, {fade_out_at});',
+    ]
     return {"html": html, "tl": tl}

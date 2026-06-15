@@ -30,3 +30,23 @@ def test_too_many_fullscreen_flagged():
         _ins(id=2, template="fullscreen", placement="full", start_s=20, end_s=24, vars={"lines":["b"]}),
         _ins(id=3, template="fullscreen", placement="full", start_s=30, end_s=34, vars={"lines":["c"]})])
     assert any("fullscreen" in e for e in validate(spec))
+
+def test_chart_empty_bars_flagged():
+    spec = FinecutSpec(source="a.mp4", inserts=[_ins(template="chart", placement="upper",
+        start_s=10, end_s=14, vars={"eyebrow":"x","bars":[]})])
+    assert any("bars" in e for e in validate(spec))
+
+def test_fullscreen_must_be_full_placement():
+    spec = FinecutSpec(source="a.mp4", inserts=[_ins(template="fullscreen", placement="upper",
+        start_s=10, end_s=14, vars={"lines":["a"]})])
+    assert any("placement" in e for e in validate(spec))
+
+def test_topbar_must_be_upper_placement():
+    spec = FinecutSpec(source="a.mp4", inserts=[_ins(template="topbar", placement="full",
+        start_s=10, end_s=14, vars={"title":"a"})])
+    assert any("placement" in e for e in validate(spec))
+
+def test_duplicate_ids_flagged():
+    spec = FinecutSpec(source="a.mp4", inserts=[
+        _ins(id=1, start_s=10, end_s=14), _ins(id=1, start_s=20, end_s=24)])
+    assert any("id" in e for e in validate(spec))

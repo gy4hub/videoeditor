@@ -30,3 +30,8 @@ def test_fullscreen_renders_lines():
 def test_timeline_lines_offset_by_start():
     o = build_overlay(_ins("topbar", "upper", {"title": "x"}), track_index=1)
     assert any('"#ins7"' in line and "12.0" in line for line in o["tl"])
+
+def test_has_fade_in_and_out():
+    o = build_overlay(_ins("topbar", "upper", {"title": "x"}), track_index=1)
+    assert any("from" in l for l in o["tl"])
+    assert any("to(" in l and "opacity:0" in l for l in o["tl"])

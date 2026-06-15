@@ -13,7 +13,7 @@ body { font-family: "PingFang SC", "Noto Sans CJK SC", "Microsoft YaHei", sans-s
   box-shadow: 0 12px 40px rgba(0,0,0,0.35);
   color: #ffffff;
 }
-.fc-upper { top: 150px; left: 70px; right: 70px; padding: 40px 52px; }
+.fc-upper { top: 150px; left: 70px; right: 70px; padding: 40px 52px; max-height: 1050px; overflow: hidden; }
 .fc-full {
   top: 0; left: 0; right: 0; bottom: 0; border-radius: 0; border: none;
   display: flex; flex-direction: column; align-items: center; justify-content: center;

@@ -29,6 +29,8 @@ window.__timelines["finecut"] = tl;
 """
 
 def build(spec, aroll_src: str, total_s: float, styles_css: str) -> str:
+    # 叠加层 track-index 从 1 递增；音频轨固定 100，故叠加层数量须 < 100 以免冲突
+    assert len(spec.inserts) < 100, "overlay 数量过多，会与音频轨 index(100) 冲突"
     overlays, tl_lines = [], []
     for i, ins in enumerate(sorted(spec.inserts, key=lambda x: x.start_s), start=1):
         o = build_overlay(ins, track_index=i)

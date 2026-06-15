@@ -1,10 +1,12 @@
 # skills/finecut/spec.py
 from __future__ import annotations
-from dataclasses import dataclass, field
+from dataclasses import dataclass
 import json
 
 TEMPLATES = {"topbar", "stat", "chart", "fullscreen"}
 PLACEMENTS = {"upper", "full"}
+# 每个模板要求的 placement（fullscreen 必须全屏，其余必须上方）
+EXPECTED_PLACEMENT = {"topbar": "upper", "stat": "upper", "chart": "upper", "fullscreen": "full"}
 REQUIRED_VARS = {
     "topbar": ["title"],
     "stat": ["number", "label"],
@@ -42,16 +44,27 @@ def load_spec(path: str) -> FinecutSpec:
 def validate(spec: FinecutSpec) -> list:
     errors = []
     full_count = 0
+    seen_ids = set()
     for ins in spec.inserts:
+        if ins.id in seen_ids:
+            errors.append(f"insert id 重复: {ins.id}")
+        seen_ids.add(ins.id)
         if ins.template not in TEMPLATES:
             errors.append(f"insert {ins.id}: 未知 template '{ins.template}'")
         if ins.placement not in PLACEMENTS:
             errors.append(f"insert {ins.id}: 未知 placement '{ins.placement}'")
+        expected = EXPECTED_PLACEMENT.get(ins.template)
+        if expected and ins.placement != expected:
+            errors.append(f"insert {ins.id}: template '{ins.template}' 的 placement 必须是 '{expected}'")
         if ins.end_s <= ins.start_s:
             errors.append(f"insert {ins.id}: end_s 必须大于 start_s")
         for key in REQUIRED_VARS.get(ins.template, []):
             if key not in ins.vars:
                 errors.append(f"insert {ins.id}: 缺少 vars['{key}']")
+        if ins.template == "chart":
+            bars = ins.vars.get("bars")
+            if not isinstance(bars, list) or not bars:
+                errors.append(f"insert {ins.id}: chart 的 bars 必须是非空数组")
         if ins.template == "fullscreen":
             full_count += 1
     if full_count > 2:

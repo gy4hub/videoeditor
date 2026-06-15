@@ -12,3 +12,7 @@ def test_upper_safe_zone_not_bottom():
 def test_has_four_template_classes():
     for cls in [".fc-topbar", ".fc-stat", ".fc-chart", ".fc-fullscreen"]:
         assert cls in CSS
+
+def test_upper_has_max_height_bound():
+    block = CSS.split(".fc-upper")[1].split("}")[0]
+    assert "max-height" in block
