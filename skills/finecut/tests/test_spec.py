@@ -50,3 +50,17 @@ def test_duplicate_ids_flagged():
     spec = FinecutSpec(source="a.mp4", inserts=[
         _ins(id=1, start_s=10, end_s=14), _ins(id=1, start_s=20, end_s=24)])
     assert any("id" in e for e in validate(spec))
+
+def test_default_theme_is_frosted_and_valid():
+    spec = FinecutSpec(source="a.mp4", inserts=[_ins()])
+    assert spec.inserts[0].theme == "frosted"
+    assert validate(spec) == []
+
+def test_swiss_and_kinetic_themes_valid():
+    for t in ("swiss", "kinetic"):
+        spec = FinecutSpec(source="a.mp4", inserts=[_ins(theme=t)])
+        assert validate(spec) == []
+
+def test_bad_theme_flagged():
+    spec = FinecutSpec(source="a.mp4", inserts=[_ins(theme="neon")])
+    assert any("theme" in e for e in validate(spec))

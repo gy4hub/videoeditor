@@ -40,3 +40,25 @@ body { font-family: "PingFang SC", "Noto Sans CJK SC", "Microsoft YaHei", sans-s
 .fc-fullscreen .fc-line { font-size: 96px; font-weight: 500; color:#fff; letter-spacing: 4px; }
 .fc-fullscreen .fc-accent { width:6px; height:96px; background:#4a9eff; margin-bottom:24px; }
 .fc-fullscreen .fc-caption { font-size: 32px; color:#cfe0f7; margin-top: 28px; }
+
+/* ── theme: swiss（瑞士网格）── 去面板，左对齐，红规线，强排版 ── */
+.fc-theme-swiss.fc-panel { background: transparent; -webkit-backdrop-filter: none; backdrop-filter: none; border: none; box-shadow: none; border-radius: 0; }
+.fc-theme-swiss { text-align: left; text-shadow: 0 2px 12px rgba(0,0,0,0.55); }
+.fc-theme-swiss.fc-full { align-items: flex-start; padding-left: 80px; background: rgba(8,10,14,0.4); }
+.fc-theme-swiss .fc-eyebrow { color: #fff; border-top: 6px solid #e2231a; padding-top: 14px; letter-spacing: 4px; text-transform: uppercase; font-weight: 500; }
+.fc-theme-swiss .fc-eyebrow .dot { display: none; }
+.fc-theme-swiss .fc-title, .fc-theme-swiss .fc-number, .fc-theme-swiss .fc-line { font-weight: 700; letter-spacing: 0; color: #fff; }
+.fc-theme-swiss .fc-num-big, .fc-theme-swiss .fc-num-small { color: #fff; }
+.fc-theme-swiss .fc-delta { color: #e2231a; }
+.fc-theme-swiss .fc-accent { background: #e2231a; }
+.fc-theme-swiss .fc-row { justify-content: flex-start; gap: 40px; }
+
+/* ── theme: kinetic（动态字体）── 去面板，超大粗体，强阴影，靠动画 ── */
+.fc-theme-kinetic.fc-panel { background: transparent; -webkit-backdrop-filter: none; backdrop-filter: none; border: none; box-shadow: none; border-radius: 0; }
+.fc-theme-kinetic.fc-full { background: rgba(8,10,14,0.5); }  /* 全屏保留压暗层（接管感） */
+.fc-theme-kinetic { text-shadow: 0 3px 16px rgba(0,0,0,0.6); }
+.fc-theme-kinetic .fc-title { font-size: 76px; font-weight: 700; }
+.fc-theme-kinetic .fc-number { font-size: 150px; font-weight: 700; }
+.fc-theme-kinetic .fc-line { font-size: 112px; font-weight: 700; }
+.fc-theme-kinetic .fc-num-big { font-size: 96px; font-weight: 700; }
+.fc-theme-kinetic .fc-eyebrow .dot { background: #ffd23f; }

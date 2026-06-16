@@ -7,7 +7,7 @@ def _ins(template, placement, vars):
 def test_topbar_wrapper_has_unique_id_and_timing():
     o = build_overlay(_ins("topbar", "upper", {"title": "奶中黄金", "sublabel": "当年宣传"}), track_index=3)
     assert 'id="ins7"' in o["html"]
-    assert 'class="clip fc-panel fc-upper fc-topbar"' in o["html"]
+    assert 'class="clip fc-panel fc-upper fc-topbar fc-theme-frosted"' in o["html"]
     assert 'data-start="12.0"' in o["html"]
     assert 'data-duration="6.0"' in o["html"]
     assert 'data-track-index="3"' in o["html"]
@@ -35,3 +35,20 @@ def test_has_fade_in_and_out():
     o = build_overlay(_ins("topbar", "upper", {"title": "x"}), track_index=1)
     assert any("from" in l for l in o["tl"])
     assert any("to(" in l and "opacity:0" in l for l in o["tl"])
+
+def _ins_theme(theme):
+    return Insert(id=7, template="stat", placement="upper", start_s=12.0, end_s=18.0,
+                  vars={"number": "70%", "label": "x"}, theme=theme)
+
+def test_theme_class_on_wrapper():
+    for theme in ("frosted", "swiss", "kinetic"):
+        o = build_overlay(_ins_theme(theme), track_index=1)
+        assert f"fc-theme-{theme}" in o["html"]
+
+def test_kinetic_animates_child_elements():
+    o = build_overlay(_ins_theme("kinetic"), track_index=1)
+    assert any("> *" in l and "stagger" in l for l in o["tl"])
+
+def test_swiss_slides_from_left():
+    o = build_overlay(_ins_theme("swiss"), track_index=1)
+    assert any("x:-40" in l for l in o["tl"])

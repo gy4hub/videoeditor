@@ -2,7 +2,7 @@
 #!/usr/bin/env python3
 """finecut — 由 finecut-spec 组装 HyperFrames composition 并渲染精剪成片。"""
 from __future__ import annotations
-import argparse, json, shutil, subprocess, sys
+import argparse, json, subprocess, sys
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[2]))
@@ -49,13 +49,22 @@ def cmd_render(a):
     errs = validate(spec)
     if errs:
         print("spec 校验失败：", *(f"\n  - {e}" for e in errs), file=sys.stderr); return 1
-    # hyperframes render 要求项目根有 index.html；A-roll 用相对项目根的路径
-    shutil.copy(a.aroll, proj / "aroll.mp4")
+    # hyperframes render 要求项目根有 index.html；A-roll 用相对项目根的路径。
+    # 用软链而非复制源片，避免每次渲染泄漏数百兆（源片可能 600M+）。
+    aroll_link = proj / "aroll.mp4"
+    if aroll_link.exists() or aroll_link.is_symlink():
+        aroll_link.unlink()
+    aroll_link.symlink_to(Path(a.aroll).resolve())
     html = build(spec, aroll_src="aroll.mp4", total_s=float(a.total), styles_css=STYLES)
     (proj / "index.html").write_text(html, encoding="utf-8")
     cmd = [str(HF_BIN), "render", str(proj), "--output", str(Path(a.out).resolve())]
     print("渲染中：", " ".join(cmd))
-    return subprocess.run(cmd).returncode
+    rc = subprocess.run(cmd).returncode
+    # 渲染产物已落到 --output；清理项目内的临时件（软链 + 生成的 index.html）
+    if aroll_link.is_symlink():
+        aroll_link.unlink()
+    (proj / "index.html").unlink(missing_ok=True)
+    return rc
 
 def main():
     p = argparse.ArgumentParser(description=__doc__)

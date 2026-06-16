@@ -4,7 +4,7 @@ from html import escape
 
 def _wrap(ins, track_index, extra_class, inner):
     dur = round(ins.end_s - ins.start_s, 3)
-    cls = f"clip fc-panel fc-{ins.placement} {extra_class}"
+    cls = f"clip fc-panel fc-{ins.placement} {extra_class} fc-theme-{ins.theme}"
     return (f'<div id="ins{ins.id}" class="{cls}" '
             f'data-start="{ins.start_s}" data-duration="{dur}" data-track-index="{track_index}">'
             f'{inner}</div>')
@@ -47,12 +47,23 @@ def _fullscreen(ins):
 
 _BUILDERS = {"topbar": _topbar, "stat": _stat, "chart": _chart, "fullscreen": _fullscreen}
 
+def _enter_tl(ins):
+    """按 theme 给出入场动画：frosted 下滑淡入；swiss 左侧滑入；kinetic 子元素弹性错位。"""
+    sid = f"#ins{ins.id}"
+    if ins.theme == "swiss":
+        return f'tl.from("{sid}", {{opacity:0, x:-40, duration:0.5, ease:"power3.out"}}, {ins.start_s});'
+    if ins.theme == "kinetic":
+        return (f'tl.set("{sid}", {{opacity:1}}, {ins.start_s});'
+                f'tl.from("{sid} > *", {{opacity:0, y:40, scale:0.8, duration:0.5, '
+                f'stagger:0.12, ease:"back.out(1.7)"}}, {ins.start_s});')
+    return f'tl.from("{sid}", {{opacity:0, y:-24, duration:0.5, ease:"power2.out"}}, {ins.start_s});'
+
 def build_overlay(ins, track_index: int) -> dict:
     inner, extra_class = _BUILDERS[ins.template](ins)
     html = _wrap(ins, track_index, extra_class, inner)
     fade_out_at = round(ins.end_s - 0.4, 3)
     tl = [
-        f'tl.from("#ins{ins.id}", {{opacity:0, y:-24, duration:0.5, ease:"power2.out"}}, {ins.start_s});',
+        _enter_tl(ins),
         f'tl.to("#ins{ins.id}", {{opacity:0, duration:0.4, ease:"power1.in"}}, {fade_out_at});',
     ]
     return {"html": html, "tl": tl}

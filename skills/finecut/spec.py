@@ -5,6 +5,7 @@ import json
 
 TEMPLATES = {"topbar", "stat", "chart", "fullscreen"}
 PLACEMENTS = {"upper", "full"}
+THEMES = {"frosted", "swiss", "kinetic"}  # 视觉配色：磨砂 / 瑞士网格 / 动态字体
 # 每个模板要求的 placement（fullscreen 必须全屏，其余必须上方）
 EXPECTED_PLACEMENT = {"topbar": "upper", "stat": "upper", "chart": "upper", "fullscreen": "full"}
 REQUIRED_VARS = {
@@ -22,6 +23,7 @@ class Insert:
     start_s: float
     end_s: float
     vars: dict
+    theme: str = "frosted"
     based_on: str = ""
     note: str = ""
     edited_by: str = ""
@@ -53,6 +55,8 @@ def validate(spec: FinecutSpec) -> list:
             errors.append(f"insert {ins.id}: 未知 template '{ins.template}'")
         if ins.placement not in PLACEMENTS:
             errors.append(f"insert {ins.id}: 未知 placement '{ins.placement}'")
+        if ins.theme not in THEMES:
+            errors.append(f"insert {ins.id}: 未知 theme '{ins.theme}'")
         expected = EXPECTED_PLACEMENT.get(ins.template)
         if expected and ins.placement != expected:
             errors.append(f"insert {ins.id}: template '{ins.template}' 的 placement 必须是 '{expected}'")
